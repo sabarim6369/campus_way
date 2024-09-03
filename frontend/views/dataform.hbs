@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        .container { width: 80%; margin: auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        #feedback { margin-top: 20px; font-size: 16px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Information Form</h1>
+        <div class="form-group">
+            <label for="language-select">Choose a language:</label>
+            <select id="language-select">
+                <option value="en-US">English</option>
+                <option value="ta-IN">Tamil</option>
+                <option value="hi-IN">Hindi</option>
+            </select>
+        </div>
+
+        <form action="/counselling" method="POST">
+            <div class="form-group">
+                <label for="generalRank">General Rank</label>
+                <input type="number" id="generalRank" name="generalRank" required>
+            </div>
+            <div class="form-group">
+                <label for="community">Community</label>
+                <input type="text" id="community" name="community" required>
+            </div>
+            <div class="form-group">
+                <label for="marks">12th Grade Marks</label>
+                <input type="number" id="marks" name="marks" required>
+            </div>
+            <div class="form-group">
+                <label for="physicsMarks">Physics Marks</label>
+                <input type="number" id="physicsMarks" name="physicsMarks" required>
+            </div>
+            <div class="form-group">
+                <label for="chemistryMarks">Chemistry Marks</label>
+                <input type="number" id="chemistryMarks" name="chemistryMarks" required>
+            </div>
+            <div class="form-group">
+                <label for="mathsMarks">Maths Marks</label>
+                <input type="number" id="mathsMarks" name="mathsMarks" required>
+            </div>
+            <div class="form-group">
+                <button type="button" id="startRecognition">Speak to Fill Form</button>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div id="feedback">Please click "Speak to Fill Form" to start.</div>
+    </div>
+
+    <script>
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const SpeechSynthesis = window.speechSynthesis;
+        let recognition;
+        let currentFieldIndex = 0;
+        const fieldIds = ['generalRank', 'community', 'marks', 'physicsMarks', 'chemistryMarks', 'mathsMarks'];
+        let debounceTimeout;
+
+        const prompts = {
+            'en-US': {
+                generalRank: "Please say your general rank",
+                community: "Please say your community",
+                marks: "Please say your 12th grade marks",
+                physicsMarks: "Please say your physics marks",
+                chemistryMarks: "Please say your chemistry marks",
+                mathsMarks: "Please say your maths marks"
+            },
+            'ta-IN': {
+                generalRank: "தயவுசெய்து உங்கள் பொதுப் படிகளைச் சொல்லுங்கள்",
+                community: "தயவுசெய்து உங்கள் சமூகத்தைச் சொல்லுங்கள்",
+                marks: "தயவுசெய்து உங்கள் 12 ஆம் வகுப்பு மதிப்பெண்களைச் சொல்லுங்கள்",
+                physicsMarks: "தயவுசெய்து உங்கள் இயற்பியலின் மதிப்பெண்களைச் சொல்லுங்கள்",
+                chemistryMarks: "தயவுசெய்து உங்கள் இரசாயனத்தின் மதிப்பெண்களைச் சொல்லுங்கள்",
+                mathsMarks: "தயவுசெய்து உங்கள் கணிதத்தின் மதிப்பெண்களைச் சொல்லுங்கள்"
+            },
+            'hi-IN': {
+                generalRank: "कृपया अपनी सामान्य रैंक बताएं",
+                community: "कृपया अपनी समुदाय बताएं",
+                marks: "कृपया अपने 12वीं कक्षा के अंक बताएं",
+                physicsMarks: "कृपया अपने भौतिकी के अंक बताएं",
+                chemistryMarks: "कृपया अपने रसायन विज्ञान के अंक बताएं",
+                mathsMarks: "कृपया अपने गणित के अंक बताएं"
+            }
+        };
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US'; // Default to English
+
+            recognition.onresult = function(event) {
+                const result = event.results[0][0].transcript.trim();
+                console.log('Recognized text:', result); // Log recognized text
+                fillForm(result);
+                currentFieldIndex++;
+                if (currentFieldIndex < fieldIds.length) {
+                    document.getElementById('feedback').textContent = 'Moving to next field: ' + prompts[recognition.lang][fieldIds[currentFieldIndex]];
+                    speakFieldLabel(fieldIds[currentFieldIndex]);
+                } else {
+                    speakCompletionMessage();
+                }
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+            };
+
+            document.getElementById('startRecognition').addEventListener('click', () => {
+                currentFieldIndex = 0;
+                updateLanguage();
+                document.getElementById('feedback').textContent = 'Starting with: ' + prompts[recognition.lang][fieldIds[currentFieldIndex]];
+                speakFieldLabel(fieldIds[currentFieldIndex]);
+            });
+
+            document.getElementById('language-select').addEventListener('change', updateLanguage);
+
+        } else {
+            alert('Speech recognition not supported in this browser.');
+        }
+
+        function updateLanguage() {
+            const languageSelect = document.getElementById('language-select').value;
+            recognition.lang = languageSelect;
+        }
+
+        function getVoiceForLanguage(language) {
+            const voices = SpeechSynthesis.getVoices();
+            return voices.find(voice => voice.lang === language) || voices[0];
+        }
+
+        function speakFieldLabel(fieldId) {
+            const label = prompts[recognition.lang] ? prompts[recognition.lang][fieldId] : prompts['en-US'][fieldId];
+            if (label) {
+                const utterance = new SpeechSynthesisUtterance(label);
+                const selectedVoice = getVoiceForLanguage(recognition.lang);
+                utterance.voice = selectedVoice;
+                utterance.onend = function() {
+                    clearTimeout(debounceTimeout);
+                    debounceTimeout = setTimeout(() => {
+                        recognition.start();
+                    }, 300);
+                };
+                SpeechSynthesis.speak(utterance);
+            } else {
+                console.error('No prompt available for field:', fieldId);
+            }
+        }
+
+        function speakCompletionMessage() {
+            const completionMessages = {
+                'en-US': 'All fields have been filled. Please review and submit.',
+                'ta-IN': 'அனைத்து புலங்களும் நிரப்பப்பட்டுவிட்டது. தயவுசெய்து சரிபார்த்து சமர்ப்பிக்கவும்.',
+                'hi-IN': 'सभी फील्ड भर दिए गए हैं। कृपया समीक्षा करें और जमा करें।'
+            };
+            const utterance = new SpeechSynthesisUtterance(completionMessages[recognition.lang]);
+            const selectedVoice = getVoiceForLanguage(recognition.lang);
+            utterance.voice = selectedVoice;
+            SpeechSynthesis.speak(utterance);
+        }
+
+        function fillForm(text) {
+            const field = document.getElementById(fieldIds[currentFieldIndex]);
+            if (field) {
+                field.value = text;
+            } else {
+                console.error('Field not found:', fieldIds[currentFieldIndex]);
+            }
+        }
+    </script>
+</body>
+</html>

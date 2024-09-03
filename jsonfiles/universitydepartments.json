@@ -1,0 +1,32 @@
+[
+    {
+        "id": "0001",
+        "name": "University Departments of Anna University, Chennai - CEG Campus",
+        "location": "Sardar Patel Road, Guindy, Chennai 600 025",
+        "rank": 1
+    },
+    {
+        "id": "0002",
+        "name": "University Departments of Anna University, Chennai - ACT Campus",
+        "location": "Sardar Patel Road, Guindy, Chennai 600 025",
+        "rank": 2
+    },
+    {
+        "id": "0003",
+        "name": "University Departments of Anna University, Chennai - SAP Campus",
+        "location": "Sardar Patel Road, Guindy, Chennai 600 025",
+        "rank": 3
+    },
+    {
+        "id": "0004",
+        "name": "University Departments of Anna University, Chennai - MIT Campus",
+        "location": "Chrompet, Tambaram Taluk, Chengalpattu District 600 044",
+        "rank": 4
+    },
+    {
+        "id": "0005",
+        "name": "Annamalai University Faculty of Engineering and Technology",
+        "location": "Annamalai nagar, Cuddalore",
+        "rank": null
+    }
+]

@@ -1,0 +1,1315 @@
+    [
+        {
+        "SNo": 1,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1011001",
+        "College Name": "Presidency College (Autonomous)",
+        "Address": "Chennai - 600005"
+        },
+        {
+        "SNo": 2,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1011005",
+        "College Name": "Dr.Ambedkar Government Arts College (Autonomous)",
+        "Address": "Vyasarpadi, Chennai - 600039"
+        },
+        {
+        "SNo": 3,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1011007",
+        "College Name": "Government Arts and Science College",
+        "Address": "RK Nagar, Chennai - 600081"
+        },
+        {
+        "SNo": 4,
+        "District": "Chengalpattu",
+        "Region": "Chennai",
+        "College Code": "1011008",
+        "College Name": "Government Arts and Science College",
+        "Address": "Perumbakkam, Chennai - 600131"
+        },
+        {
+        "SNo": 5,
+        "District": "Chengalpattu",
+        "Region": "Chennai",
+        "College Code": "1011009",
+        "College Name": "Government Arts and Science College",
+        "Address": "ECR, Nemmeli - 603104"
+        },
+        {
+        "SNo": 6,
+        "District": "Thiruvallur",
+        "Region": "Chennai",
+        "College Code": "1011010",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thiruvottiyur, Chennai - 600019"
+        },
+        {
+        "SNo": 7,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1012002",
+        "College Name": "Queen Mary's College (Autonomous)",
+        "Address": "Dr.Radhakrishnan Salai, Mylapore, Chennai - 600004"
+        },
+        {
+        "SNo": 8,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1012003",
+        "College Name": "Bharathi Womens College (Autonomous)",
+        "Address": "No.1 Prakasam Salai, Chennai - 600108"
+        },
+        {
+        "SNo": 9,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1012006",
+        "College Name": "Quaid-E-Millath Government College for Women (Autonomous)",
+        "Address": "Anna Salai, Chennai - 600002"
+        },
+        {
+        "SNo": 10,
+        "District": "Chennai",
+        "Region": "Chennai",
+        "College Code": "1013004",
+        "College Name": "Government Arts College for Men (Autonomous)",
+        "Address": "Nandanam, Chennai -600035"
+        },
+        {
+        "SNo": 11,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1021001",
+        "College Name": "Government Arts College (Autonomous)",
+        "Address": "Coimbatore - 641018"
+        },
+        {
+        "SNo": 12,
+        "District": "The Nilgiris",
+        "Region": "Coimbatore",
+        "College Code": "1021002",
+        "College Name": "Government Arts College",
+        "Address": "Udhagamandalam - 643002"
+        },
+        {
+        "SNo": 13,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021003",
+        "College Name": "Chikkanna Government Arts College",
+        "Address": "Tiruppur - 641602"
+        },
+        {
+        "SNo": 14,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021005",
+        "College Name": "Government Arts College",
+        "Address": "Udumalpet - 642126"
+        },
+        {
+        "SNo": 15,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021006",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kangeyam - 638108"
+        },
+        {
+        "SNo": 16,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1021007",
+        "College Name": "Government Arts and Science College",
+        "Address": "Mettupalayam - 641104"
+        },
+        {
+        "SNo": 17,
+        "District": "Erode",
+        "Region": "Coimbatore",
+        "College Code": "1021008",
+        "College Name": "Government Arts and Science College",
+        "Address": "Sathyamangalam - 638401"
+        },
+        {
+        "SNo": 18,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021009",
+        "College Name": "Government Arts and Science College",
+        "Address": "Avinashi - 641654"
+        },
+        {
+        "SNo": 19,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021010",
+        "College Name": "Puratchi Thalaivi Amma Government Arts and Science College",
+        "Address": "Palladam - 641664"
+        },
+        {
+        "SNo": 20,
+        "District": "Erode",
+        "Region": "Coimbatore",
+        "College Code": "1021011",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thittamalai - 638458"
+        },
+        {
+        "SNo": 21,
+        "District": "The Nilgiris",
+        "Region": "Coimbatore",
+        "College Code": "1021012",
+        "College Name": "Government Arts and Science College",
+        "Address": "Gudalur - 643212"
+        },
+        {
+        "SNo": 22,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1021013",
+        "College Name": "Government Arts and Science College",
+        "Address": "Valparai - 642127"
+        },
+        {
+        "SNo": 23,
+        "District": "Erode",
+        "Region": "Coimbatore",
+        "College Code": "1021014",
+        "College Name": "Government Arts and Science College",
+        "Address": "Modakkurichi - 638104"
+        },
+        {
+        "SNo": 24,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1021015",
+        "College Name": "Government Arts and Science College",
+        "Address": "Pollachi - 642002"
+        },
+        {
+        "SNo": 25,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1021016",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thondamuthur - 641109"
+        },
+        {
+        "SNo": 26,
+        "District": "Erode",
+        "Region": "Coimbatore",
+        "College Code": "1021018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Anthiyur - 638501"
+        },
+        {
+        "SNo": 27,
+        "District": "Erode",
+        "Region": "Coimbatore",
+        "College Code": "1021019",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thalavadi - 638461"
+        },
+        {
+        "SNo": 28,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1021020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Dharapuram - 638661"
+        },
+        {
+        "SNo": 29,
+        "District": "Tiruppur",
+        "Region": "Coimbatore",
+        "College Code": "1022004",
+        "College Name": "LRG Government Arts College for Women",
+        "Address": "Tiruppur - 641604"
+        },
+        {
+        "SNo": 30,
+        "District": "Coimbatore",
+        "Region": "Coimbatore",
+        "College Code": "1022017",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Puliyakulam, Coimbatore - 641045"
+        },
+        {
+        "SNo": 31,
+        "District": "Salem",
+        "Region": "Dharmapuri",
+        "College Code": "1031001",
+        "College Name": "Government Arts College (Autonomous)",
+        "Address": "Salem - 636007"
+        },
+        {
+        "SNo": 32,
+        "District": "Krishnagiri",
+        "Region": "Dharmapuri",
+        "College Code": "1031002",
+        "College Name": "Government Arts College for Men",
+        "Address": "Krishnagiri - 635001"
+        },
+        {
+        "SNo": 33,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031003",
+        "College Name": "Government Arts College",
+        "Address": "Dharmapuri - 636705"
+        },
+        {
+        "SNo": 34,
+        "District": "Namakkal",
+        "Region": "Dharmapuri",
+        "College Code": "1031004",
+        "College Name": "Arignar Anna Government Arts College",
+        "Address": "Namakkal - 637002"
+        },
+        {
+        "SNo": 35,
+        "District": "Namakkal",
+        "Region": "Dharmapuri",
+        "College Code": "1031005",
+        "College Name": "Thiruvalluvar Government Arts College",
+        "Address": "Rasipuram - 637401"
+        },
+        {
+        "SNo": 36,
+        "District": "Salem",
+        "Region": "Dharmapuri",
+        "College Code": "1031007",
+        "College Name": "Arignar Anna Government Arts College",
+        "Address": "Attur - 636121"
+        },
+        {
+        "SNo": 37,
+        "District": "Krishnagiri",
+        "Region": "Dharmapuri",
+        "College Code": "1031011",
+        "College Name": "Government Arts and Science College",
+        "Address": "Hosur - 635110"
+        },
+        {
+        "SNo": 38,
+        "District": "Namakkal",
+        "Region": "Dharmapuri",
+        "College Code": "1031013",
+        "College Name": "Government Arts and Science College",
+        "Address": "Komarapalayam - 638183"
+        },
+        {
+        "SNo": 39,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031014",
+        "College Name": "Bharat Ratna Puratchi Thalaivar Dr. M.G.R Govt Arts & Science College",
+        "Address": "Palacode - 636808"
+        },
+        {
+        "SNo": 40,
+        "District": "Salem",
+        "Region": "Dharmapuri",
+        "College Code": "1031015",
+        "College Name": "Government Arts and Science College",
+        "Address": "Mettur - 636401"
+        },
+        {
+        "SNo": 41,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031016",
+        "College Name": "Government Arts and Science College",
+        "Address": "Pennagaram - 636803"
+        },
+        {
+        "SNo": 42,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031017",
+        "College Name": "Government Arts and Science College",
+        "Address": "Harur - 636903"
+        },
+        {
+        "SNo": 43,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Pappireddipatti - 636905"
+        },
+        {
+        "SNo": 44,
+        "District": "Salem",
+        "Region": "Dharmapuri",
+        "College Code": "1031019",
+        "College Name": "Government Arts and Science College",
+        "Address": "Idappadi - 637102"
+        },
+        {
+        "SNo": 45,
+        "District": "Namakkal",
+        "Region": "Dharmapuri",
+        "College Code": "1031020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Sendamangalam - 674404"
+        },
+        {
+        "SNo": 46,
+        "District": "Krishnagiri",
+        "Region": "Dharmapuri",
+        "College Code": "1031021",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thalli - 635118"
+        },
+        {
+        "SNo": 47,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1031022",
+        "College Name": "Government Arts and Science College",
+        "Address": "Eriyur - 636810"
+        },
+        {
+        "SNo": 48,
+        "District": "Namakkal",
+        "Region": "Dharmapuri",
+        "College Code": "1032006",
+        "College Name": "Namakkal Kavignar Ramalingam Government Arts College for Women",
+        "Address": "Namakkal - 637001"
+        },
+        {
+        "SNo": 49,
+        "District": "Salem",
+        "Region": "Dharmapuri",
+        "College Code": "1032008",
+        "College Name": "Government Arts College for Women",
+        "Address": "Salem - 636008"
+        },
+        {
+        "SNo": 50,
+        "District": "Krishnagiri",
+        "Region": "Dharmapuri",
+        "College Code": "1032009",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Barugur - 635104"
+        },
+        {
+        "SNo": 51,
+        "District": "Krishnagiri",
+        "Region": "Dharmapuri",
+        "College Code": "1032010",
+        "College Name": "Government Arts College for Women",
+        "Address": "Krishnagiri - 635002"
+        },
+        {
+        "SNo": 52,
+        "District": "Dharmapuri",
+        "Region": "Dharmapuri",
+        "College Code": "1032012",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Karimangalam - 635111"
+        },
+        {
+        "SNo": 53,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041002",
+        "College Name": "Sethupathy Government Arts College",
+        "Address": "Ramanathapuram - 623502"
+        },
+        {
+        "SNo": 54,
+        "District": "Madurai",
+        "Region": "Madurai",
+        "College Code": "1041004",
+        "College Name": "Government Arts College",
+        "Address": "Melur - 625106"
+        },
+        {
+        "SNo": 55,
+        "District": "Sivagangai",
+        "Region": "Madurai",
+        "College Code": "1041005",
+        "College Name": "V. S. Sivalingam Government Arts College",
+        "Address": "Pulankurichi - 630413"
+        },
+        {
+        "SNo": 56,
+        "District": "Sivagangai",
+        "Region": "Madurai",
+        "College Code": "1041006",
+        "College Name": "Raja Doraisingam Government Arts College",
+        "Address": "Sivagangai - 630651"
+        },
+        {
+        "SNo": 57,
+        "District": "Sivagangai",
+        "Region": "Madurai",
+        "College Code": "1041007",
+        "College Name": "Alagappa Government Arts College",
+        "Address": "Karaikudi - 630003"
+        },
+        {
+        "SNo": 58,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041009",
+        "College Name": "Government Arts College",
+        "Address": "Paramakudi - 623707"
+        },
+        {
+        "SNo": 59,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041012",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kadaladi - 623703"
+        },
+        {
+        "SNo": 60,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041013",
+        "College Name": "Government Arts and Science College",
+        "Address": "Mudhukulathur"
+        },
+        {
+        "SNo": 61,
+        "District": "Virudhunagar",
+        "Region": "Madurai",
+        "College Code": "1041014",
+        "College Name": "Government Arts and Science College",
+        "Address": "ESI Hospital, Anaiyur Panchayat, Sivakasi - 626124"
+        },
+        {
+        "SNo": 62,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041015",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thiruvadanai - 623407"
+        },
+        {
+        "SNo": 63,
+        "District": "Theni",
+        "Region": "Madurai",
+        "College Code": "1041016",
+        "College Name": "Government Arts and Science College",
+        "Address": "Veerapandi - 625534"
+        },
+        {
+        "SNo": 64,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1041017",
+        "College Name": "Bharat Ratna Dr. APJ Abdul Kalam Government Arts and Science College",
+        "Address": "Rameswaram - 623526"
+        },
+        {
+        "SNo": 65,
+        "District": "Theni",
+        "Region": "Madurai",
+        "College Code": "1041018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Aundipatti - 625512"
+        },
+        {
+        "SNo": 66,
+        "District": "Theni",
+        "Region": "Madurai",
+        "College Code": "1041020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kottur - 625534"
+        },
+        {
+        "SNo": 67,
+        "District": "Virudhunagar",
+        "Region": "Madurai",
+        "College Code": "1041021",
+        "College Name": "Government Arts and Science College",
+        "Address": "Sattur, Virudhunagar - 626203"
+        },
+        {
+        "SNo": 68,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1041022",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thaneerpanthampatti, Eriyodu - 624702, Vedasandur, Dindigul"
+        },
+        {
+        "SNo": 69,
+        "District": "Madurai",
+        "Region": "Madurai",
+        "College Code": "1041023",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thirumangalam - 625008"
+        },
+        {
+        "SNo": 70,
+        "District": "Virudhunagar",
+        "Region": "Madurai",
+        "College Code": "1041025",
+        "College Name": "Government Arts and Science College",
+        "Address": "Aruppukottai - 626134, Virudhunagar"
+        },
+        {
+        "SNo": 71,
+        "District": "Virudhunagar",
+        "Region": "Madurai",
+        "College Code": "1041026",
+        "College Name": "Government Arts and Science College",
+        "Address": "Srivilliputhur, Virudhunagar - 626125"
+        },
+        {
+        "SNo": 72,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1041027",
+        "College Name": "Government Arts and Science College",
+        "Address": "Reddiarchatram - 624622"
+        },
+        {
+        "SNo": 73,
+        "District": "Virudhunagar",
+        "Region": "Madurai",
+        "College Code": "1041028",
+        "College Name": "Government Arts and Science College",
+        "Address": "Tiruchuli - 626129"
+        },
+        {
+        "SNo": 74,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1041029",
+        "College Name": "Government Arts and Science College",
+        "Address": "Oddanchatram - 624619"
+        },
+        {
+        "SNo": 75,
+        "District": "Madurai",
+        "Region": "Madurai",
+        "College Code": "1042001",
+        "College Name": "Sri Meenakshi Government Arts College for Women (Autonomous)",
+        "Address": "Madurai - 625002"
+        },
+        {
+        "SNo": 76,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1042003",
+        "College Name": "M.V. Muthiah Government Arts College for Women",
+        "Address": "Dindigul - 624001"
+        },
+        {
+        "SNo": 77,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1042008",
+        "College Name": "Government Arts College for Women",
+        "Address": "Ramanathapuram - 623501"
+        },
+        {
+        "SNo": 78,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1042010",
+        "College Name": "Government Arts College for Women",
+        "Address": "Nilakottai - 624208"
+        },
+        {
+        "SNo": 79,
+        "District": "Sivagangai",
+        "Region": "Madurai",
+        "College Code": "1042011",
+        "College Name": "Government Arts College for Women",
+        "Address": "Sivagangai - 630562"
+        },
+        {
+        "SNo": 80,
+        "District": "Dindigul",
+        "Region": "Madurai",
+        "College Code": "1042019",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Kodaikanal - 624101"
+        },
+        {
+        "SNo": 81,
+        "District": "Ramanathapuram",
+        "Region": "Madurai",
+        "College Code": "1042024",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Mudukulathur Road, Paramakudi, Ramanathapuram - 623707"
+        },
+        {
+        "SNo": 82,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1051001",
+        "College Name": "Government Arts College (Autonomous)",
+        "Address": "Kumbakonam - 612002"
+        },
+        {
+        "SNo": 83,
+        "District": "Ariyalur",
+        "Region": "Thanjavur",
+        "College Code": "1051003",
+        "College Name": "Government Arts College",
+        "Address": "Ariyalur - 621713"
+        },
+        {
+        "SNo": 84,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1051004",
+        "College Name": "Rajah Serfoji Government College (Autonomous)",
+        "Address": "Thanjavur - 613005"
+        },
+        {
+        "SNo": 85,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1051007",
+        "College Name": "Thiru. Vi-Ka Government Arts College",
+        "Address": "Thiruvarur - 610003"
+        },
+        {
+        "SNo": 86,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1051008",
+        "College Name": "Manni Raja Gopala Swamy Government Arts College",
+        "Address": "Mannargudi - 614001"
+        },
+        {
+        "SNo": 87,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1051009",
+        "College Name": "Government Arts and Science College",
+        "Address": "Peravurani - 614804"
+        },
+        {
+        "SNo": 88,
+        "District": "Mayiladuthurai",
+        "Region": "Thanjavur",
+        "College Code": "1051010",
+        "College Name": "Government Arts and Science College",
+        "Address": "Chinna Illuppapattu, College Road, Manalmedu - 609202"
+        },
+        {
+        "SNo": 89,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1051011",
+        "College Name": "Dr. Puratchi Thalaivar M.G.R Government Arts and Science College",
+        "Address": "Kudavasal - 612601"
+        },
+        {
+        "SNo": 90,
+        "District": "Mayiladuthurai",
+        "Region": "Thanjavur",
+        "College Code": "1051012",
+        "College Name": "Ponmana Chemmal Puratchi Thalaivar M.G.R. Government Arts and Science College",
+        "Address": "Sirkali, Puthur - 609108"
+        },
+        {
+        "SNo": 91,
+        "District": "Nagapattinam",
+        "Region": "Thanjavur",
+        "College Code": "1051014",
+        "College Name": "Government Arts and Science College",
+        "Address": "Vedaranyam - 614810"
+        },
+        {
+        "SNo": 92,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1051015",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thiruthuraipoondi - 614715"
+        },
+        {
+        "SNo": 93,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1051016",
+        "College Name": "Government Arts and Science College",
+        "Address": "Nannilam - 610105"
+        },
+        {
+        "SNo": 94,
+        "District": "Nagapattinam",
+        "Region": "Thanjavur",
+        "College Code": "1051017",
+        "College Name": "Government Arts and Science College",
+        "Address": "Nagapattinam - 611106"
+        },
+        {
+        "SNo": 95,
+        "District": "Ariyalur",
+        "Region": "Thanjavur",
+        "College Code": "1051018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Jayankondam - 621802"
+        },
+        {
+        "SNo": 96,
+        "District": "Mayiladuthurai",
+        "Region": "Thanjavur",
+        "College Code": "1051019",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kuthalam - 609810"
+        },
+        {
+        "SNo": 97,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1051020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thirukkattupalli - 613104"
+        },
+        {
+        "SNo": 98,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1052002",
+        "College Name": "Government College for Women (Autonomous)",
+        "Address": "Kumbakonam - 612001"
+        },
+        {
+        "SNo": 99,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1052005",
+        "College Name": "Kunthavai Naacchiyaar Government Arts College for Women (Autonomous)",
+        "Address": "Thanjavur - 613007"
+        },
+        {
+        "SNo": 100,
+        "District": "Mayiladuthurai",
+        "Region": "Thanjavur",
+        "College Code": "1052006",
+        "College Name": "Dharmapuram Gnanambigai Government Arts College for Women",
+        "Address": "Mayiladuthurai - 609001"
+        },
+        {
+        "SNo": 101,
+        "District": "Thanjavur",
+        "Region": "Thanjavur",
+        "College Code": "1052013",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Orathanadu - 614625"
+        },
+        {
+        "SNo": 102,
+        "District": "Thiruvarur",
+        "Region": "Thanjavur",
+        "College Code": "1052021",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Koothanallur - 614101"
+        },
+        {
+        "SNo": 103,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1061001",
+        "College Name": "H.H. The Rajahs College (Autonomous)",
+        "Address": "Pudukkottai - 622001"
+        },
+        {
+        "SNo": 104,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061002",
+        "College Name": "Thanthai Periyar Government Arts and Science College (Autonomous)",
+        "Address": "Tiruchirapalli - 620023"
+        },
+        {
+        "SNo": 105,
+        "District": "Karur",
+        "Region": "Trichy",
+        "College Code": "1061003",
+        "College Name": "Government Arts College, Thanthonimalai (Autonomous)",
+        "Address": "Karur - 639005"
+        },
+        {
+        "SNo": 106,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061004",
+        "College Name": "Arignar Anna Government Arts College",
+        "Address": "Musiri - 621201"
+        },
+        {
+        "SNo": 107,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061006",
+        "College Name": "Government Arts College",
+        "Address": "Tiruverumbur, Trichy - 620022"
+        },
+        {
+        "SNo": 108,
+        "District": "Karur",
+        "Region": "Trichy",
+        "College Code": "1061007",
+        "College Name": "Dr. Kalaignar Government Arts College",
+        "Address": "Kulithalai - 639120"
+        },
+        {
+        "SNo": 109,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1061008",
+        "College Name": "Government Arts and Science College",
+        "Address": "Karambakudi - 622302"
+        },
+        {
+        "SNo": 110,
+        "District": "Perambalur",
+        "Region": "Trichy",
+        "College Code": "1061010",
+        "College Name": "Government Arts and Science College",
+        "Address": "Veppanthattai - 621116"
+        },
+        {
+        "SNo": 111,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061011",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kumulur, Lalgudi - 621712"
+        },
+        {
+        "SNo": 112,
+        "District": "Perambalur",
+        "Region": "Trichy",
+        "College Code": "1061012",
+        "College Name": "Government Arts and Science College",
+        "Address": "Perambalur - 621107"
+        },
+        {
+        "SNo": 113,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1061013",
+        "College Name": "Government Arts and Science College",
+        "Address": "Aranthangi - 614618"
+        },
+        {
+        "SNo": 114,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061014",
+        "College Name": "Government Arts and Science College",
+        "Address": "Srirangam - 620027"
+        },
+        {
+        "SNo": 115,
+        "District": "Karur",
+        "Region": "Trichy",
+        "College Code": "1061016",
+        "College Name": "Government Arts and Science College",
+        "Address": "Union Office Building, Tharagampatti, Kadavur - 621311"
+        },
+        {
+        "SNo": 116,
+        "District": "Trichy",
+        "Region": "Trichy",
+        "College Code": "1061017",
+        "College Name": "Government Arts and Science College",
+        "Address": "Manapparai - 621306"
+        },
+        {
+        "SNo": 117,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1061018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Tirumayam - 622507"
+        },
+        {
+        "SNo": 118,
+        "District": "Karur",
+        "Region": "Trichy",
+        "College Code": "1061019",
+        "College Name": "Government Arts and Science College",
+        "Address": "Aravakurichi - 639201"
+        },
+        {
+        "SNo": 119,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1061020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Alangudi - 622301"
+        },
+        {
+        "SNo": 120,
+        "District": "Pudukkottai",
+        "Region": "Trichy",
+        "College Code": "1062005",
+        "College Name": "Kalaignar Karunanidhi Government Arts College for Women (Autonomous)",
+        "Address": "Pudukkottai - 622001"
+        },
+        {
+        "SNo": 121,
+        "District": "Perambalur",
+        "Region": "Trichy",
+        "College Code": "1062015",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Veppur - 621717"
+        },
+        {
+        "SNo": 122,
+        "District": "Tenkasi",
+        "Region": "Tirunelveli",
+        "College Code": "1071002",
+        "College Name": "Kamarajar Govt Arts College",
+        "Address": "Surandai - 627859"
+        },
+        {
+        "SNo": 123,
+        "District": "Thoothukudi",
+        "Region": "Tirunelveli",
+        "College Code": "1071003",
+        "College Name": "Government Arts and Science College",
+        "Address": "Krishna Nagar, Kovilpatti - 628503"
+        },
+        {
+        "SNo": 124,
+        "District": "Kanyakumari",
+        "Region": "Tirunelveli",
+        "College Code": "1071004",
+        "College Name": "Government Arts and Science College",
+        "Address": "Nagercoil - 629004"
+        },
+        {
+        "SNo": 125,
+        "District": "Tenkasi",
+        "Region": "Tirunelveli",
+        "College Code": "1071006",
+        "College Name": "Government Arts and Science College",
+        "Address": "Sankarankovil - 627756"
+        },
+        {
+        "SNo": 126,
+        "District": "Thoothukudi",
+        "Region": "Tirunelveli",
+        "College Code": "1071008",
+        "College Name": "Government Arts and Science College",
+        "Address": "Nagalapuram - 628904"
+        },
+        {
+        "SNo": 127,
+        "District": "Kanyakumari",
+        "Region": "Tirunelveli",
+        "College Code": "1071009",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kanyakumari - 629401"
+        },
+        {
+        "SNo": 128,
+        "District": "Tenkasi",
+        "Region": "Tirunelveli",
+        "College Code": "1071010",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kadayanallur, Tenkasi - 627751"
+        },
+        {
+        "SNo": 129,
+        "District": "Tirunelveli",
+        "Region": "Tirunelveli",
+        "College Code": "1071011",
+        "College Name": "Government Arts and Science College",
+        "Address": "Manur - 627201"
+        },
+        {
+        "SNo": 130,
+        "District": "Tirunelveli",
+        "Region": "Tirunelveli",
+        "College Code": "1072001",
+        "College Name": "Rani Anna Govt College for Women",
+        "Address": "Tirunelveli – 627008"
+        },
+        {
+        "SNo": 131,
+        "District": "Thoothukudi",
+        "Region": "Tirunelveli",
+        "College Code": "1072005",
+        "College Name": "Government Arts and Science College For Women",
+        "Address": "Sathankulam - 628704"
+        },
+        {
+        "SNo": 132,
+        "District": "Tenkasi",
+        "Region": "Tirunelveli",
+        "College Code": "1072007",
+        "College Name": "Government Arts and Science College for Women",
+        "Address": "Alangulam - 627851"
+        },
+        {
+        "SNo": 133,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081001",
+        "College Name": "Periyar Arts College",
+        "Address": "Cuddalore - 607001"
+        },
+        {
+        "SNo": 134,
+        "District": "Vellore",
+        "Region": "Vellore",
+        "College Code": "1081002",
+        "College Name": "Government Thirumagal Mills College",
+        "Address": "Gudiyatham - 632602"
+        },
+        {
+        "SNo": 135,
+        "District": "Thiruvallur",
+        "Region": "Vellore",
+        "College Code": "1081003",
+        "College Name": "Loganatha Narayanaswamy Government Arts College (Autonomous)",
+        "Address": "Ponneri - 601204"
+        },
+        {
+        "SNo": 136,
+        "District": "Vellore",
+        "Region": "Vellore",
+        "College Code": "1081004",
+        "College Name": "Muthurangam Government Arts College (Autonomous)",
+        "Address": "Vellore - 632002"
+        },
+        {
+        "SNo": 137,
+        "District": "Thiruvannamalai",
+        "Region": "Vellore",
+        "College Code": "1081005",
+        "College Name": "Kalaignar Karunanidhi Government Arts College",
+        "Address": "Tiruvannamalai - 606603"
+        },
+        {
+        "SNo": 138,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081006",
+        "College Name": "Thiru Kolanjiappar Government Arts College",
+        "Address": "Virudhachalam - 606001"
+        },
+        {
+        "SNo": 139,
+        "District": "Thiruvannamalai",
+        "Region": "Vellore",
+        "College Code": "1081007",
+        "College Name": "Arignar Anna Government Arts College",
+        "Address": "Cheyyar - 604407"
+        },
+        {
+        "SNo": 140,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1081008",
+        "College Name": "Arignar Anna Government Arts College",
+        "Address": "Villupuram - 605602"
+        },
+        {
+        "SNo": 141,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1081010",
+        "College Name": "Thiru. A. Govindasamy Government Arts College",
+        "Address": "Tindivanam - 604307"
+        },
+        {
+        "SNo": 142,
+        "District": "Chengalpattu",
+        "Region": "Vellore",
+        "College Code": "1081011",
+        "College Name": "Rajeswari Vedachalam Government Arts College",
+        "Address": "Chengalpattu - 603001"
+        },
+        {
+        "SNo": 143,
+        "District": "Thiruvallur",
+        "Region": "Vellore",
+        "College Code": "1081012",
+        "College Name": "Sri Subramanyaswamy Government Arts College",
+        "Address": "Tiruttani - 631209"
+        },
+        {
+        "SNo": 144,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081013",
+        "College Name": "Government Arts College",
+        "Address": "Chidambaram - 608102"
+        },
+        {
+        "SNo": 145,
+        "District": "Kanchipuram",
+        "Region": "Vellore",
+        "College Code": "1081014",
+        "College Name": "Puratchi Thalaivar Dr. M.G.R Government Arts and Science College",
+        "Address": "Uthiramerur - 603406"
+        },
+        {
+        "SNo": 146,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081015",
+        "College Name": "Manbumigu Dr. Puratchi Thalaivar M.G.R Government Arts and Science College",
+        "Address": "Kattumannar Koil - 608301"
+        },
+        {
+        "SNo": 147,
+        "District": "Vellore",
+        "Region": "Vellore",
+        "College Code": "1081016",
+        "College Name": "Puratchithalaivar Dr. M.G.R. Government Arts and Science College",
+        "Address": "Madhanur - 635804"
+        },
+        {
+        "SNo": 148,
+        "District": "Thiruvannamalai",
+        "Region": "Vellore",
+        "College Code": "1081018",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thennangur - Vandavasi - 604408"
+        },
+        {
+        "SNo": 149,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1081019",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thiruvennainallur - 607203"
+        },
+        {
+        "SNo": 150,
+        "District": "Kallakurichi",
+        "Region": "Vellore",
+        "College Code": "1081020",
+        "College Name": "Government Arts and Science College",
+        "Address": "Rishivandiyam - 606205"
+        },
+        {
+        "SNo": 151,
+        "District": "Kallakurichi",
+        "Region": "Vellore",
+        "College Code": "1081021",
+        "College Name": "Government Arts and Science College",
+        "Address": "Kallakurichi - 606203"
+        },
+        {
+        "SNo": 152,
+        "District": "Thirupathur",
+        "Region": "Vellore",
+        "College Code": "1081022",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thirupathur - 635901"
+        },
+        {
+        "SNo": 153,
+        "District": "Ranipet",
+        "Region": "Vellore",
+        "College Code": "1081024",
+        "College Name": "Government Arts and Science College",
+        "Address": "Arakkonam, Senthamangalam to Nemili Road, Attuppakkam, Arakkonam-631051"
+        },
+        {
+        "SNo": 154,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081025",
+        "College Name": "Government Arts and Science College",
+        "Address": "Tittakkudi - 606106, Cuddalore District"
+        },
+        {
+        "SNo": 155,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1081026",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thiruchitrambalam Koot Road, Vanur, Villupuram - 605111"
+        },
+        {
+        "SNo": 156,
+        "District": "Ranipet",
+        "Region": "Vellore",
+        "College Code": "1081027",
+        "College Name": "Government Arts and Science College",
+        "Address": "(Jambukulam), Sholinghur - 631102"
+        },
+        {
+        "SNo": 157,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1081028",
+        "College Name": "Government Arts and Science College",
+        "Address": "Gingee - 604202"
+        },
+        {
+        "SNo": 158,
+        "District": "Kanchipuram",
+        "Region": "Vellore",
+        "College Code": "1081029",
+        "College Name": "Government Arts and Science College",
+        "Address": "Sriperumbudur - 602105"
+        },
+        {
+        "SNo": 159,
+        "District": "Cuddalore",
+        "Region": "Vellore",
+        "College Code": "1081030",
+        "College Name": "Government Arts and Science College",
+        "Address": "Vadalur - 607303"
+        },
+        {
+        "SNo": 160,
+        "District": "Kallakurichi",
+        "Region": "Vellore",
+        "College Code": "1081031",
+        "College Name": "Government Arts and Science College",
+        "Address": "Thirukovilur - 605757"
+        },
+        {
+        "SNo": 161,
+        "District": "Vellore",
+        "Region": "Vellore",
+        "College Code": "1081032",
+        "College Name": "Government Arts and Science College",
+        "Address": "Serkadu - 632106"
+        },
+        {
+        "SNo": 162,
+        "District": "Thirupathur",
+        "Region": "Vellore",
+        "College Code": "1081033",
+        "College Name": "Government Arts and Science College",
+        "Address": "Natrampalli"
+        },
+        {
+        "SNo": 163,
+        "District": "Ranipet",
+        "Region": "Vellore",
+        "College Code": "1082009",
+        "College Name": "Arignar Anna Government Arts College for Women",
+        "Address": "Walajapet - 632513"
+        },
+        {
+        "SNo": 164,
+        "District": "Villupuram",
+        "Region": "Vellore",
+        "College Code": "1082017",
+        "College Name": "Dr. M.G.R. Government Arts and Science College for Women",
+        "Address": "Villupuram - 605401"
+        }
+    ]
+    

@@ -1,0 +1,82 @@
+[
+    {
+        "code": "1013",
+        "name": "University College of Engineering, Villupuram, Kakuppam",
+        "location": "Villupuram District 605103"
+    },
+    {
+        "code": "1014",
+        "name": "University College of Engineering, Tindivanam, Melpakkam, Tindivanam",
+        "location": "Villupuram District 604001"
+    },
+    {
+        "code": "1015",
+        "name": "University College of Engineering, Arni, Arni to Devikapuram Road, Thatchur, Arni",
+        "location": "Thiruvannamalai District 632326"
+    },
+    {
+        "code": "1026",
+        "name": "University College of Engineering, Kancheepuram, Ponnerikarai Campus, NH4, Chennai-Bangalore Highway, Karaipettai Village & Post",
+        "location": "Kancheepuram District 631552"
+    },
+    {
+        "code": "2025",
+        "name": "Anna University Regional Campus- Coimbatore, Maruthamalai Main Road, Navavoor Bharathiyar University Post, Somayampalayam",
+        "location": "Coimbatore District 641046"
+    },
+    {
+        "code": "3011",
+        "name": "University College of Engineering, Tiruchirappalli, (Bharathidasan Institute of Technology)",
+        "location": "Tiruchirappalli District 620024"
+    },
+    {
+        "code": "3016",
+        "name": "University College of Engineering, Ariyalur, Kathankudikadu Village, Thelur Post",
+        "location": "Ariyalur District 621704"
+    },
+    {
+        "code": "3018",
+        "name": "University College of Engineering, Thirukkuvalai",
+        "location": "Nagappattinam District 610204"
+    },
+    {
+        "code": "3019",
+        "name": "University College of Engineering, Panruti, Chennai-Kumbakonam Highway, Panikkankuppam, Panruti",
+        "location": "Cuddalore District 607106"
+    },
+    {
+        "code": "3021",
+        "name": "University College of Engineering, Pattukkottai, ECR Road, Rajamadam, Pattukkottai Taluk",
+        "location": "Thanjavur District 614701"
+    },
+    {
+        "code": "4020",
+        "name": "Anna University Regional Campus - Tirunelveli, Trivandrum Road, Palayamkottai",
+        "location": "Tirunelveli District 627007"
+    },
+    {
+        "code": "4023",
+        "name": "University College of Engineering, Nagercoil, Nagercoil Industrial Estate, Konam",
+        "location": "Kanyakumari District 629004"
+    },
+    {
+        "code": "4024",
+        "name": "University V.O.C. College of Engineering, Thoothukudi, Near V.O.C. College, Millerpuram",
+        "location": "Thoothukudi District 628008"
+    },
+    {
+        "code": "5010",
+        "name": "Anna University Regional Campus- Madurai, Kanyakumari National Highway, Keelakuilkudi",
+        "location": "Madurai District 625019"
+    },
+    {
+        "code": "5017",
+        "name": "University College of Engineering, Ramanathapuram, Pullangudi",
+        "location": "Ramanathapuram District 623513"
+    },
+    {
+        "code": "5022",
+        "name": "University College of Engineering, Dindigul, Mangarai Pirivu, Reddiyarchathiram",
+        "location": "Dindigul District 624622"
+    }
+]

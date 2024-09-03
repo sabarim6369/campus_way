@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  /* Basic styles for layout and aesthetics */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+</style>
+<body>
+    <!-- Form for selecting cutoff and department -->
+    <div class="container">
+        <h1>College Search</h1>
+        <form id="input-form">
+            <label for="cutoff-input">Cutoff:</label>
+            <input type="number" id="cutoff-input" name="cutoff" step="0.1" required>
+
+            <label for="department-input">Department:</label>
+            <select id="department-input" name="department" required>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Table to display the results -->
+        <table>
+            <thead>
+                <tr>
+                    <th>College Code</th>
+                    <th>College Name</th>
+                    <th>Branch</th>
+                    <th>Branch Name</th>
+                    <th>Cutoff</th>
+                </tr>
+            </thead>
+            <tbody id="results-table-body">
+                <!-- Results will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+      // Array of colleges with branch and cutoff details
+   const colleges = [
+    {
+      "college_code": "101",
+      "college_name": "Anna University",
+      "district": "Chennai",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 190.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "102",
+      "college_name": "PSG College of Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Electrical Engineering", "cutoff": 175.0 }
+      ]
+    },
+    {
+      "college_code": "103",
+      "college_name": "Madras Institute of Technology",
+      "district": "Chennai",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Aerospace Engineering", "cutoff": 192.0 },
+        { "branch": "Information Technology", "cutoff": 187.0 }
+      ]
+    },
+    {
+      "college_code": "104",
+      "college_name": "SSN College of Engineering",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 170.0 },
+        { "branch": "Electrical Engineering", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "105",
+      "college_name": "Coimbatore Institute of Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Government-Aided",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 178.0 },
+        { "branch": "Computer Science", "cutoff": 183.0 }
+      ]
+    },
+    {
+      "college_code": "106",
+      "college_name": "St. Joseph's College of Engineering",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electronics and Communication", "cutoff": 172.0 },
+        { "branch": "Chemical Engineering", "cutoff": 168.0 }
+      ]
+    },
+    {
+      "college_code": "107",
+      "college_name": "Velammal Engineering College",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 177.0 },
+        { "branch": "Computer Science", "cutoff": 182.0 }
+      ]
+    },
+    {
+      "college_code": "108",
+      "college_name": "Sri Sairam Engineering College",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 170.0 },
+        { "branch": "Electronics and Communication", "cutoff": 174.0 }
+      ]
+    },
+    {
+      "college_code": "109",
+      "college_name": "Hindustan Institute of Technology and Science",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Aeronautical Engineering", "cutoff": 185.0 },
+        { "branch": "Computer Science", "cutoff": 179.0 }
+      ]
+    },
+    {
+      "college_code": "110",
+      "college_name": "Kumaraguru College of Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Information Technology", "cutoff": 180.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "111",
+      "college_name": "Amrita Vishwa Vidyapeetham",
+      "district": "Coimbatore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 190.0 },
+        { "branch": "Electrical Engineering", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "112",
+      "college_name": "Vellore Institute of Technology",
+      "district": "Vellore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 195.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 175.0 }
+      ]
+    },
+    {
+      "college_code": "113",
+      "college_name": "Government College of Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 180.0 },
+        { "branch": "Electrical Engineering", "cutoff": 182.0 }
+      ]
+    },
+    {
+      "college_code": "114",
+      "college_name": "Sri Venkateswara College of Engineering",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electronics and Communication", "cutoff": 177.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 173.0 }
+      ]
+    },
+    {
+      "college_code": "115",
+      "college_name": "SASTRA University",
+      "district": "Thanjavur",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 188.0 },
+        { "branch": "Civil Engineering", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "116",
+      "college_name": "Alagappa Chettiar Government College of Engineering and Technology",
+      "district": "Karaikudi",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 178.0 },
+        { "branch": "Electronics and Communication", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "117",
+      "college_name": "Bannari Amman Institute of Technology",
+      "district": "Erode",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 175.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "118",
+      "college_name": "Kongu Engineering College",
+      "district": "Erode",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 172.0 },
+        { "branch": "Civil Engineering", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "119",
+      "college_name": "SRM Institute of Science and Technology",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 187.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 169.0 }
+      ]
+    },
+    {
+      "college_code": "120",
+      "college_name": "Thiagarajar College of Engineering",
+      "district": "Madurai",
+      "type_of_institution": "Government-Aided",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Electronics and Communication", "cutoff": 172.0 }
+      ]
+    },
+    {
+      "college_code": "121",
+      "college_name": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 174.0 },
+        { "branch": "Civil Engineering", "cutoff": 160.0 }
+      ]
+    },
+    {
+      "college_code": "122",
+      "college_name": "Periyar Maniammai Institute of Science & Technology",
+      "district": "Thanjavur",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 168.0 },
+        { "branch": "Computer Science", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "123",
+      "college_name": "Velalar College of Engineering and Technology",
+      "district": "Erode",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 175.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 168.0 }
+      ]
+    },
+    {
+      "college_code": "124",
+      "college_name": "Anand Institute of Higher Technology",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Information Technology", "cutoff": 170.0 },
+        { "branch": "Electrical Engineering", "cutoff": 160.0 }
+      ]
+    },
+    {
+      "college_code": "125",
+      "college_name": "Adhiyamaan College of Engineering",
+      "district": "Hosur",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 165.0 },
+        { "branch": "Computer Science", "cutoff": 175.0 }
+      ]
+    },
+    {
+      "college_code": "126",
+      "college_name": "Jeppiaar Engineering College",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 },
+        { "branch": "Electronics and Communication", "cutoff": 160.0 }
+      ]
+    },
+    {
+      "college_code": "127",
+      "college_name": "Sri Krishna College of Engineering and Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 182.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 172.0 }
+      ]
+    },
+    {
+      "college_code": "128",
+      "college_name": "Rajiv Gandhi College of Engineering and Technology",
+      "district": "Puducherry",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 160.0 },
+        { "branch": "Electrical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "129",
+      "college_name": "Mepco Schlenk Engineering College",
+      "district": "Sivakasi",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "130",
+      "college_name": "Noorul Islam University",
+      "district": "Kanyakumari",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 180.0 },
+        { "branch": "Civil Engineering", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "131",
+      "college_name": "Chennai Institute of Technology",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 160.0 },
+        { "branch": "Electronics and Communication", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "132",
+      "college_name": "Saveetha Engineering College",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 175.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "133",
+      "college_name": "Sri Ramachandra Institute of Higher Education and Research",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Biomedical Engineering", "cutoff": 190.0 },
+        { "branch": "Biotechnology", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "134",
+      "college_name": "Karunya Institute of Technology and Sciences",
+      "district": "Coimbatore",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 },
+        { "branch": "Electrical Engineering", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "135",
+      "college_name": "Periyar University",
+      "district": "Salem",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "136",
+      "college_name": "Vivekananda College of Engineering for Women",
+      "district": "Tiruchengode",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Information Technology", "cutoff": 160.0 },
+        { "branch": "Computer Science", "cutoff": 165.0 }
+      ]
+    },
+    {
+      "college_code": "137",
+      "college_name": "National Engineering College",
+      "district": "Kovilpatti",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electronics and Communication", "cutoff": 160.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "138",
+      "college_name": "Muthayammal Engineering College",
+      "district": "Namakkal",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 165.0 },
+        { "branch": "Civil Engineering", "cutoff": 160.0 }
+      ]
+    },
+    {
+      "college_code": "139",
+      "college_name": "Vel's Institute of Science, Technology & Advanced Studies",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 175.0 },
+        { "branch": "Electronics and Communication", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "140",
+      "college_name": "Annamalai University",
+      "district": "Chidambaram",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 160.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "141",
+      "college_name": "Sona College of Technology",
+      "district": "Salem",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 180.0 },
+        { "branch": "Electrical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "142",
+      "college_name": "Bharath University",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "143",
+      "college_name": "Sathyabama Institute of Science and Technology",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 165.0 },
+        { "branch": "Electronics and Communication", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "144",
+      "college_name": "Sri Shakthi Institute of Engineering and Technology",
+      "district": "Coimbatore",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Electrical Engineering", "cutoff": 170.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 160.0 }
+      ]
+    },
+    {
+      "college_code": "145",
+      "college_name": "Kalasalingam Academy of Research and Education",
+      "district": "Krishnankoil",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 180.0 },
+        { "branch": "Civil Engineering", "cutoff": 170.0 }
+      ]
+    },
+    {
+      "college_code": "146",
+      "college_name": "Loyola-ICAM College of Engineering and Technology",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 185.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 175.0 }
+      ]
+    },
+    {
+      "college_code": "147",
+      "college_name": "Rajalakshmi Engineering College",
+      "district": "Chennai",
+      "type_of_institution": "Private",
+      "branches": [
+        { "branch": "Information Technology", "cutoff": 175.0 },
+        { "branch": "Computer Science", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "148",
+      "college_name": "Vellore Institute of Technology",
+      "district": "Vellore",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 190.0 },
+        { "branch": "Electronics and Communication", "cutoff": 185.0 }
+      ]
+    },
+    {
+      "college_code": "149",
+      "college_name": "Madras Institute of Technology",
+      "district": "Chennai",
+      "type_of_institution": "Government",
+      "branches": [
+        { "branch": "Computer Science", "cutoff": 190.0 },
+        { "branch": "Mechanical Engineering", "cutoff": 180.0 }
+      ]
+    },
+    {
+      "college_code": "150",
+      "college_name": "SRM Institute of Science and Technology",
+      "district": "Chennai",
+      "type_of_institution": "Deemed University",
+      "branches": [
+        { "branch": "Civil Engineering", "cutoff": 170.0 },
+        { "branch": "Computer Science", "cutoff": 185.0 }
+      ]
+    }
+  ];
+
+function populateTable(cutoff, department) {
+    const tableBody = document.getElementById('results-table-body');
+    tableBody.innerHTML = ''; 
+
+    colleges.forEach(college => {
+        college.branches.forEach(branch => {
+          
+            if (branch.branch === department && branch.cutoff <= cutoff) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${college.college_code}</td>
+                    <td>${college.college_name}</td>
+                    <td>${branch.branch}</td>
+                    <td>${branch.branch} Engineering</td>
+                    <td>${branch.cutoff}</td>
+                `;
+                tableBody.appendChild(row);
+            }
+        });
+    });
+}
+
+document.getElementById('input-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission from reloading the page
+   
+    const cutoff = parseFloat(document.getElementById('cutoff-input').value);
+    const department = document.getElementById('department-input').value;
+   
+    populateTable(cutoff, department);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    populateTable(180.0, 'Computer Science'); 
+});
+
+    </script>
+
+</body>
+</html>

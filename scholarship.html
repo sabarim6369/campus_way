@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Types</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e3f2fd; /* Light blue background */
+    color: #212121;
+    display: flex;
+    min-height: 100vh; /* Ensures the body covers the full height of the viewport */
+    overflow: hidden; /* Prevents body from scrolling */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 300px;
+    background: hsl(202, 75%, 47%); /* Main blue color */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    border-right: 2px solid hsl(202, 75%, 37%); /* Slightly darker blue border */
+    flex-shrink: 0; /* Prevents the sidebar from shrinking */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff; /* White color for the logo text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.career-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.career-table td {
+    padding: 12px;
+    border: 1px solid hsl(202, 75%, 37%); /* Slightly darker blue border */
+}
+
+.career-table td a {
+    color: #ffffff; /* White text for links */
+    display: block;
+    padding: 10px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.career-table td a:hover {
+    background-color: hsl(202, 75%, 57%); /* Lighter blue on hover */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid hsl(202, 75%, 47%); /* Matching border color */
+    border-radius: 8px;
+    margin: 20px;
+    height: calc(100vh - 40px); /* Full height minus margins */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Other styles remain unchanged */
+
+        .content h2 {
+            font-size: 2rem;
+            color: hsl(202, 75%, 47%); /* Matching color for headings */
+            margin-bottom: 20px;
+        }
+        
+        .content p {
+            line-height: 1.6;
+            color: #424242;
+        }
+        
+        .content ul {
+            padding-left: 20px;
+        }
+        
+        .content ul li {
+            margin-bottom: 10px;
+            color: #424242;
+        }
+        
+        .footer {
+            background-color: hsl(202, 75%, 47%); /* Matching footer background color */
+            color: #ffffff; /* White text */
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .view-colleges-btn {
+            background-color: #1d4ed8; /* Tailwind's bg-blue-500 */
+            color: #ffffff; /* Text color */
+            padding: 10px 16px; /* Tailwind's px-4 py-2 */
+            border-radius: 0.375rem; /* Tailwind's rounded */
+            cursor: pointer;
+            position: fixed; /* Make the button fixed to the viewport */
+            top: 60px; /* Move the button up, adjust this value as needed */
+            right: 120px; /* Position horizontally as needed */
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+            z-index: 1000; /* Ensure the button stays on top of other content */
+        }
+        
+        .view-colleges-btn:hover {
+            background-color: #1e40af; /* Tailwind's hover:bg-blue-600 */
+        }
+        .apply-now-box {
+            border: 2px solid #1d4ed8; /* Blue border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 16px; /* Space inside the box */
+            margin-bottom: 16px; /* Space between boxes */
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Vertically center content */
+            justify-content: space-between; /* Space between button and text */
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+        }
+        
+        .apply-now-btn {
+            background-color: #1d4ed8; /* Blue background */
+            color: #ffffff; /* White text */
+            padding: 12px 24px; /* Button padding */
+            border-radius: 4px; /* Slightly rounded corners */
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .apply-now-btn:hover {
+            background-color: #1e40af; /* Darker blue on hover */
+        }
+        
+        .apply-now-box:hover {
+            background-color: #f1f5f9; /* Light gray background on hover */
+        }
+        
+        .apply-now-box strong {
+            margin-left: 16px; /* Space between the button and the text */
+            color: #1d4ed8; /* Matching text color */
+        }
+        .scholarship-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .scholarship-table th, .scholarship-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .scholarship-table th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .apply-now-btn {
+            background-color: #1d4ed8; /* Blue background */
+            color: #ffffff; /* White text */
+            padding: 8px 16px; /* Button padding */
+            border-radius: 4px; /* Slightly rounded corners */
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .apply-now-btn:hover {
+            background-color: #1e40af; /* Darker blue on hover */
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <h2 class="logo">CampusWay</h2>
+                <div class="overflow-x-auto">
+                    <table class="career-table">
+                        <thead>
+                            <tr>
+                                <td><a href="#" onclick="showContent('starting')">Scholarship Type</a></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" onclick="showContent('meritBased')">Merit-Based Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('needBased')">Need-Based Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('international')">International Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('underrepresented')">Underrepresented Groups</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('specialFocus')">Special Focus Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('institution')">By Awarding Institution</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('funding')">By Funding Amount</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('academic')">Academic Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('athletic')">Athletic Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('extracurricular')">Extracurricular Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('studentSpecific')">Student Specific Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('employer')">Employer Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('military')">Military Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('stem')">STEM Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('majorBased')">Major-Based Scholarships</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('noEssay')">No Essay Scholarships</a></td>
+                            </tr>
+                            <!-- Other options... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div id="contentArea" class="bg-white p-8 rounded-lg shadow-lg border border-gray-300 transition-transform duration-300">
+                <!-- Default Content -->
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Welcome to Scholarship Overview</h2>
+                <p class="text-gray-700">Select a scholarship type from the table to learn more about it, including eligibility criteria and application processes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(branch) {
+            const contentArea = document.getElementById('contentArea');
+            let content = '';
+        
+            switch(branch) {
+                case 'starting':
+                // Scholarships content
+                content = `
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarship Overview</h2>
+            
+                    <p class="text-gray-700 mb-6">Scholarships are financial awards given to students to help pay for their education. Unlike loans, scholarships do not have to be repaid, making them a valuable resource for funding your studies. They can be based on academic achievement, financial need, or specific criteria such as field of study, extracurricular activities, or personal background.</p>
+            
+                    <section class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">How Scholarships Can Benefit You</h3>
+            
+                        <p class="text-gray-700 mb-6">Applying for scholarships can significantly reduce your educational expenses and ease the financial burden of tuition, books, and other costs. Scholarships can also enhance your resume and provide opportunities for networking and professional development. With the right scholarships, you can focus more on your studies and less on financial stress.</p>
+                    </section>
+            
+                    <section class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">How Our Website Can Help You with Scholarships</h3>
+            
+                        <p class="text-gray-700 mb-6">Our website offers a comprehensive scholarship guidance platform designed to streamline your search for financial aid. Here's how we can assist:</p>
+            
+                        <ul class="list-disc list-inside mb-6 text-gray-600">
+                            <li><strong>Scholarship Database:</strong> Access a wide range of scholarships from various sources, including merit-based, need-based, and special focus scholarships.</li>
+                            <li><strong>Personalized Recommendations:</strong> Receive tailored scholarship suggestions based on your academic profile, career goals, and financial needs.</li>
+                            <li><strong>Application Guidance:</strong> Get step-by-step instructions on how to apply for different types of scholarships, including tips for writing essays and gathering required documents.</li>
+                            <li><strong>Deadline Reminders:</strong> Stay informed about upcoming scholarship deadlines and application requirements with automated alerts.</li>
+                            <li><strong>Resource Hub:</strong> Access valuable resources, such as scholarship application templates, guides, and FAQs to support your application process.</li>
+                        </ul>
+                    </section>
+            
+                    <section class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of Scholarships</h3>
+            
+                        <p class="text-gray-700 mb-6">Scholarships come in various types to cater to different needs and qualifications. Here are some common types:</p>
+            
+                        <ul class="list-disc list-inside mb-6 text-gray-600">
+                            <li><strong>Merit-Based Scholarships:</strong> Awarded based on academic excellence, achievements, or talents.</li>
+                            <li><strong>Need-Based Scholarships:</strong> Given to students who demonstrate financial need to support their education.</li>
+                            <li><strong>International Scholarships:</strong> Available for students from abroad to study in different countries.</li>
+                            <li><strong>Underrepresented Groups Scholarships:</strong> Targeted towards students from underrepresented or minority groups.</li>
+                            <li><strong>Special Focus Scholarships:</strong> For students pursuing specific fields or career paths, such as STEM or arts.</li>
+                            <li><strong>Scholarships by Awarding Institution:</strong> Offered by specific universities or colleges based on their criteria.</li>
+                            <li><strong>Scholarships by Funding Amount:</strong> Varying amounts of financial support, from partial to full coverage of tuition and expenses.</li>
+                            <li><strong>Academic Scholarships:</strong> Based on academic performance, such as high GPAs or standardized test scores.</li>
+                            <li><strong>Athletic Scholarships:</strong> Awarded to students with exceptional skills in sports.</li>
+                            <li><strong>Extracurricular Scholarships:</strong> For students involved in extracurricular activities, such as community service or leadership roles.</li>
+                            <li><strong>Need-Based Scholarships:</strong> For students facing financial hardships.</li>
+                            <li><strong>Employer Scholarships:</strong> Provided by employers to employees or their families.</li>
+                            <li><strong>Military Scholarships:</strong> For students with military backgrounds or those pursuing military careers.</li>
+                            <li><strong>STEM Scholarships:</strong> Focused on students pursuing science, technology, engineering, and mathematics fields.</li>
+                            <li><strong>Scholarships Based on Major:</strong> For students majoring in specific subjects or fields of study.</li>
+                            <li><strong>No Essay Scholarships:</strong> Awards that do not require a written essay, often involving simple applications or competitions.</li>
+                        </ul>
+                    </section>
+            
+                    <section class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Get Started</h3>
+            
+                        <p class="text-gray-700 mb-6">Getting started with scholarships is easy! Follow these steps to maximize your opportunities:</p>
+            
+                        <ul class="list-disc list-inside mb-6 text-gray-600">
+                            <li><strong>Explore Scholarships:</strong> Use our website's scholarship database to search for scholarships that match your profile and interests.</li>
+                            <li><strong>Prepare Your Documents:</strong> Gather necessary documents, such as transcripts, letters of recommendation, and financial statements.</li>
+                            <li><strong>Customize Your Applications:</strong> Tailor your applications and essays to meet the specific requirements of each scholarship.</li>
+                            <li><strong>Apply Early:</strong> Submit your applications well before the deadlines to ensure you don't miss out on any opportunities.</li>
+                            <li><strong>Track Your Progress:</strong> Use our platform to keep track of your applications and deadlines with automated reminders.</li>
+                            <li><strong>Seek Assistance:</strong> If you need help, utilize our resources or reach out for support through our help center or chat support.</li>
+                        </ul>
+                    </section>
+                `;
+                break;
+                case 'meritBased':
+                content = `
+                        <section id="merit-scholarships">
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Merit-Based Scholarships Overview</h2>
+                        <div class="scholarship-section">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Merit Scholarships?</h3>
+                            <p>Merit-based scholarships are awards given to students based on their academic achievements, talents, or accomplishments. These scholarships recognize and reward students for exceptional performance in areas such as academics, arts, athletics, or leadership. Unlike need-based scholarships, which are awarded based on financial need, merit-based scholarships focus on the student's abilities and achievements.</p>
+                        </div>
+                        <div class="scholarship-section">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Merit-Based Scholarships:</h3>
+                            <ul>
+                                <li><strong>Research Opportunities:</strong> Look for merit-based scholarships offered by universities, private organizations, foundations, and governmental bodies.</li>
+                                <li><strong>Check Eligibility:</strong> Ensure you meet the criteria specified by the scholarship provider, such as academic performance, extracurricular activities, or specific talents.</li>
+                                <li><strong>Prepare Documentation:</strong> Gather necessary documents, including transcripts, standardized test scores, letters of recommendation, and personal statements.</li>
+                                <li><strong>Complete Applications:</strong> Follow the application instructions carefully. This may include filling out forms, writing essays, and submitting supporting materials.</li>
+                                <li><strong>Meet Deadlines:</strong> Ensure you submit your application before the deadline. Some scholarships may have early deadlines, so plan accordingly.</li>
+                                <li><strong>Follow Up:</strong> After applying, check the status of your application and provide any additional information if requested.</li>
+                            </ul>
+                        </div>
+                        <div class="scholarship-section">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of Merit-Based Scholarships:</h3>
+                            <ul>
+                                <li><strong>Academic Excellence Scholarships:</strong> Awarded based on high academic performance, such as GPA, standardized test scores, or class rank.</li>
+                                <li><strong>Talent-Based Scholarships:</strong> Given to students with exceptional talents in areas such as music, art, or sports.</li>
+                                <li><strong>Leadership Scholarships:</strong> For students who have demonstrated strong leadership skills in extracurricular activities or community service.</li>
+                                <li><strong>Competition Scholarships:</strong> Awarded based on success in competitions or contests, such as science fairs or essay contests.</li>
+                                <li><strong>Subject-Specific Scholarships:</strong> For students excelling in specific academic subjects, such as mathematics or literature.</li>
+                            </ul>
+                        </div>
+                        <div class="scholarship-section">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Application Links for Top Colleges and Organizations:</h3>
+                            <table class="scholarship-table">
+                                <thead>
+                                    <tr>
+                                        <th>College Name</th>
+                                        <th>Application Links</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Harvard University</td>
+                                        <td><button onclick="window.open('https://college.harvard.edu/financial-aid', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stanford University</td>
+                                        <td><button onclick="window.open('https://financialaid.stanford.edu/undergrad/how/international.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>University of Chicago</td>
+                                        <td><button onclick="window.open('https://collegeadmissions.uchicago.edu/tuition-aid/merit-scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MIT</td>
+                                        <td><button onclick="window.open('https://sfs.mit.edu/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>University of Pennsylvania</td>
+                                        <td><button onclick="window.open('https://srfs.upenn.edu/financial-aid/international', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>National Merit Scholarship Corporation</td>
+                                        <td><button onclick="window.open('https://www.nationalmerit.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coca-Cola Scholars Foundation</td>
+                                        <td><button onclick="window.open('https://www.coca-colascholarsfoundation.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gates Millennium Scholars Program</td>
+                                        <td><button onclick="window.open('https://www.gmsp.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>IIT Madras</td>
+                                        <td><button onclick="window.open('https://www.iitm.ac.in/students/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anna University</td>
+                                        <td><button onclick="window.open('https://www.annauniv.edu/scstcell/scholarship.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sri Ramachandra Institute of Higher Education and Research</td>
+                                        <td><button onclick="window.open('https://www.sriramachandra.edu.in/university/search.php?q=schlorships&btn-search-submit=', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>VIT</td>
+                                        <td><button onclick="window.open('https://vit.ac.in/admissions/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bharathiar University</td>
+                                        <td><button onclick="window.open('https://b-u.ac.in/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PSG College of Technology</td>
+                                        <td><button onclick="window.open('https://www.psgtech.edu/scholarships.php', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Madras Christian College</td>
+                                        <td><button onclick="window.open('https://mcc.edu.in/prizes-awards-and-scholarship/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loyola College</td>
+                                        <td><button onclick="window.open('https://loyolacollege.ac.in/scholarships.php', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amrita Vishwa Vidyapeetham</td>
+                                        <td><button onclick="window.open('https://www.amrita.edu/admissions/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rajalakshmi Engineering College</td>
+                                        <td><button onclick="window.open('https://www.rajalakshmi.org/studentlife-prizes.php', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                `;
+                break;
+            
+                case 'needBased':
+                        content = `
+                        <section id="need-scholarships">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Need-Based Scholarships Overview</h2>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Need-Based Scholarships?</h3>
+                    <p>Need-based scholarships are financial awards given to students based on their financial need. These scholarships are designed to help students who might not otherwise be able to afford higher education. The eligibility for these scholarships typically involves an assessment of the student's financial situation, and awards are often given based on factors such as family income, household size, and other financial considerations.</p>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Need-Based Scholarships:</h3>
+                    <ul>
+                        <li><strong>Research Opportunities:</strong> Look for need-based scholarships offered by universities, private organizations, foundations, and governmental bodies.</li>
+                        <li><strong>Check Eligibility:</strong> Ensure you meet the criteria specified by the scholarship provider, such as financial need, household income, or other financial factors.</li>
+                        <li><strong>Prepare Documentation:</strong> Gather necessary documents, including financial statements, tax returns, and other proof of financial need.</li>
+                        <li><strong>Complete Applications:</strong> Follow the application instructions carefully. This may include filling out forms, writing essays, and submitting supporting materials.</li>
+                        <li><strong>Meet Deadlines:</strong> Ensure you submit your application before the deadline. Some scholarships may have early deadlines, so plan accordingly.</li>
+                        <li><strong>Follow Up:</strong> After applying, check the status of your application and provide any additional information if requested.</li>
+                    </ul>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of Need-Based Scholarships:</h3>
+                    <ul>
+                        <li><strong>Federal Grants:</strong> Financial aid provided by the government, such as Pell Grants, based on financial need.</li>
+                        <li><strong>Institutional Grants:</strong> Scholarships or grants provided directly by colleges or universities based on financial need.</li>
+                        <li><strong>Private Need-Based Scholarships:</strong> Awards from private organizations, foundations, or corporations that consider financial need.</li>
+                        <li><strong>Community-Based Scholarships:</strong> Local organizations or community groups that offer need-based scholarships to residents or members.</li>
+                    </ul>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Application Links for Need-Based Scholarships:</h3>
+                    <table class="scholarship-table">
+                        <thead>
+                            <tr>
+                                <th>Scholarship Name</th>
+                                <th>Application Links</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alaska Education Grant</td>
+                                <td><button onclick="window.open('https://acpe.alaska.gov/FINANCIAL-AID/AK-Education-Grant')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Oregon Opportunity Grant</td>
+                                <td><button onclick="window.open('https://oregonstudentaid.gov/grants/oregon-opportunity-grant/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>MS Financial Aid Help</td>
+                                <td><button onclick="window.open('https://www.msfinancialaid.org/help/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Nitro Scholarship</td>
+                                <td><button onclick="window.open('https://www.nitrocollege.com/nitro-scholarship-application?utm_source=cpc&utm_medium=schol360&utm_campaign=schol360_2k_main', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Two Ten Scholarship</td>
+                                <td><button onclick="window.open('https://twoten.org/get-help/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Herbert Lehman Education Fund</td>
+                                <td><button onclick="window.open('https://www.naacpldf.org/about-us/scholarships/herbert-lehman-education-fund-scholarship/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Future CPAs Scholarship</td>
+                                <td><button onclick="window.open('https://us.aicpa.org/interestareas/accountingeducation/resources/future-cpas-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Servco Scholarships</td>
+                                <td><button onclick="window.open('https://www.servco.com/giving-back/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Lawrence Strader Boy Scouts of America Scholarship</td>
+                                <td><button onclick="window.open('https://www.easttennesseefoundation.org/scholarships-grants/scholarships/scholarships-listed-by-name/lawrence-strader-boy-scouts-of-america-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>EFWA Scholarships</td>
+                                <td><button onclick="window.open('https://www.efwa.org/scholarships_undergraduate.php', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Brehm Scholarship</td>
+                                <td><button onclick="window.open('https://www.apa.org/apf/funding/brehm', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            `;
+                break;
+                case 'international':
+                content = `
+                <section id="international-scholarships">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">International Scholarships Overview</h2>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are International Scholarships?</h3>
+                    <p>International scholarships are financial awards given to students to help them pursue higher education abroad. These scholarships can cover tuition fees, living expenses, travel costs, and other associated costs. They are offered by various organizations, including universities, governments, and private entities, and are typically awarded based on criteria such as academic merit, financial need, or specific talents and achievements.</p>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for International Scholarships:</h3>
+                    <ul>
+                        <li><strong>Research Opportunities:</strong> Look for scholarships offered by international universities, government programs, and private organizations.</li>
+                        <li><strong>Check Eligibility:</strong> Ensure you meet the criteria specified by the scholarship provider, such as academic achievements, country of origin, or intended field of study.</li>
+                        <li><strong>Prepare Documentation:</strong> Gather necessary documents including transcripts, letters of recommendation, proof of financial need, and personal statements.</li>
+                        <li><strong>Complete Applications:</strong> Follow the application instructions carefully, which may include filling out forms, writing essays, and submitting supporting materials.</li>
+                        <li><strong>Meet Deadlines:</strong> Ensure you submit your application before the deadline. Some scholarships may have specific deadlines, so be aware of these dates.</li>
+                        <li><strong>Follow Up:</strong> After applying, monitor the status of your application and provide any additional information if requested.</li>
+                    </ul>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of International Scholarships:</h3>
+                    <ul>
+                        <li><strong>Government Scholarships:</strong> Financial aid provided by governments to support international students, such as the Fulbright Program or Chevening Scholarships.</li>
+                        <li><strong>University Scholarships:</strong> Awards offered directly by universities to attract talented international students.</li>
+                        <li><strong>Private Scholarships:</strong> Financial aid provided by private organizations, foundations, or corporations.</li>
+                        <li><strong>International Organizations Scholarships:</strong> Scholarships offered by international bodies or NGOs to support students from specific regions or fields.</li>
+                    </ul>
+                </div>
+                <div class="scholarship-section">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Application Links for International Scholarships:</h3>
+                    <table class="scholarship-table">
+                        <thead>
+                            <tr>
+                                <th>Scholarship Name</th>
+                                <th>Application Links</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MPOWER Women in STEM Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3589/MPOWER_Women_in_STEM_Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>MPOWER Monthly Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3596/MPOWER_Monthly_Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>New International Scholarship Opportunities Monthly</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3676/New_International_Scholarship_Opportunities_Monthly', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chasing Dreams Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3688/Chasing_Dreams_Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Andrew W. Mellon Foundation Turning the Tide Masters Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3727/Andrew_W._Mellon_Foundation_Turning_the_Tide_Masters_Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>MPOWER MBA Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalscholarships.com/scholarships/3726/MPOWER_MBA_Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Medical Internship and Shadowing Program for High School Students (London, UK)</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3223/Medical+Internship+and+Shadowing+Program+for+High+School+Students+London+UK', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Engineering Summer Course Scholarship in London, UK (High School Students)</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3469/Engineering+Summer+Course+Scholarship+in+London+UK+for+High+School+Students', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Law Summer Course Scholarship for High School Students in London and Cambridge</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3470/Law+Summer+Course+Scholarship+for+High+School+Students+in+London+and+Cambridge', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>British Council IELTS Award</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3484/British+Council+IELTS+Award', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Psychology Summer Course Scholarship for High School Students (London, UK)</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3554/PSYCHOLOGY+SUMMER+COURSE+SCHOLARSHIP+FOR+HIGH+SCHOOL+STUDENTS+IN+LONDON+', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Amber Scholar</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3657/Amber+Scholar+++', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Zuckerman STEM Leadership Program</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3423/Zuckerman+STEM+Leadership+Program', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>International Studies Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3645/International+Studies+Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>Fairfax University of America President's Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3640/Fairfax+University+of+America+President\'s+Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                            <tr>
+                                <td>CWU International Student Scholarship</td>
+                                <td><button onclick="window.open('https://www.internationalstudent.com/scholarships/3634/CWU+International+Student+Scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            `;
+            break;     
+            case 'underrepresented':
+            content = 
+                `<section id="underrepresented-groups-scholarships">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarships for Underrepresented Groups</h2>
+                    <div class="scholarship-section">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Scholarships for Underrepresented Groups?</h3>
+                        <p>Scholarships for underrepresented groups are financial awards designed to support students from communities that are traditionally underrepresented in higher education. These scholarships aim to address disparities and provide opportunities to individuals who may face barriers due to their ethnicity, gender, socioeconomic status, disability, or other factors. They help to increase diversity and inclusion within educational institutions and support students in achieving their academic and career goals.</p>
+                    </div>
+                    <div class="scholarship-section">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Scholarships for Underrepresented Groups:</h3>
+                        <ul>
+                            <li><strong>Identify Relevant Scholarships:</strong> Look for scholarships specifically aimed at underrepresented groups, which may be offered by universities, nonprofits, corporations, and government agencies.</li>
+                            <li><strong>Verify Eligibility:</strong> Check if you meet the eligibility requirements, which may include factors such as race, gender, disability status, or economic background.</li>
+                            <li><strong>Prepare Required Documents:</strong> Gather necessary documentation, which could include academic transcripts, personal statements, letters of recommendation, and proof of identity or background.</li>
+                            <li><strong>Follow Application Instructions:</strong> Carefully complete the application process, which may involve writing essays, filling out forms, and providing supporting materials.</li>
+                            <li><strong>Submit Applications on Time:</strong> Ensure that you submit all applications before their respective deadlines.</li>
+                            <li><strong>Stay Informed:</strong> Keep track of the status of your applications and respond to any additional requests or follow-ups from scholarship providers.</li>
+                        </ul>
+                    </div>
+                    <div class="scholarship-section">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of Scholarships for Underrepresented Groups:</h3>
+                        <ul>
+                            <li><strong>Minority Scholarships:</strong> Financial aid for students from racial or ethnic minorities, such as the United Negro College Fund (UNCF) scholarships.</li>
+                            <li><strong>Women Scholarships:</strong> Awards for women pursuing higher education in fields where they are underrepresented, such as STEM fields or leadership roles.</li>
+                            <li><strong>Disability Scholarships:</strong> Scholarships for students with disabilities to support their educational pursuits and accommodate their needs.</li>
+                            <li><strong>Low-Income Scholarships:</strong> Financial aid for students from economically disadvantaged backgrounds to help cover tuition and other educational expenses.</li>
+                            <li><strong>LGBTQ+ Scholarships:</strong> Scholarships aimed at supporting LGBTQ+ students and addressing challenges they may face in their educational journey.</li>
+                        </ul>
+                    </div>
+                    <div class="scholarship-section">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Application Links for Scholarships for Underrepresented Groups:</h3>
+                        <table class="scholarship-table">
+                            <thead>
+                                <tr>
+                                    <th>Scholarship Name</th>
+                                    <th>Application Links</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>United Negro College Fund (UNCF) Scholarships</td>
+                                    <td><button onclick="window.open('https://www.uncf.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>National Merit Scholarship Program</td>
+                                    <td><button onclick="window.open('https://www.nationalmerit.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Gates Millennium Scholars Program</td>
+                                    <td><button onclick="window.open('https://www.gmsp.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Jackie Robinson Foundation Scholarship</td>
+                                    <td><button onclick="window.open('https://www.jackierobinson.org/our-scholarship-program/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Hispanic Scholarship Fund</td>
+                                    <td><button onclick="window.open('https://www.hsf.net/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>American Association of University Women (AAUW) Fellowships and Grants</td>
+                                    <td><button onclick="window.open('https://www.aauw.org/resources/programs/fellowships-grants/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Scholarships for Students with Disabilities - The ABLE Act Scholarship</td>
+                                    <td><button onclick="window.open('https://www.ableactscholarship.com/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Point Foundation Scholarships (LGBTQ+)</td>
+                                    <td><button onclick="window.open('https://pointfoundation.org/point-apply/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Black Foundation of Florida Scholarships</td>
+                                    <td><button onclick="window.open('https://www.blackfoundationfl.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Asian & Pacific Islander American Scholarship Fund (APIASF)</td>
+                                    <td><button onclick="window.open('https://www.apiasf.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>`;
+            break;
+            
+            case 'specialFocus':
+                content = 
+        `<section id="special-focus-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Special Focus Scholarships</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Special Focus Scholarships?</h3>
+                <p>Special focus scholarships are designed to support students who have specific interests, talents, or educational needs that fall outside the traditional categories of merit or need-based scholarships. These scholarships often target specific fields of study, career paths, or unique characteristics and achievements. They are intended to encourage and support students pursuing goals or interests that might not be covered by general scholarship programs.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Special Focus Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Relevant Scholarships:</strong> Search for scholarships that align with your special focus area or specific interests. These could be offered by professional organizations, industry-specific groups, or educational institutions.</li>
+                    <li><strong>Review Eligibility Criteria:</strong> Check the eligibility requirements for each scholarship to ensure you meet the criteria related to your focus area, interests, or achievements.</li>
+                    <li><strong>Gather Required Materials:</strong> Prepare necessary documents such as personal statements, portfolios, proof of achievements, or letters of recommendation that align with the scholarship’s focus.</li>
+                    <li><strong>Follow Application Instructions:</strong> Complete the application process according to the scholarship provider’s guidelines. This may involve specific essays, interviews, or project submissions.</li>
+                    <li><strong>Submit Applications on Time:</strong> Make sure to adhere to application deadlines and submit all required materials promptly.</li>
+                    <li><strong>Stay Engaged:</strong> Keep in touch with scholarship providers if needed and follow up on your application status if required.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Types of Special Focus Scholarships:</h3>
+                <ul>
+                    <li><strong>Field-Specific Scholarships:</strong> Awards for students pursuing studies in specific fields such as environmental science, technology, or the arts.</li>
+                    <li><strong>Career Path Scholarships:</strong> Scholarships aimed at students pursuing specific careers such as nursing, engineering, or public service.</li>
+                    <li><strong>Unique Talent Scholarships:</strong> Financial aid for students who demonstrate exceptional talent in areas such as music, writing, or sports.</li>
+                    <li><strong>Innovation and Entrepreneurship Scholarships:</strong> For students with innovative business ideas or those pursuing entrepreneurial ventures.</li>
+                    <li><strong>Special Achievement Scholarships:</strong> Awards for students who have achieved significant milestones in their field or have unique personal stories.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Application Links for Special Focus Scholarships:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship Name</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>National Geographic Society’s Explorer Grants</td>
+                            <td><button onclick="window.open('https://www.nationalgeographic.org/funding/opportunities/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Google Lime Scholarship for Students with Disabilities</td>
+                            <td><button onclick="window.open('https://buildyourfuture.withgoogle.com/scholarships/lime-scholarship/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Elks National Foundation Most Valuable Student Scholarship</td>
+                            <td><button onclick="window.open('https://www.elks.org/scholars/mvs.cfm', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>John Lennon Scholarship</td>
+                            <td><button onclick="window.open('https://www.johnlennonsongwritingcontest.com/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Society of Women Engineers (SWE) Scholarships</td>
+                            <td><button onclick="window.open('https://swe.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Pepper Tuition Giveaway</td>
+                            <td><button onclick="window.open('https://www.drpeppertuition.com/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Intel Science Talent Search</td>
+                            <td><button onclick="window.open('https://www.societyforscience.org/intel-sts/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>American Chemical Society (ACS) Scholars Program</td>
+                            <td><button onclick="window.open('https://www.acs.org/content/acs/en/funding-and-awards/scholarships.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Gates Millennium Scholars Program</td>
+                            <td><button onclick="window.open('https://www.gmsp.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>National Institute of Health (NIH) Undergraduate Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.training.nih.gov/programs/undergraduate', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'institution':
+    content = 
+        `<section id="awarding-institution-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarships by Awarding Institution</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Scholarships by Awarding Institution?</h3>
+                <p>Scholarships by awarding institution are financial awards provided directly by educational institutions, ranging from high schools and colleges to universities and specialized training centers. These scholarships may be merit-based, need-based, or designed to support students in specific programs or fields of study. Institutions often offer these scholarships to attract top talent, support their student body, and ensure that talented students have the financial resources needed to succeed.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Scholarships by Awarding Institution:</h3>
+                <ul>
+                    <li><strong>Research Available Scholarships:</strong> Visit the websites of the institutions you are interested in to find available scholarships and their application procedures.</li>
+                    <li><strong>Check Eligibility Requirements:</strong> Review the criteria for each scholarship, including academic performance, financial need, or specific program enrollment.</li>
+                    <li><strong>Prepare Required Documents:</strong> Gather necessary documentation such as transcripts, application forms, letters of recommendation, and personal statements as required by the institution.</li>
+                    <li><strong>Follow Application Instructions:</strong> Complete the application process according to the guidelines provided by the institution, which may include filling out online forms or submitting physical copies of documents.</li>
+                    <li><strong>Submit Applications on Time:</strong> Ensure you meet all deadlines for scholarship applications and provide all requested materials before the due date.</li>
+                    <li><strong>Stay Informed:</strong> Check your application status and respond promptly to any additional requests from the institution.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Scholarships Offered by Various Institutions:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Institution Name</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Harvard University</td>
+                            <td><button onclick="window.open('https://college.harvard.edu/financial-aid', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Stanford University</td>
+                            <td><button onclick="window.open('https://financialaid.stanford.edu/undergrad/how/international.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>University of Chicago</td>
+                            <td><button onclick="window.open('https://collegeadmissions.uchicago.edu/tuition-aid/merit-scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>MIT</td>
+                            <td><button onclick="window.open('https://sfs.mit.edu/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>University of Pennsylvania</td>
+                            <td><button onclick="window.open('https://srfs.upenn.edu/financial-aid/international', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>University of California, Berkeley</td>
+                            <td><button onclick="window.open('https://financialaid.berkeley.edu/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>University of Michigan</td>
+                            <td><button onclick="window.open('https://finaid.umich.edu/types-of-aid/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Princeton University</td>
+                            <td><button onclick="window.open('https://admission.princeton.edu/cost-aid', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Columbia University</td>
+                            <td><button onclick="window.open('https://www.college.columbia.edu/finaid', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Yale University</td>
+                            <td><button onclick="window.open('https://finaid.yale.edu/financial-aid/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>California Institute of Technology (Caltech)</td>
+                            <td><button onclick="window.open('https://finaid.caltech.edu/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'funding':
+    content = 
+        `<section id="funding-amount-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarships by Funding Amount</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Scholarships by Funding Amount?</h3>
+                <p>Scholarships by funding amount are categorized based on the financial support they provide to students. These scholarships can vary greatly in size, from small awards that cover a fraction of tuition costs to substantial grants that cover full tuition, fees, and sometimes even living expenses. Understanding the different funding amounts can help students identify opportunities that best match their financial needs and educational goals.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Scholarships by Funding Amount:</h3>
+                <ul>
+                    <li><strong>Determine Your Needs:</strong> Assess how much financial support you need and search for scholarships that fit those requirements.</li>
+                    <li><strong>Research Available Scholarships:</strong> Look for scholarships categorized by funding amount on scholarship databases and institutional websites.</li>
+                    <li><strong>Check Eligibility Criteria:</strong> Ensure you meet the qualifications for the scholarships, which might include academic achievements, financial need, or specific criteria related to the funding amount.</li>
+                    <li><strong>Prepare Required Documents:</strong> Gather all necessary documents, such as financial statements, transcripts, and recommendation letters, as required by the scholarship.</li>
+                    <li><strong>Follow Application Guidelines:</strong> Complete and submit applications according to the guidelines provided by the scholarship providers.</li>
+                    <li><strong>Meet Deadlines:</strong> Adhere to deadlines for submission to ensure your application is considered.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Scholarships Offered by Funding Amount:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Funding Amount</th>
+                            <th>Scholarship Name</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Up to $1,000</td>
+                            <td>Small Grant Scholarship</td>
+                            <td><button onclick="window.open('https://example.com/small-grant-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>$1,000 - $5,000</td>
+                            <td>Mid-Level Scholarship</td>
+                            <td><button onclick="window.open('https://example.com/mid-level-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>$5,000 - $10,000</td>
+                            <td>Substantial Award Scholarship</td>
+                            <td><button onclick="window.open('https://example.com/substantial-award-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>$10,000 - $25,000</td>
+                            <td>Major Scholarship</td>
+                            <td><button onclick="window.open('https://example.com/major-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Over $25,000</td>
+                            <td>Full Tuition Scholarship</td>
+                            <td><button onclick="window.open('https://example.com/full-tuition-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'academic':
+    content = 
+        `<section id="academic-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Academic Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Academic Scholarships?</h3>
+                <p>Academic scholarships are awards given to students based on their academic achievements. These scholarships recognize students who have demonstrated exceptional academic performance, such as high grades, standardized test scores, or outstanding achievements in academic competitions. They can be awarded by educational institutions, private organizations, and government bodies.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Academic Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Opportunities:</strong> Look for academic scholarships offered by schools, universities, and external organizations.</li>
+                    <li><strong>Review Eligibility:</strong> Ensure you meet the scholarship criteria, which might include GPA requirements, test scores, or academic honors.</li>
+                    <li><strong>Prepare Your Application:</strong> Gather necessary documents such as transcripts, standardized test scores, and letters of recommendation.</li>
+                    <li><strong>Submit Your Application:</strong> Complete the application process as instructed, which may involve essays, personal statements, or interviews.</li>
+                    <li><strong>Meet Deadlines:</strong> Be aware of and adhere to all application deadlines to ensure your submission is considered.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Academic Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship Name</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>National Merit Scholarship</td>
+                            <td><button onclick="window.open('https://www.nationalmerit.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Rhodes Scholarship</td>
+                            <td><button onclick="window.open('https://www.rhodeshouse.ox.ac.uk/scholarships/applying/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Fulbright Scholarship</td>
+                            <td><button onclick="window.open('https://foreign.fulbrightonline.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Goldwater Scholarship</td>
+                            <td><button onclick="window.open('https://goldwater.scholarsapply.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Gates Millennium Scholars Program</td>
+                            <td><button onclick="window.open('https://www.gmsp.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Truman Scholarship</td>
+                            <td><button onclick="window.open('https://www.truman.gov/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Marshall Scholarship</td>
+                            <td><button onclick="window.open('https://www.marshallscholarship.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Commonwealth Scholarship</td>
+                            <td><button onclick="window.open('http://cscuk.dfid.gov.uk/apply/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Chevening Scholarships</td>
+                            <td><button onclick="window.open('https://www.chevening.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Horace W. Goldsmith Scholarship</td>
+                            <td><button onclick="window.open('https://www.gs.columbia.edu/content/horace-w-goldsmith-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'athletic':
+    content = 
+        `<section id="athletic-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Athletic Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Athletic Scholarships?</h3>
+                <p>Athletic scholarships are awards given to students based on their skills and achievements in sports. These scholarships are intended to support talented athletes who demonstrate exceptional ability and potential in their respective sports. They can be awarded by universities, colleges, and sports organizations to help cover tuition and other expenses.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Athletic Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Opportunities:</strong> Research athletic scholarships offered by colleges, universities, and sports organizations.</li>
+                    <li><strong>Evaluate Eligibility:</strong> Check if you meet the criteria, which might include athletic achievements, participation in specific sports, or performance in competitions.</li>
+                    <li><strong>Prepare Your Application:</strong> Gather required documents such as athletic resumes, performance records, and letters of recommendation from coaches.</li>
+                    <li><strong>Submit Your Application:</strong> Follow the application process, which may include submitting videos of your performances, attending interviews, or filling out forms.</li>
+                    <li><strong>Meet Deadlines:</strong> Be aware of and adhere to all application deadlines to ensure your submission is considered.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Athletic Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Sport</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Baseball</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/baseball', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Basketball</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-basketball', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Diving</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-diving', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Football</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/football', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Golf</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-golf', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Ice Hockey</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-ice-hockey', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Lacrosse</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-lacrosse', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Rowing</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-rowing', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Men's Tennis</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/mens-tennis', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Basketball</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-basketball', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Beach Volleyball</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-beach-volleyball', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Diving</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-diving', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Field Hockey</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/field-hockey', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Golf</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-golf', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Gymnastics</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-gymnastics', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Women's Tennis</td>
+                            <td><button onclick="window.open('https://www.ncsasports.org/athletic-scholarships/womens-tennis', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'extracurricular':
+    content = 
+        `<section id="extracurricular-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Extracurricular Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Extracurricular Scholarships?</h3>
+                <p>Extracurricular scholarships are awards given to students who excel in activities outside of the standard academic curriculum. These activities can include arts, music, drama, leadership roles, community service, and more. Such scholarships are designed to recognize and support students who demonstrate exceptional skills, dedication, and leadership in their extracurricular pursuits.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Extracurricular Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Opportunities:</strong> Look for scholarships related to your extracurricular activities by researching organizations, schools, and community programs.</li>
+                    <li><strong>Evaluate Eligibility:</strong> Check the scholarship requirements, which may include demonstrated participation, achievements, or leadership roles in extracurricular activities.</li>
+                    <li><strong>Prepare Your Application:</strong> Gather relevant documents such as certificates, awards, recommendation letters, and a personal statement highlighting your extracurricular achievements.</li>
+                    <li><strong>Submit Your Application:</strong> Follow the application process, which may involve filling out forms, submitting essays, or providing evidence of your extracurricular involvement.</li>
+                    <li><strong>Meet Deadlines:</strong> Ensure you submit all required materials before the scholarship deadlines to be considered for the award.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Extracurricular Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Davidson Fellows Scholarship</td>
+                            <td><button onclick="window.open('https://www.davidsongifted.org/fellows/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>The Elks National Foundation Most Valuable Student Scholarship</td>
+                            <td><button onclick="window.open('https://www.elks.org/scholars/scholarships.cfm', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>National Honor Society Scholarship</td>
+                            <td><button onclick="window.open('https://www.nhs.us/students/the-nhs-scholarship/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Gates Millennium Scholars Program</td>
+                            <td><button onclick="window.open('https://www.gmsp.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>The Horatio Alger Association Scholarship</td>
+                            <td><button onclick="window.open('https://scholars.horatioalger.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Youth Foundation Scholarship</td>
+                            <td><button onclick="window.open('https://youthfoundation.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Congress-Bundestag Youth Exchange Program</td>
+                            <td><button onclick="window.open('https://www.cbyx.info/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jack Kent Cooke Foundation College Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.jkcf.org/our-scholarships/college-scholarship-program/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'studentSpecific':
+    content = 
+        `<section id="student-specific-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Student-Specific Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Student-Specific Scholarships?</h3>
+                <p>Student-specific scholarships are awards given to students based on specific characteristics or circumstances. These characteristics can include factors such as gender, ethnicity, disability, religion, or being from a particular geographic region. The goal of these scholarships is to support students who belong to particular groups or who face specific challenges, helping them to achieve their educational goals.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Student-Specific Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify the Scholarship:</strong> Look for scholarships that are designed for specific groups or individuals with particular backgrounds or circumstances.</li>
+                    <li><strong>Check Eligibility Criteria:</strong> Ensure you meet the specific requirements related to the scholarship, such as demographic information, background, or specific challenges.</li>
+                    <li><strong>Prepare Required Documentation:</strong> Gather any necessary documentation that supports your eligibility, such as proof of background, personal statements, or other relevant materials.</li>
+                    <li><strong>Complete the Application:</strong> Follow the application instructions carefully, which may include filling out forms, writing essays, or submitting additional documents.</li>
+                    <li><strong>Submit on Time:</strong> Make sure to adhere to the deadlines for submitting your application to ensure consideration for the scholarship.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Student-Specific Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hispanic Scholarship Fund</td>
+                            <td><button onclick="window.open('https://www.hsf.net/scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>United Negro College Fund (UNCF)</td>
+                            <td><button onclick="window.open('https://www.uncf.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>American Indian College Fund</td>
+                            <td><button onclick="window.open('https://collegefund.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>National Association of Black Journalists (NABJ) Scholarships</td>
+                            <td><button onclick="window.open('https://www.nabj.org/page/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Disability Scholarships</td>
+                            <td><button onclick="window.open('https://www.disabled-world.com/disability/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>The Jackie Robinson Foundation Scholarship</td>
+                            <td><button onclick="window.open('https://jackierobinson.org/scholarship/overview/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>APIASF Scholarship Program</td>
+                            <td><button onclick="window.open('https://apiasf.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Asian & Pacific Islander American Scholarship Fund</td>
+                            <td><button onclick="window.open('https://www.apiasf.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Ronald McDonald House Charities Scholarship</td>
+                            <td><button onclick="window.open('https://www.rmhc.org/what-we-do/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>The Point Foundation Scholarship</td>
+                            <td><button onclick="window.open('https://pointfoundation.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'employer':
+    content = 
+        `<section id="employer-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Employer Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Employer Scholarships?</h3>
+                <p>Employer scholarships are financial awards provided by companies and organizations to support their employees or their employees' dependents in pursuing higher education. These scholarships can be part of an employee benefits package and are designed to encourage professional development, support career growth, and assist with educational expenses. The eligibility criteria and application process may vary depending on the employer and the specific scholarship program.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Employer Scholarships:</h3>
+                <ul>
+                    <li><strong>Check Eligibility:</strong> Verify if you are eligible for the scholarship based on your employment status, position, or affiliation with the company.</li>
+                    <li><strong>Review Application Requirements:</strong> Understand the application requirements, which may include proof of employment, academic transcripts, and essays.</li>
+                    <li><strong>Gather Documentation:</strong> Prepare and collect all necessary documents required for the application.</li>
+                    <li><strong>Complete the Application:</strong> Follow the application instructions carefully, filling out forms and providing requested information.</li>
+                    <li><strong>Submit by Deadline:</strong> Ensure your application is submitted before the deadline to be considered for the scholarship.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Employer Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wells Fargo College Scholarships</td>
+                            <td><button onclick="window.open('https://www.wellsfargo.com/about/careers/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>AT&T Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.att.com/gen/general?pid=11247', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Chevron Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.chevron.com/sustainability/education/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>IBM Employee Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.ibm.com/employment/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Google Scholarships</td>
+                            <td><button onclick="window.open('https://buildyourfuture.withgoogle.com/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Apple Scholars Program</td>
+                            <td><button onclick="window.open('https://www.apple.com/careers/us/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Tuition Scholarship</td>
+                            <td><button onclick="window.open('https://careers.microsoft.com/students/us/en/us-scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Intel Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.intel.com/content/www/us/en/education/scholarships.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Amazon Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.amazon.jobs/en/guides/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Facebook Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.facebook.com/careers/students', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'military':
+    content = 
+        `<section id="military-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Military Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Military Scholarships?</h3>
+                <p>Military scholarships are financial awards provided to individuals who are serving or have served in the armed forces, as well as their family members. These scholarships are designed to support educational pursuits and career development for those who have dedicated their lives to military service. They may be offered by military branches, veterans' organizations, or private entities.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Military Scholarships:</h3>
+                <ul>
+                    <li><strong>Determine Eligibility:</strong> Check the eligibility criteria, which may include military service requirements, rank, or family status.</li>
+                    <li><strong>Gather Documentation:</strong> Prepare necessary documents, such as military service records, discharge papers, and transcripts.</li>
+                    <li><strong>Review Application Requirements:</strong> Understand the application requirements, which may include essays, recommendation letters, or proof of service.</li>
+                    <li><strong>Complete the Application:</strong> Follow the application instructions carefully, ensuring all required information and documents are provided.</li>
+                    <li><strong>Submit by Deadline:</strong> Ensure your application is submitted before the deadline to be considered for the scholarship.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Military Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pat Tillman Foundation Scholarship</td>
+                            <td><button onclick="window.open('https://pattillmanfoundation.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Legion College Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.legion.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Fisher House Foundation Scholarships</td>
+                            <td><button onclick="window.open('https://fisherhouse.org/programs/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>AMVETS National Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.amvets.org/programs/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Military Officers Association of America (MOAA) Scholarships</td>
+                            <td><button onclick="window.open('https://www.moaa.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Army Scholarship Foundation</td>
+                            <td><button onclick="window.open('https://www.armyscholarshipfoundation.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Marine Corps Scholarship Foundation</td>
+                            <td><button onclick="window.open('https://www.mcsf.org/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Veterans of Foreign Wars (VFW) Scholarships</td>
+                            <td><button onclick="window.open('https://www.vfw.org/community/youth-and-education/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Naval Reserve Officers Training Corps (NROTC) Scholarships</td>
+                            <td><button onclick="window.open('https://www.nrotc.navy.mil/Scholarships.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>U.S. Air Force Academy Scholarships</td>
+                            <td><button onclick="window.open('https://www.usafa.edu/academics/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'stem':
+    content = 
+        `<section id="stem-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">STEM Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are STEM Scholarships?</h3>
+                <p>STEM scholarships are financial awards designed to support students pursuing degrees in Science, Technology, Engineering, and Mathematics (STEM) fields. These scholarships aim to encourage more students to enter and succeed in STEM careers by providing financial assistance, mentorship, and other resources.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for STEM Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Eligible Scholarships:</strong> Research and identify STEM scholarships that align with your field of study, academic performance, and career goals.</li>
+                    <li><strong>Prepare Required Documents:</strong> Gather necessary documents such as transcripts, letters of recommendation, and personal statements.</li>
+                    <li><strong>Complete the Application:</strong> Follow the application guidelines carefully, providing all requested information and documentation.</li>
+                    <li><strong>Submit by Deadline:</strong> Ensure that your application is submitted before the specified deadline to be considered for the scholarship.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top STEM Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AICTE PG (GATE/GPAT/CEED) Scholarship</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/article/aicte-pg-scholarship-how-to-apply', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Central Sector Scheme of Scholarship for College and University Students</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/article/nsp-central-sector-scheme-for-school-students-obc-ebc-dnt-2023', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Fulbright Kalam Climate Fellowship for Doctoral Research</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/scholarship/fulbright-kalam-climate-fellowship-for-doctoral-research', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Fulbright Nehru Academic and Professional Excellence Fellowships</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/scholarship/fulbright-nehru-academic-and-professional-excellence-fellowships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Inspire Scholarship – Scholarship for Higher Education (SHE)</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/scholarship/inspire-scholarship-for-higher-education-she', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Medhaavi Engineering Scholarship Program</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/page/medhaavi-engineering-scholarship-program', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Progress Software Akanksha Scholarship for Women in STEM</td>
+                            <td><button onclick="window.open('https://www.progress.com/social-responsibility/women-in-stem-scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Rolls-Royce Unnati Scholarship for Women Engineering Students</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/page/rolls-royce-unnati-scholarships-for-women-engineering-students', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>SERB (Science and Engineering Research Board) – POWER (Promoting Opportunities For Women in Exploratory Research) Research Grants</td>
+                            <td><button onclick="window.open('https://www.buddy4study.com/scholarship/serb-power-translation-grant', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+    case 'majorBased':
+    content = 
+        `<section id="major-based-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Major-Based Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are Major-Based Scholarships?</h3>
+                <p>Major-based scholarships are financial awards specifically designed to support students pursuing a degree in a particular field of study. These scholarships often target students who demonstrate a strong academic record and interest in their chosen major. They can help cover tuition, fees, and other educational expenses, providing significant support to students committed to their field of study.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for Major-Based Scholarships:</h3>
+                <ul>
+                    <li><strong>Identify Relevant Scholarships:</strong> Look for scholarships that are specifically aimed at your major or field of interest.</li>
+                    <li><strong>Prepare Application Materials:</strong> Gather materials such as transcripts, letters of recommendation, and a personal statement or essay related to your major.</li>
+                    <li><strong>Follow Application Instructions:</strong> Adhere to the specific guidelines and requirements for each scholarship.</li>
+                    <li><strong>Meet Deadlines:</strong> Submit your application before the deadline to ensure it is considered.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top Major-Based Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>American Chemical Society (ACS) Scholars Program</td>
+                            <td><button onclick="window.open('https://www.acs.org/content/acs/en/funding-and-awards/scholarships/acs-scholars.html', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Engineering Scholarship by Society of Women Engineers (SWE)</td>
+                            <td><button onclick="window.open('https://swe.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>National Society of Professional Engineers (NSPE) Scholarship</td>
+                            <td><button onclick="window.open('https://www.nspe.org/resources/students/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>American Institute of Chemical Engineers (AIChE) Scholarship</td>
+                            <td><button onclick="window.open('https://www.aiche.org/education/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>International Baccalaureate (IB) Scholarships</td>
+                            <td><button onclick="window.open('https://www.ibo.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>American Mathematical Society (AMS) Fellowships</td>
+                            <td><button onclick="window.open('https://www.ams.org/programs/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Society of Physics Students (SPS) Scholarships</td>
+                            <td><button onclick="window.open('https://www.spsnational.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>National Association of Schools of Public Affairs and Administration (NASPAA) Scholarships</td>
+                            <td><button onclick="window.open('https://www.naspaa.org/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+
+    case 'noEssay':
+    content = 
+        `<section id="no-essay-scholarships">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">No Essay Scholarships Overview</h2>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">What are No Essay Scholarships?</h3>
+                <p>No essay scholarships are a type of financial award where the application process does not require writing an essay. These scholarships often have a simpler application process, making them accessible to a wider range of students. They typically require basic information and may include a short survey or questionnaire.</p>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">How to Apply for No Essay Scholarships:</h3>
+                <ul>
+                    <li><strong>Find No Essay Scholarships:</strong> Search for scholarships that do not require essays. Many scholarship search engines and websites list these opportunities.</li>
+                    <li><strong>Complete the Application:</strong> Fill out the application form with your basic details. Some may require additional information such as academic achievements or extracurricular activities.</li>
+                    <li><strong>Submit the Application:</strong> Ensure you submit your application before the deadline.</li>
+                    <li><strong>Monitor Results:</strong> Check back for announcements of winners or further instructions.</li>
+                </ul>
+            </div>
+            <div class="scholarship-section">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Top No Essay Scholarships and Links:</h3>
+                <table class="scholarship-table">
+                    <thead>
+                        <tr>
+                            <th>Scholarship</th>
+                            <th>Application Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scholarships.com $1,000 No Essay Scholarship</td>
+                            <td><button onclick="window.open('https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/no-essay-scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Niche $2,000 No Essay Scholarship</td>
+                            <td><button onclick="window.open('https://www.niche.com/colleges/scholarships/no-essay/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Unigo $10,000 Scholarship</td>
+                            <td><button onclick="window.open('https://www.unigo.com/scholarships/our-scholarships/unigo-scholarship', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Cappex $1,000 Easy College Money Scholarship</td>
+                            <td><button onclick="window.open('https://www.cappex.com/scholarships', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Bold.org No Essay Scholarship</td>
+                            <td><button onclick="window.open('https://bold.org/scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>CollegeXpress $10,000 No Essay Scholarship</td>
+                            <td><button onclick="window.open('https://www.collegexpress.com/scholarships/no-essay-scholarships/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>Easy Scholarships</td>
+                            <td><button onclick="window.open('https://www.easyscholarships.com/', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>BigFuture $40,000 Scholarship</td>
+                            <td><button onclick="window.open('https://bigfuture.collegeboard.org/scholarship-search', '_blank')" class="apply-now-btn">Apply Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>`;
+    break;
+
+                default:
+                content = `
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Welcome to Career Overview</h2>
+                <p class="text-gray-700">Select a career option from the table to learn more about it, including the methods to join and other details.</p>
+                `;
+                }
+                            
+
+            contentArea.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>

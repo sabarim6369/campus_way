@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Data Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>College Data Table</h1>
+    <div class="table-container">
+        <table id="collegeTable">
+            <thead>
+                <tr>
+                    <th>Branch Code</th>
+                    <th>Branch Name</th>
+                    <th>OC</th>
+                    <th>BC</th>
+                    <th>BCM</th>
+                    <th>MBC</th>
+                    <th>MBCDNC</th>
+                    <th>MBCV</th>
+                    <th>SC</th>
+                    <th>SCA</th>
+                    <th>ST</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be injected here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto; /* Allows horizontal scrolling */
+    margin: 0 auto;
+    width: 90%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Fetch JSON data from the file
+    fetch('sample1.json')
+        .then(response => response.json())
+        .then(data => {
+            // Call function to populate the table with fetched data
+            populateTable(data.Branches);
+        })
+        .catch(error => console.error('Error fetching JSON data:', error));
+});
+
+// Function to populate the table with data
+function populateTable(branches) {
+    const tableBody = document.querySelector('#collegeTable tbody');
+    
+    branches.forEach(branch => {
+        // Create a new row for each branch
+        const row = document.createElement('tr');
+        
+        // Create cells for each field
+        const branchCodeCell = createCell(branch['Branch Code']);
+        const branchNameCell = createCell(branch['Branch Name']);
+        const ocCell = createCell(branch.OC);
+        const bcCell = createCell(branch.BC);
+        const bcmCell = createCell(branch.BCM);
+        const mbcCell = createCell(branch.MBC);
+        const mbcdncCell = createCell(branch.MBCDNC);
+        const mbcvCell = createCell(branch.MBCV);
+        const scCell = createCell(branch.SC);
+        const scaCell = createCell(branch.SCA);
+        const stCell = createCell(branch.ST);
+        
+        // Append all cells to the row
+        row.appendChild(branchCodeCell);
+        row.appendChild(branchNameCell);
+        row.appendChild(ocCell);
+        row.appendChild(bcCell);
+        row.appendChild(bcmCell);
+        row.appendChild(mbcCell);
+        row.appendChild(mbcdncCell);
+        row.appendChild(mbcvCell);
+        row.appendChild(scCell);
+        row.appendChild(scaCell);
+        row.appendChild(stCell);
+        
+        // Append the row to the table body
+        tableBody.appendChild(row);
+    });
+}
+
+// Helper function to create table cells
+function createCell(data) {
+    const cell = document.createElement('td');
+    cell.textContent = data ? data : 'N/A';
+    return cell;
+}
+
+</script>

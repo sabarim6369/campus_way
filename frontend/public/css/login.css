@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    position: relative;
+    background: linear-gradient(135deg, #1b1b32, #222246);
+  }
+
+  .login-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7); /* Darkened background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    backdrop-filter: blur(10px);
+    background-image: url('https://images.unsplash.com/photo-1604688603194-3c1bd54d81c1'); /* Education-related background */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+  }
+
+  .login-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Darker text shadow for contrast */
+  }
+
+  /* Login Card */
+  .login-card {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #3e3e5e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #34495e;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+    outline: none;
+  }
+
+  button {
+    background-color: #ff6f00;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+  }
+
+  .signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+
+  .signup-link a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+  /* Back to Home Button */
+  .button.back-to-home {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    z-index: 1000;
+  }
+
+  .button.back-to-home:hover {
+    opacity: 0.8;
+  }
+
+  .validation-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }

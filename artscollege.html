@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="showGovtColleges">Show Government Colleges</button>
+            <button id="showPrivateColleges">Show Private Colleges</button>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search...">
+            <select id="searchCategory">
+                <option value="College Code">College Code</option>
+                <option value="District">District</option>
+                <option value="College Name">College Name</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>District</th>
+                    <th>Region</th>
+                    <th>College Code</th>
+                    <th>College Name</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="collegesBody">
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchBar {
+    width: 70%;
+    padding: 8px;
+}
+
+#searchCategory {
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+</style>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    const govtCollegesUrl = 'arts.json';
+    const privateCollegesUrl = 'artsprivate.json';
+
+    const showGovtButton = document.getElementById('showGovtColleges');
+    const showPrivateButton = document.getElementById('showPrivateColleges');
+    const collegesBody = document.getElementById('collegesBody');
+    const searchBar = document.getElementById('searchBar');
+    const searchCategory = document.getElementById('searchCategory');
+
+    let collegesData = [];
+
+    function loadColleges(url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                collegesData = data;
+                displayColleges(data);
+            })
+            .catch(error => console.error('Error loading colleges:', error));
+    }
+
+    function displayColleges(data) {
+        collegesBody.innerHTML = '';
+        data.forEach(college => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${college.SNo}</td>
+                <td>${college.District}</td>
+                <td>${college.Region}</td>
+                <td>${college['College Code']}</td>
+                <td>${college['College Name']}</td>
+                <td>${college.Address}</td>
+            `;
+            collegesBody.appendChild(row);
+        });
+    }
+
+    function filterColleges() {
+        const searchText = searchBar.value.toLowerCase();
+        const category = searchCategory.value;
+        
+        const filteredData = collegesData.filter(college => {
+            const value = college[category].toLowerCase();
+            return value.includes(searchText);
+        });
+
+        displayColleges(filteredData);
+    }
+
+    showGovtButton.addEventListener('click', () => loadColleges(govtCollegesUrl));
+    showPrivateButton.addEventListener('click', () => loadColleges(privateCollegesUrl));
+
+    searchBar.addEventListener('input', filterColleges);
+    searchCategory.addEventListener('change', filterColleges);
+});
+
+</script>
+</html>

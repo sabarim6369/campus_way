@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusWay</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>   
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #e3f2fd; /* Light blue background */
+        color: #212121;
+        display: flex;
+        min-height: 100vh; /* Ensures the body covers the full height of the viewport */
+    }
+
+    .container {
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 300px;
+        background: hsl(202, 75%, 47%); /* Main blue color */
+        color: #ffffff; /* White text */
+        padding: 20px;
+        border-right: 2px solid hsl(202, 75%, 37%); /* Slightly darker blue border */
+        position: fixed; /* Sidebar remains fixed while scrolling */
+        height: 100vh; /* Full viewport height */
+        overflow-y: auto; /* Independent scrollbar */
+    }
+
+    .content {
+        margin-left: 300px; /* Space for the fixed sidebar */
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid hsl(202, 75%, 47%); /* Matching border color */
+        border-radius: 8px;
+        flex: 1;
+        overflow-y: auto; /* Allows scrolling if content overflows */
+    }
+
+    .logo {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff; /* White color for the logo text */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    .sidebar .nav-link {
+        background-color: hsl(202, 75%, 47%); /* Matching background color */
+        color: #ffffff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar .nav-link:hover {
+        background-color: hsl(202, 75%, 57%); /* Lighter blue on hover */
+        color: #ffffff;
+    }
+
+    .view-colleges-btn {
+        background-color: #10b981; /* Tailwind's bg-green-500 */
+        color: #ffffff; /* Text color */
+        padding: 10px 16px; /* Tailwind's px-4 py-2 */
+        border-radius: 0.375rem; /* Tailwind's rounded */
+        cursor: pointer;
+        position: fixed; /* Make the button fixed to the viewport */
+        top: 20px; /* Position the button at the top */
+        right: 20px; /* Position the button at the right */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        z-index: 1000; /* Ensure the button stays on top of other content */
+    }
+
+    .view-colleges-btn:hover {
+        background-color: #059669; /* Tailwind's hover:bg-green-600 */
+    }
+
+    .career-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .career-table th,
+    .career-table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid hsl(202, 75%, 37%); /* Slightly darker blue border */
+    }
+
+    .career-table th {
+        background-color: hsl(202, 75%, 47%); /* Matching header background color */
+        color: #ffffff; /* White text */
+    }
+
+    .career-table tr:nth-child(even) {
+        background-color: hsl(202, 75%, 57%); /* Slightly lighter blue for even rows */
+    }
+
+    .career-table tr:hover {
+        background-color: hsl(202, 75%, 47%); /* Matching hover background color */
+        color: #ffffff; /* White text on hover */
+    }
+
+    .footer {
+        background-color: hsl(202, 75%, 47%); /* Matching footer background color */
+        color: #ffffff; /* White text */
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+</style>
+
+        
+    </style>
+</head>
+<body>
+ 
+   
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <h2 class="logo">CampusWay</h2>
+                <div class="overflow-x-auto">
+                    <table class="career-table">
+                        <thead>
+                            <tr>
+                                <td><a href="#" onclick="showContent('starting')" data-translate="Career Option">Career Option</a></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#" onclick="showContent('engineering')" data-translate="Engineering">Engineering</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('btech')" data-translate="Bachelor of Technology">Bachelor of Technology</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('animation')" data-translate="Animation">Animation</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('fashionDesign')" data-translate="Fashion Design">Fashion Design</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('law')" data-translate="Law">Law</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('fineArts')" data-translate="Bachelor of Fine Arts">Bachelor of Fine Arts</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('massCommunication')" data-translate="Mass Communication">Mass Communication</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('nursing')" data-translate="Nursing">Nursing</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('environmentalScience')" data-translate="Environmental Science">Environmental Science</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('arts')" data-translate="Arts">Arts</a></td>
+                            </tr>
+                            <tr> 
+                                <td><a href="#" onclick="showContent('bpharmacy')" data-translate="Bachelor of Pharmacy">Bachelor of Pharmacy</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('dataScience')" data-translate="Data Science">Data Science</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('interiorDesign')" data-translate="Interior Design">Interior Design</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('healthTourism')" data-translate="Health Tourism">Health Tourism</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('hospitalityManagement')" data-translate="Hospitality Management Studies">Hospitality Management Studies</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('barchitecture')" data-translate="Bachelor of Architecture">Bachelor of Architecture</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('bsc')" data-translate="Bachelor of Science">Bachelor of Science</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('ballb')" data-translate="BA LLB">BA LLB</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('accountant')" data-translate="Accountant">Accountant</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('charteredAccountant')" data-translate="Chartered Accountant">Chartered Accountant</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('companySecretary')" data-translate="Company Secretary">Company Secretary</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('architect')" data-translate="Architect">Architect</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('baHospitalityTravel')" data-translate="BA in Hospitality Travel">BA in Hospitality Travel</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" onclick="showContent('baHumanities')" data-translate="BA in Humanities & Social Science">BA in Humanities & Social Science</a></td>
+                            </tr>
+                            <!-- Other options... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content">
+            <div id="contentArea" class="bg-white p-8 rounded-lg shadow-lg border border-gray-300 transition-transform duration-300">
+                <!-- Default Content -->
+                <h2 class="text-3xl font-bold mb-4 text-gray-800" data-translate="welcome">Welcome to Career Overview</h2>
+                <p class="text-gray-700" data-translate="select_career">Select a career option from the table to learn more about it, including the methods to join and other details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle content display -->
+    <script>
+        function showContent(branch) {
+            const contentArea = document.getElementById('contentArea');
+            let content = '';
+        
+            switch(branch) {
+                case 'starting':
+                    // Starting content remains unchanged
+                    content = `
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800" data-translate="welcome">Welcome to Career Overview</h2>
+                        <p class="text-gray-700 mb-4" data-translate="select_care">Welcome to our comprehensive student career counseling and guidance platform. Our website is designed to help you navigate your educational journey with ease. Explore our features to make informed decisions about your future.</p>
+                        <section class="mb-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">Website Features:</h3>
+                            <ul class="list-disc list-inside mb-4 text-gray-600">
+                                <li><strong>Resources:</strong> Aggregate and provide access to a wide range of resources on careers, educational requirements, and job market trends.</li>
+                                <li><strong>College Predictor:</strong> Predict which colleges you are eligible for based on your academic performance and preferences.</li>
+                                <li><strong>Scholarships:</strong> Discover and apply for scholarships that match your profile to help finance your education.</li>
+                                <li><strong>Career Development:</strong> Analyze student profiles (interests, skills, academic performance) to recommend suitable career paths.</li>
+                                <li><strong>Voice-to-Text Form Recognition:</strong> Utilize voice recognition technology to fill out forms quickly and accurately.</li>
+                                <li><strong>Language Translator:</strong> Translate website content into different languages for better understanding.</li>
+                                <li><strong>Full Counseling Guidance:</strong> Receive detailed step-by-step guidance on the college admission process, from application to enrollment.</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">How to Use the Platform:</h3>
+                            <p class="text-gray-700 mb-4">To get started, select a career option from the table. Each option provides detailed information about various fields, how to join them, and related opportunities. Use our tools and resources to make well-informed decisions about your education and career.</p>
+                            <p class="text-gray-700 mb-4">Our platform is designed to simplify your career planning and help you achieve your academic and professional goals with confidence.</p>
+                        </section>
+                    `;
+                    break;
+        
+                case 'engineering':
+            content = `
+<button class="view-colleges-btn" onclick="window.location.href='/colleges';">View Colleges</button>
+
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Engineering</h2>
+
+                <p class="text-gray-700 mb-4">Engineering is a broad field of study that applies scientific principles, mathematics, and empirical evidence to design, create, and improve structures, machines, systems, and processes. It involves solving complex problems and innovating solutions across various industries.</p>
+
+                <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join Engineering Programs:</h3>
+                <p class="text-gray-700 mb-4">To pursue an engineering degree, you typically need to go through an entrance examination and meet the eligibility criteria. Here are some common ways to join engineering programs in different regions:</p>
+
+                <h4 class="text-xl font-semibold mt-4 text-gray-800">1. India:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>JEE Main and JEE Advanced:</strong> JEE Main is an entrance test for admission to undergraduate engineering programs at National Institutes of Technology (NITs), Indian Institutes of Information Technology (IIITs), and other government and private colleges. JEE Advanced is for admission to the Indian Institutes of Technology (IITs). You must first qualify JEE Main to be eligible.</li>
+                    <li><strong>TNEA (Tamil Nadu Engineering Admissions):</strong> A state-level admission process for engineering colleges in Tamil Nadu. It is based on 12th-grade marks and does not require a separate entrance exam.</li>
+                    <li><strong>BITSAT:</strong> The Birla Institute of Technology and Science Admission Test (BITSAT) is for admission to BITS Pilani and its other campuses.</li>
+                    <li><strong>State Entrance Exams:</strong> Various states in India conduct their own entrance exams for engineering admissions, such as MHT-CET (Maharashtra), WBJEE (West Bengal), and UPSEE (Uttar Pradesh).</li>
+                    <li><strong>Direct Admissions:</strong> Some private engineering colleges offer direct admissions based on 12th-grade marks or management quotas.</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold mt-4 text-gray-800">2. United States:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>SAT/ACT:</strong> High school students need to take the SAT or ACT as part of their college application process. Some engineering schools may have additional requirements or recommendations.</li>
+                    <li><strong>Application Process:</strong> Students apply directly to universities, often including personal statements, recommendation letters, and academic records.</li>
+                    <li><strong>Community College Pathway:</strong> Some students start at a community college and transfer to a four-year university to complete their engineering degree.</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold mt-4 text-gray-800">3. United Kingdom:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>A-Level/IB:</strong> Students need to have strong A-Level or International Baccalaureate (IB) results, particularly in Mathematics and Sciences.</li>
+                    <li><strong>UCAS Application:</strong> Applications are made through the UCAS system, which includes submitting predicted grades, a personal statement, and possibly attending interviews.</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold mt-4 text-gray-800">4. Canada:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li><strong>High School Diploma:</strong> Students must have a high school diploma with strong grades in Mathematics and Science subjects.</li>
+                    <li><strong>Application Process:</strong> Apply directly to universities through their application portals, often including academic transcripts, letters of recommendation, and personal statements.</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mt-4 text-gray-800">Various Engineering Courses:</h3>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Civil Engineering</summary>
+                    <p class="text-gray-700 mt-2">Focuses on the design and construction of infrastructure such as bridges, roads, and buildings.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Mechanical Engineering</summary>
+                    <p class="text-gray-700 mt-2">Involves the design and manufacturing of mechanical systems and machines.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Electrical Engineering</summary>
+                    <p class="text-gray-700 mt-2">Deals with electrical systems, including power generation, electronics, and telecommunications.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Computer Science Engineering</summary>
+                    <p class="text-gray-700 mt-2">Covers computer systems, software development, and information technology.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Chemical Engineering</summary>
+                    <p class="text-gray-700 mt-2">Focuses on chemical processes and the production of chemicals, fuels, and pharmaceuticals.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Aerospace Engineering</summary>
+                    <p class="text-gray-700 mt-2">Involves the design and development of aircraft and spacecraft.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Biomedical Engineering</summary>
+                    <p class="text-gray-700 mt-2">Combines engineering principles with medical sciences to develop healthcare technologies.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Environmental Engineering</summary>
+                    <p class="text-gray-700 mt-2">Addresses environmental challenges such as pollution control and sustainable development.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Industrial Engineering</summary>
+                    <p class="text-gray-700 mt-2">Optimizes complex systems and processes, improving efficiency in industries.</p>
+                </details>
+                <details class="mt-2 mb-4">
+                    <summary class="cursor-pointer text-lg font-semibold text-gray-800">Software Engineering</summary>
+                    <p class="text-gray-700 mt-2">Focuses on the design, development, and maintenance of software systems.</p>
+                </details>
+            `;
+            break;
+            
+        
+                    case 'btech':
+                    content = `
+                                                <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Bachelor of Technology (B.Tech)</h2>
+                        <p class="text-gray-700 mb-4">A Bachelor of Technology (B.Tech) is an undergraduate degree awarded to students who have completed a program of study in the field of engineering or technology. The degree focuses on technical skills and practical knowledge necessary for various engineering fields.</p>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a B.Tech Degree:</h3>
+                        <p class="text-gray-700 mb-4">To pursue a B.Tech degree, students typically need to meet specific eligibility criteria and go through an entrance examination. Here are some common paths to pursue a B.Tech degree in different regions:</p>
+                
+                        <h4 class="text-xl font-semibold mt-4 text-gray-800">1. India:</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>JEE Main and JEE Advanced:</strong> These are national-level entrance exams required for admission to B.Tech programs in NITs, IIITs, and IITs.</li>
+                            <li><strong>TNEA (Tamil Nadu Engineering Admissions):</strong> A state-level process for admission to engineering colleges in Tamil Nadu based on 12th-grade marks.</li>
+                            <li><strong>BITSAT:</strong> An entrance exam for admission to BITS Pilani and its campuses.</li>
+                            <li><strong>State Entrance Exams:</strong> State-specific exams such as MHT-CET (Maharashtra) or WBJEE (West Bengal).</li>
+                            <li><strong>Direct Admissions:</strong> Some private colleges offer direct admissions based on 12th-grade marks or management quotas.</li>
+                        </ul>
+                
+                        <h4 class="text-xl font-semibold mt-4 text-gray-800">2. United States:</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>SAT/ACT:</strong> Required as part of the college application process.</li>
+                            <li><strong>Application Process:</strong> Includes submitting personal statements, recommendation letters, and academic records.</li>
+                            <li><strong>Community College Pathway:</strong> Start at a community college and transfer to a four-year university.</li>
+                        </ul>
+                
+                        <h4 class="text-xl font-semibold mt-4 text-gray-800">3. United Kingdom:</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>A-Level/IB:</strong> Strong results in Mathematics and Sciences are required.</li>
+                            <li><strong>UCAS Application:</strong> Application through UCAS, including predicted grades and personal statements.</li>
+                        </ul>
+                
+                        <h4 class="text-xl font-semibold mt-4 text-gray-800">4. Canada:</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>High School Diploma:</strong> Requires strong grades in Mathematics and Science subjects.</li>
+                            <li><strong>Application Process:</strong> Apply directly through university portals, including academic transcripts and personal statements.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Popular B.Tech Specializations:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Computer Science and Engineering</summary>
+                            <p class="text-gray-700 mt-2">Focuses on computer systems, software development, and information technology.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Electronics and Communication Engineering</summary>
+                            <p class="text-gray-700 mt-2">Involves designing and developing electronic systems and communication networks.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Mechanical Engineering</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the design and manufacturing of mechanical systems and machines.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Civil Engineering</summary>
+                            <p class="text-gray-700 mt-2">Deals with the design and construction of infrastructure such as roads, bridges, and buildings.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Electrical Engineering</summary>
+                            <p class="text-gray-700 mt-2">Focuses on electrical systems, including power generation and electronics.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Chemical Engineering</summary>
+                            <p class="text-gray-700 mt-2">Involves the design and operation of chemical processes and production of chemicals.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Aerospace Engineering</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the design and development of aircraft and spacecraft.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Biomedical Engineering</summary>
+                            <p class="text-gray-700 mt-2">Combines engineering principles with medical sciences to develop healthcare technologies.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Artificial Intelligence and Data Science</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the use of AI and data analytics to solve complex problems and make data-driven decisions.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Artificial Intelligence and Machine Learning</summary>
+                            <p class="text-gray-700 mt-2">Specializes in the development of intelligent systems and algorithms that enable machines to learn and adapt.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Cyber Security</summary>
+                            <p class="text-gray-700 mt-2">Involves protecting systems and networks from digital attacks and ensuring information security.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Information Technology</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the use of computers and software to manage and process information.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Computer Science and Business Systems</summary>
+                            <p class="text-gray-700 mt-2">Integrates computer science principles with business management to solve business problems through technology.</p>
+                        </details>
+                    `;
+                    break;
+                
+                    case 'animation':
+                    content = `
+                                            <button class="view-colleges-btn"onclick="window.location.href='/animationcollege';">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Animation</h2>
+                        <p class="text-gray-700 mb-4">Animation is the art of bringing characters, objects, and environments to life through movement. It combines creativity, storytelling, and technical skills to produce visual content that can be used in films, television, video games, advertising, and more. Animators use various techniques, including 2D and 3D animation, to create captivating visual experiences.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join an Animation Program:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in a degree program or specialized course in animation, digital arts, or a related field.</li>
+                            <li>Develop a strong portfolio showcasing your work, including character designs, storyboards, and finished animations.</li>
+                            <li>Gain practical experience through internships, freelance projects, or collaborations.</li>
+                            <li>Learn and master industry-standard software such as Adobe Animate, Autodesk Maya, Blender, and others.</li>
+                            <li>Stay updated with the latest trends and advancements in animation technology.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Animation:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">2D Animation</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating movement in a two-dimensional space, often used in traditional cartoons and explainer videos.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">3D Animation</summary>
+                            <p class="text-gray-700 mt-2">Involves creating animations in a three-dimensional space, widely used in movies, video games, and virtual reality.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Motion Graphics</summary>
+                            <p class="text-gray-700 mt-2">Combines graphic design and animation to create visually appealing moving graphics, often used in advertising and media.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Stop Motion Animation</summary>
+                            <p class="text-gray-700 mt-2">Uses physical objects, photographing them frame by frame to create movement, commonly seen in claymation and puppet animation.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Visual Effects (VFX)</summary>
+                            <p class="text-gray-700 mt-2">Involves integrating computer-generated imagery (CGI) with live-action footage to create realistic effects in films and TV shows.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Animation:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Animator:</strong> Create animated sequences for films, games, and digital content.</li>
+                            <li><strong>Storyboard Artist:</strong> Develop visual storylines by sketching key scenes for animated productions.</li>
+                            <li><strong>Character Designer:</strong> Design and develop unique characters for various media.</li>
+                            <li><strong>3D Modeler:</strong> Build and sculpt 3D models for animation, games, and VFX.</li>
+                            <li><strong>VFX Artist:</strong> Create realistic visual effects and integrate them into live-action footage.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'fashionDesign':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Fashion Design</h2>
+                        <p class="text-gray-700 mb-4">Fashion Design is the art of creating clothing, accessories, and footwear that are both functional and stylish. It involves a deep understanding of design principles, fabric types, and fashion trends. Fashion designers use their creativity to produce innovative designs that reflect their unique vision and meet the needs of their target audience.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Fashion Design:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in a degree program or specialized course in fashion design, fashion merchandising, or a related field.</li>
+                            <li>Build a strong portfolio showcasing your designs, sketches, and completed projects.</li>
+                            <li>Gain practical experience through internships, work placements, or freelance projects with fashion designers or brands.</li>
+                            <li>Stay updated with current fashion trends, fabric innovations, and design techniques.</li>
+                            <li>Develop skills in fashion illustration, pattern making, draping, and sewing.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Fashion Design:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Apparel Design</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating clothing for various occasions, from everyday wear to haute couture.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Accessory Design</summary>
+                            <p class="text-gray-700 mt-2">Involves designing accessories such as bags, jewelry, hats, and belts to complement clothing.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Footwear Design</summary>
+                            <p class="text-gray-700 mt-2">Specializes in designing and creating shoes and other types of footwear.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Textile Design</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating patterns and prints for fabrics used in clothing and home furnishings.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Fashion Merchandising</summary>
+                            <p class="text-gray-700 mt-2">Combines design skills with business acumen to manage fashion products, trends, and marketing strategies.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Fashion Design:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Fashion Designer:</strong> Create and develop original clothing and accessory designs for fashion houses or brands.</li>
+                            <li><strong>Fashion Illustrator:</strong> Produce visual representations of fashion designs through sketches and digital artwork.</li>
+                            <li><strong>Textile Designer:</strong> Design fabrics and textiles used in clothing and other fashion items.</li>
+                            <li><strong>Fashion Merchandiser:</strong> Oversee the marketing, sales, and distribution of fashion products.</li>
+                            <li><strong>Pattern Maker:</strong> Develop patterns and templates for garments based on designer specifications.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'law':
+                    content = `
+                                            <button class="view-colleges-btn"onclick="window.location.href='/lawcollege';">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Law</h2>
+                        <p class="text-gray-700 mb-4">A career in law involves studying legal principles, understanding the justice system, and practicing as a lawyer or legal consultant. It requires strong analytical, research, and communication skills to interpret and apply the law effectively. Legal professionals work in various settings, including private practice, corporate legal departments, government agencies, and non-profit organizations.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Law:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a Bachelor of Laws (LLB) degree or a Juris Doctor (JD) degree from a recognized institution.</li>
+                            <li>Pass the bar examination or equivalent licensing exams to practice law in your jurisdiction.</li>
+                            <li>Gain practical experience through internships, clerkships, or work placements in legal settings.</li>
+                            <li>Develop strong research, writing, and analytical skills to effectively handle legal cases.</li>
+                            <li>Consider obtaining further specialization or certifications in areas of interest within the field of law.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Law:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Criminal Law</summary>
+                            <p class="text-gray-700 mt-2">Focuses on defending or prosecuting individuals accused of criminal offenses, such as theft, assault, or fraud.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Corporate Law</summary>
+                            <p class="text-gray-700 mt-2">Involves advising businesses on legal matters, including mergers and acquisitions, corporate governance, and compliance.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Family Law</summary>
+                            <p class="text-gray-700 mt-2">Deals with legal issues related to family matters, such as divorce, child custody, and adoption.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Intellectual Property Law</summary>
+                            <p class="text-gray-700 mt-2">Protects creations of the mind, including patents, trademarks, copyrights, and trade secrets.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Environmental Law</summary>
+                            <p class="text-gray-700 mt-2">Focuses on legal issues related to environmental protection, natural resources, and sustainability.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Human Rights Law</summary>
+                            <p class="text-gray-700 mt-2">Addresses issues related to the protection and promotion of human rights and social justice.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Tax Law</summary>
+                            <p class="text-gray-700 mt-2">Deals with laws governing taxation, including income tax, corporate tax, and tax compliance.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Law:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Attorney/Lawyer:</strong> Represent clients in legal matters, provide legal advice, and advocate in court.</li>
+                            <li><strong>Judge:</strong> Preside over court proceedings, interpret the law, and make legal rulings.</li>
+                            <li><strong>Legal Consultant:</strong> Offer expert advice on legal issues to individuals or organizations.</li>
+                            <li><strong>Corporate Counsel:</strong> Manage legal affairs within a corporation, including compliance and risk management.</li>
+                            <li><strong>Public Defender:</strong> Represent individuals who cannot afford private legal counsel in criminal cases.</li>
+                            <li><strong>Legal Academic:</strong> Teach and conduct research in law at academic institutions.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'fineArts':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Bachelor of Fine Arts (BFA)</h2>
+                        <p class="text-gray-700 mb-4">The Bachelor of Fine Arts (BFA) is a degree program designed to provide comprehensive training in visual arts. It covers a range of artistic disciplines, including painting, sculpture, photography, drawing, and digital media. The program emphasizes the development of both technical skills and conceptual understanding, preparing students for professional careers in the arts.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a BFA:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in a BFA program at an accredited art school or university.</li>
+                            <li>Prepare and submit a portfolio of your artwork, demonstrating your skills and creativity.</li>
+                            <li>Participate in art exhibitions, workshops, and internships to gain practical experience and build your network.</li>
+                            <li>Develop a strong understanding of art theory, history, and contemporary practices.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Fine Arts:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Painting</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating visual art using various painting techniques and media, such as oils, acrylics, and watercolors.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Sculpture</summary>
+                            <p class="text-gray-700 mt-2">Involves creating three-dimensional art using materials like clay, metal, wood, and stone.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Photography</summary>
+                            <p class="text-gray-700 mt-2">Focuses on capturing images using digital or traditional photographic techniques, including studio and fieldwork.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Digital Media</summary>
+                            <p class="text-gray-700 mt-2">Explores the use of digital tools and software to create art, including graphic design, animation, and interactive media.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Printmaking</summary>
+                            <p class="text-gray-700 mt-2">Involves creating art through various print techniques such as etching, lithography, and screen printing.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Drawing</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating art using pencils, charcoal, ink, and other drawing tools.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Fine Arts:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Visual Artist:</strong> Create and exhibit original artwork in galleries, museums, and public spaces.</li>
+                            <li><strong>Art Director:</strong> Oversee the visual aspects of artistic projects, including advertising, film, and digital media.</li>
+                            <li><strong>Art Teacher:</strong> Teach art techniques and art history at schools, colleges, or community centers.</li>
+                            <li><strong>Gallery Curator:</strong> Manage and curate art exhibitions in galleries or museums.</li>
+                            <li><strong>Illustrator:</strong> Provide illustrations for books, magazines, advertisements, and other media.</li>
+                            <li><strong>Art Therapist:</strong> Use art as a therapeutic tool to help individuals express emotions and improve mental health.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'massCommunication':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Mass Communication</h2>
+                        <p class="text-gray-700 mb-4">Mass Communication is the field focused on the dissemination of information to a broad audience through various media channels such as television, radio, print, and digital platforms. It encompasses areas like journalism, public relations, advertising, and media management, aiming to influence public opinion and communicate messages effectively.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Mass Communication:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in Mass Communication, Journalism, Media Studies, or a related field.</li>
+                            <li>Gain practical experience through internships, part-time jobs, or projects in media organizations.</li>
+                            <li>Develop strong communication, writing, and analytical skills to effectively convey messages and understand audience needs.</li>
+                            <li>Build a portfolio showcasing your work in journalism, media production, or public relations.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Mass Communication:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Journalism</summary>
+                            <p class="text-gray-700 mt-2">Focuses on reporting news and information through various media channels, including print, broadcast, and online journalism.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Public Relations</summary>
+                            <p class="text-gray-700 mt-2">Involves managing and maintaining a positive public image for individuals, organizations, or companies through media relations and communication strategies.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Advertising</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating and managing promotional campaigns to market products or services to targeted audiences.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Media Management</summary>
+                            <p class="text-gray-700 mt-2">Involves overseeing media operations, including production, programming, and distribution across various platforms.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Digital Media</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating and managing content for digital platforms such as websites, social media, and mobile applications.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Mass Communication:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Journalist/Reporter:</strong> Research, write, and report news stories for newspapers, magazines, television, or online platforms.</li>
+                            <li><strong>Public Relations Specialist:</strong> Develop and implement communication strategies to enhance the public image of clients or organizations.</li>
+                            <li><strong>Advertising Executive:</strong> Create and manage advertising campaigns to promote products or services across various media channels.</li>
+                            <li><strong>Media Manager:</strong> Oversee media operations, including programming, production, and distribution, in television, radio, or digital media.</li>
+                            <li><strong>Content Creator:</strong> Develop and produce content for websites, social media, and other digital platforms.</li>
+                            <li><strong>Broadcast Producer:</strong> Coordinate and oversee the production of television or radio programs, ensuring content meets quality and regulatory standards.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'nursing':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Nursing</h2>
+                        <p class="text-gray-700 mb-4">Nursing is a critical healthcare profession dedicated to providing care and support to patients and their families. Nurses play a vital role in assessing patient needs, administering treatments, and collaborating with other healthcare professionals to ensure optimal patient outcomes. The profession requires strong interpersonal skills, medical knowledge, and a commitment to patient care.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Nursing:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a nursing degree or diploma from an accredited institution, such as a Bachelor of Science in Nursing (BSN) or an Associate Degree in Nursing (ADN).</li>
+                            <li>Pass the nursing licensure examination (such as the NCLEX-RN in the United States) to become a registered nurse.</li>
+                            <li>Gain clinical experience through internships, clinical rotations, or practical training in various healthcare settings.</li>
+                            <li>Consider obtaining additional certifications or advanced degrees for specialized roles or advanced practice.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Nursing:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Pediatric Nursing</summary>
+                            <p class="text-gray-700 mt-2">Focuses on providing care to infants, children, and adolescents, including managing pediatric diseases and developmental issues.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Geriatric Nursing</summary>
+                            <p class="text-gray-700 mt-2">Specializes in caring for older adults, addressing age-related health conditions, and promoting quality of life for seniors.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Emergency Nursing</summary>
+                            <p class="text-gray-700 mt-2">Provides immediate care in emergency situations, including trauma, acute illness, and injury management.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Critical Care Nursing</summary>
+                            <p class="text-gray-700 mt-2">Focuses on providing intensive care to patients with life-threatening conditions in ICU settings.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Oncology Nursing</summary>
+                            <p class="text-gray-700 mt-2">Specializes in caring for cancer patients, including administering chemotherapy, managing symptoms, and providing supportive care.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Nurse Practitioner</summary>
+                            <p class="text-gray-700 mt-2">Advanced practice role involving diagnosis, treatment, and management of patient care with a focus on primary care or specialized areas.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Nursing:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Registered Nurse (RN):</strong> Provide patient care in hospitals, clinics, and other healthcare settings.</li>
+                            <li><strong>Nurse Practitioner (NP):</strong> Perform advanced clinical roles, including diagnosing and treating patients, often with a focus on a specific area.</li>
+                            <li><strong>Clinical Nurse Specialist (CNS):</strong> Provide expert advice and support in a specialized area of nursing practice.</li>
+                            <li><strong>Nurse Educator:</strong> Teach and train nursing students and healthcare professionals in academic or clinical settings.</li>
+                            <li><strong>Nurse Administrator:</strong> Oversee nursing departments or healthcare facilities, managing staff and resources.</li>
+                            <li><strong>Public Health Nurse:</strong> Work in community settings to improve public health and prevent disease through education and outreach.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'environmentalScience':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Environmental Science</h2>
+                        <p class="text-gray-700 mb-4">Environmental Science is an interdisciplinary field that studies the environment and the solutions to environmental problems. It integrates principles from biology, chemistry, physics, and earth sciences to address issues like climate change, pollution, and resource management.</p>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Environmental Science:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in an environmental science degree program or related field such as biology or ecology.</li>
+                            <li>Gain hands-on experience through internships, fieldwork, and research projects related to environmental issues.</li>
+                            <li>Stay informed about current environmental policies, scientific advancements, and best practices.</li>
+                            <li>Consider pursuing advanced degrees or certifications for specialized roles or research positions.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Environmental Science:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Conservation Science</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the preservation of natural habitats, wildlife, and biodiversity through research and conservation strategies.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Environmental Policy and Management</summary>
+                            <p class="text-gray-700 mt-2">Involves developing and implementing policies to manage natural resources and address environmental challenges.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Environmental Chemistry</summary>
+                            <p class="text-gray-700 mt-2">Studies the chemical processes and pollutants affecting the environment and their impact on ecosystems and human health.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Ecology</summary>
+                            <p class="text-gray-700 mt-2">Examines the relationships between organisms and their environments, focusing on ecosystems, populations, and conservation.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Climate Science</summary>
+                            <p class="text-gray-700 mt-2">Focuses on understanding climate systems, climate change, and the impacts on weather patterns and ecosystems.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Environmental Science:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Environmental Consultant:</strong> Advise organizations on environmental practices and regulations, conduct assessments, and recommend solutions.</li>
+                            <li><strong>Environmental Scientist:</strong> Conduct research, collect data, and analyze environmental conditions to address issues like pollution and conservation.</li>
+                            <li><strong>Conservation Biologist:</strong> Study and protect wildlife and natural habitats through research, policy advocacy, and fieldwork.</li>
+                            <li><strong>Environmental Policy Analyst:</strong> Develop and analyze policies related to environmental protection and sustainability.</li>
+                            <li><strong>Ecologist:</strong> Research ecosystems and their components to understand ecological interactions and support conservation efforts.</li>
+                            <li><strong>Climate Scientist:</strong> Study climate patterns, impacts of climate change, and develop strategies for mitigation and adaptation.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'arts':
+                    content = `
+                                          <button class="view-colleges-btn" onclick="window.location.href='/artscolleges';">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Arts</h2>
+                        <p class="text-gray-700 mb-4">The field of Arts encompasses various disciplines including literature, visual arts, performing arts, and music. It focuses on creative expression, cultural development, and the exploration of human experiences through different mediums.</p>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Arts:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Select a specific arts discipline such as fine arts, theater, music, or literature and enroll in a relevant degree or training program.</li>
+                            <li>Develop your skills through consistent practice, artistic projects, and engagement in your chosen field.</li>
+                            <li>Build a portfolio of your work, participate in exhibitions, performances, or publications, and network with other professionals in the industry.</li>
+                            <li>Consider pursuing advanced degrees or specialized training to deepen your expertise and increase career opportunities.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Disciplines in Arts:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Visual Arts</summary>
+                            <p class="text-gray-700 mt-2">Includes disciplines such as painting, sculpture, photography, and digital art. Focuses on creating visual representations through various techniques and mediums.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Performing Arts</summary>
+                            <p class="text-gray-700 mt-2">Encompasses theater, dance, music, and performance art. Involves live performances and expressions through movement, sound, and drama.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Literature</summary>
+                            <p class="text-gray-700 mt-2">Focuses on written works such as novels, poetry, drama, and essays. Explores narrative, language, and literary forms to convey stories and ideas.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Music</summary>
+                            <p class="text-gray-700 mt-2">Involves the creation, performance, and study of music. Includes composition, instrumental performance, vocal performance, and music theory.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Arts:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Visual Artist:</strong> Create and exhibit artworks such as paintings, sculptures, or digital media in galleries, museums, or public spaces.</li>
+                            <li><strong>Performer:</strong> Engage in live performances in theater, dance, music, or other performance arts, either as a solo artist or part of a troupe.</li>
+                            <li><strong>Writer:</strong> Produce literary works including novels, poetry, or scripts for various media, and contribute to publications or media outlets.</li>
+                            <li><strong>Art Educator:</strong> Teach art and creative disciplines in schools, colleges, or through community programs.</li>
+                            <li><strong>Curator:</strong> Manage and organize art collections in galleries or museums, and curate exhibitions.</li>
+                            <li><strong>Art Therapist:</strong> Use artistic techniques to help individuals express themselves and address emotional and psychological challenges.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'bpharmacy':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Bachelor of Pharmacy (B.Pharm)</h2>
+                        <p class="text-gray-700 mb-4">The Bachelor of Pharmacy (B.Pharm) is an undergraduate degree focused on pharmaceutical sciences. It covers drug formulation, distribution, and the therapeutic effects of medications. The program prepares students for careers in pharmacy practice, research, and industry.</p>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a B.Pharm Degree:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete higher secondary education with science subjects, including chemistry, biology, and physics.</li>
+                            <li>Pass entrance exams for pharmacy colleges if required by the institution.</li>
+                            <li>Enroll in a B.Pharm program at a recognized institution, ensuring it is accredited by relevant pharmacy councils or bodies.</li>
+                            <li>Engage in practical training and internships during the program to gain hands-on experience.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Pharmacy:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Clinical Pharmacy</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the application of pharmacological principles to patient care, including medication management and patient counseling in clinical settings.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Pharmaceutics</summary>
+                            <p class="text-gray-700 mt-2">Involves the study of drug formulation, delivery systems, and the development of new pharmaceutical products.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Pharmacology</summary>
+                            <p class="text-gray-700 mt-2">The study of drug action and the interaction between drugs and biological systems, focusing on the effects, mechanisms, and therapeutic uses of drugs.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Pharmaceutical Chemistry</summary>
+                            <p class="text-gray-700 mt-2">Covers the chemical properties and synthesis of drugs, including the design and development of new chemical entities.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Pharmacy Practice</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the practical aspects of pharmacy, including patient care, medication management, and healthcare communication.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Pharmacy:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Community Pharmacist:</strong> Work in retail pharmacies, providing medication counseling, dispensing prescriptions, and managing patient health.</li>
+                            <li><strong>Hospital Pharmacist:</strong> Provide medication management and clinical support in hospitals, working closely with healthcare teams to optimize patient care.</li>
+                            <li><strong>Industrial Pharmacist:</strong> Involved in the development, manufacturing, and quality control of pharmaceutical products in the industry.</li>
+                            <li><strong>Pharmaceutical Researcher:</strong> Conduct research and development of new drugs and therapies in laboratories or research institutions.</li>
+                            <li><strong>Regulatory Affairs Specialist:</strong> Ensure compliance with regulations and guidelines for pharmaceutical products and assist in the approval process.</li>
+                            <li><strong>Academic Pharmacist:</strong> Teach and train future pharmacists in academic institutions and contribute to pharmaceutical research.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'dataScience':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Data Science</h2>
+                        <p class="text-gray-700 mb-4">Data Science involves analyzing large volumes of data to uncover patterns and insights. It combines statistics, programming, and domain knowledge to make data-driven decisions. The field is crucial for various industries, helping organizations optimize operations and strategize based on data.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Data Science:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in data science, computer science, statistics, or a related field.</li>
+                            <li>Develop proficiency in programming languages such as Python or R, and tools like SQL, Excel, and data visualization software.</li>
+                            <li>Gain practical experience through projects, internships, or data analysis competitions, and build a portfolio showcasing your skills.</li>
+                            <li>Stay updated with the latest trends and technologies in data science, such as machine learning, big data, and artificial intelligence.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Data Science:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Machine Learning</summary>
+                            <p class="text-gray-700 mt-2">Focuses on developing algorithms and models that enable computers to learn from and make predictions or decisions based on data.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Big Data</summary>
+                            <p class="text-gray-700 mt-2">Involves managing and analyzing large datasets that cannot be handled by traditional data processing tools, often using technologies like Hadoop or Spark.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Data Engineering</summary>
+                            <p class="text-gray-700 mt-2">Focuses on building and maintaining the infrastructure and tools required for data collection, storage, and analysis.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Data Visualization</summary>
+                            <p class="text-gray-700 mt-2">Involves creating visual representations of data to help stakeholders understand complex information and make informed decisions.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Business Intelligence</summary>
+                            <p class="text-gray-700 mt-2">Focuses on analyzing data to support business decision-making, including creating reports, dashboards, and strategic insights.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Data Science:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Data Scientist:</strong> Analyze complex data sets to identify trends, develop models, and provide actionable insights for business decision-making.</li>
+                            <li><strong>Data Analyst:</strong> Interpret data, create reports, and provide insights to help organizations make informed decisions based on data.</li>
+                            <li><strong>Data Engineer:</strong> Design and maintain data pipelines, ensuring the efficient collection, storage, and processing of data.</li>
+                            <li><strong>Machine Learning Engineer:</strong> Develop and deploy machine learning models and algorithms to solve specific business problems.</li>
+                            <li><strong>Business Intelligence Analyst:</strong> Utilize data to support business strategies and decisions, often through the creation of dashboards and performance metrics.</li>
+                            <li><strong>Data Visualization Specialist:</strong> Create visual representations of data to communicate insights and support decision-making processes.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'interiorDesign':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Interior Design</h2>
+                        <p class="text-gray-700 mb-4">Interior Design focuses on creating functional and aesthetically pleasing indoor spaces. It involves space planning, color theory, furniture design, and understanding human behavior to enhance the quality of living environments. Interior designers work on various projects, from residential homes to commercial spaces, aiming to improve the comfort, functionality, and visual appeal of interiors.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Interior Design:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in an interior design degree or diploma program at an accredited institution.</li>
+                            <li>Develop a strong portfolio showcasing your design projects, concepts, and skills.</li>
+                            <li>Gain practical experience through internships, freelance projects, or entry-level positions in design firms.</li>
+                            <li>Consider obtaining certification from a recognized professional organization, such as the National Council for Interior Design Qualification (NCIDQ) in the United States.</li>
+                            <li>Stay updated with design trends, materials, and technologies to enhance your skills and knowledge.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Interior Design:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Residential Design</summary>
+                            <p class="text-gray-700 mt-2">Focuses on designing private homes, including layout planning, color schemes, and furnishings to create personalized and comfortable living spaces.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Commercial Design</summary>
+                            <p class="text-gray-700 mt-2">Involves designing spaces for businesses, such as offices, retail stores, and restaurants, with an emphasis on functionality, branding, and customer experience.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Hospitality Design</summary>
+                            <p class="text-gray-700 mt-2">Specializes in designing spaces for hotels, resorts, and other hospitality venues, focusing on creating inviting and luxurious environments for guests.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Healthcare Design</summary>
+                            <p class="text-gray-700 mt-2">Focuses on designing healthcare facilities such as hospitals, clinics, and care centers, with attention to patient comfort, safety, and efficient workflow.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Sustainable Design</summary>
+                            <p class="text-gray-700 mt-2">Involves designing interiors with a focus on sustainability, including the use of eco-friendly materials, energy-efficient solutions, and reducing environmental impact.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Interior Design:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Interior Designer:</strong> Create and plan functional and aesthetically pleasing interior spaces for residential or commercial projects.</li>
+                            <li><strong>Design Consultant:</strong> Provide expert advice and recommendations on design projects, including selecting materials, colors, and furnishings.</li>
+                            <li><strong>Project Manager:</strong> Oversee interior design projects from conception to completion, ensuring timely delivery and adherence to budget and client specifications.</li>
+                            <li><strong>Furniture Designer:</strong> Design and create custom furniture pieces that fit specific design needs and preferences.</li>
+                            <li><strong>Lighting Designer:</strong> Specialize in designing lighting schemes that enhance the functionality and ambiance of interior spaces.</li>
+                            <li><strong>Design Educator:</strong> Teach and train future interior designers in academic or vocational settings, sharing knowledge and expertise in the field.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'healthTourism':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Health Tourism</h2>
+                        <p class="text-gray-700 mb-4">Health Tourism, also known as medical tourism, involves traveling to another country for medical treatment or healthcare services. It combines elements of travel and healthcare, including the planning and facilitation of health-related travel and services. Health tourism aims to provide patients with access to high-quality medical care at a lower cost or with specialized treatments unavailable in their home country.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Health Tourism:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in health tourism, travel management, healthcare administration, or a related field.</li>
+                            <li>Gain knowledge in medical procedures, travel logistics, patient care, and international healthcare systems.</li>
+                            <li>Obtain experience through internships, work placements, or by working with medical tourism agencies or healthcare providers.</li>
+                            <li>Consider pursuing additional certifications or training related to medical tourism or international healthcare.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Health Tourism:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Medical Tourism Coordination</summary>
+                            <p class="text-gray-700 mt-2">Specializes in coordinating and managing travel and medical arrangements for patients seeking treatment abroad, including logistics, accommodations, and communication with healthcare providers.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Travel Health Consultant</summary>
+                            <p class="text-gray-700 mt-2">Focuses on providing advice and guidance on health and safety aspects of international travel, including vaccinations, health risks, and preventive measures.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Medical Tourism Marketing</summary>
+                            <p class="text-gray-700 mt-2">Involves promoting medical tourism services and destinations, including creating marketing strategies, advertising, and developing partnerships with healthcare providers.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">International Patient Liaison</summary>
+                            <p class="text-gray-700 mt-2">Acts as a liaison between international patients and healthcare providers, ensuring clear communication, addressing patient needs, and facilitating a smooth healthcare experience.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Healthcare Quality Assurance</summary>
+                            <p class="text-gray-700 mt-2">Focuses on ensuring the quality and safety of healthcare services provided to international patients, including compliance with international standards and regulations.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Health Tourism:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Medical Tourism Coordinator:</strong> Manage and coordinate all aspects of medical travel, including patient arrangements, medical appointments, and travel logistics.</li>
+                            <li><strong>Travel Health Consultant:</strong> Provide expert advice on health and safety for travelers, including vaccinations, travel insurance, and health risk assessments.</li>
+                            <li><strong>Medical Tourism Marketing Specialist:</strong> Develop and implement marketing strategies to promote medical tourism services and attract international patients.</li>
+                            <li><strong>International Patient Liaison:</strong> Serve as a point of contact for international patients, assisting with their healthcare needs and ensuring effective communication with medical providers.</li>
+                            <li><strong>Healthcare Quality Assurance Specialist:</strong> Monitor and evaluate the quality of healthcare services provided to international patients, ensuring compliance with standards and regulations.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'hospitalityManagement':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Hospitality Management Studies</h2>
+                        <p class="text-gray-700 mb-4">Hospitality Management involves overseeing and managing services related to accommodation, food, and tourism. It focuses on customer service, operations, and business management within the hospitality industry. This field is essential for ensuring high-quality service in hotels, restaurants, resorts, and other hospitality-related establishments.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Hospitality Management:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in a hospitality management degree or diploma program at an accredited institution.</li>
+                            <li>Gain practical experience through internships, part-time jobs, or entry-level positions in hotels, restaurants, or other hospitality settings.</li>
+                            <li>Develop strong leadership, communication, and customer service skills.</li>
+                            <li>Consider obtaining additional certifications related to hospitality management or specific areas of the industry.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Hospitality Management:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Hotel Management</summary>
+                            <p class="text-gray-700 mt-2">Focuses on managing hotel operations, including front desk management, housekeeping, guest services, and overall hotel administration.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Restaurant Management</summary>
+                            <p class="text-gray-700 mt-2">Involves overseeing restaurant operations, including food service, staff management, inventory control, and customer satisfaction.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Event Management</summary>
+                            <p class="text-gray-700 mt-2">Specializes in planning and coordinating events, including conferences, weddings, and corporate functions, ensuring smooth execution and client satisfaction.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Tourism Management</summary>
+                            <p class="text-gray-700 mt-2">Focuses on managing and promoting tourism services, including tour planning, travel arrangements, and tourist attraction management.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Resort Management</summary>
+                            <p class="text-gray-700 mt-2">Specializes in managing resort operations, including guest services, recreational activities, and facility management to enhance the guest experience.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Hospitality Management:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Hotel Manager:</strong> Oversee all operations within a hotel, including guest services, staff management, and financial performance.</li>
+                            <li><strong>Restaurant Manager:</strong> Manage restaurant operations, including staffing, menu planning, and customer service.</li>
+                            <li><strong>Event Planner:</strong> Plan and coordinate events, including logistics, vendor management, and client communication.</li>
+                            <li><strong>Tourism Director:</strong> Develop and manage tourism programs, including travel packages, destination marketing, and tourist services.</li>
+                            <li><strong>Resort Manager:</strong> Oversee resort operations, including guest accommodations, recreational activities, and overall guest experience.</li>
+                            <li><strong>Hospitality Consultant:</strong> Provide expert advice to hospitality businesses on improving operations, guest experience, and financial performance.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'barchitecture':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Bachelor of Architecture (B.Arch)</h2>
+                        <p class="text-gray-700 mb-4">B.Arch is an undergraduate degree focusing on architectural design and planning. It covers subjects such as building design, urban planning, construction management, and architectural theory. The program combines practical design projects with theoretical knowledge to prepare students for a career in architecture.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a Career in Architecture:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete higher secondary education with a focus on mathematics and physics.</li>
+                            <li>Pass entrance exams like NATA (National Aptitude Test in Architecture) or JEE Main Paper 2 for admission into architecture programs.</li>
+                            <li>Enroll in a recognized B.Arch program at an accredited institution.</li>
+                            <li>Engage in internships or practical training to gain hands-on experience in architectural design and construction.</li>
+                            <li>Obtain a license to practice architecture if required in your region.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Architecture:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Urban Design</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the design and planning of urban spaces, including public areas, transportation systems, and community development.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Landscape Architecture</summary>
+                            <p class="text-gray-700 mt-2">Involves designing outdoor spaces, including parks, gardens, and recreational areas, with an emphasis on environmental sustainability and aesthetics.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Sustainable Architecture</summary>
+                            <p class="text-gray-700 mt-2">Focuses on designing buildings and spaces with minimal environmental impact, incorporating energy-efficient and eco-friendly practices.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Interior Architecture</summary>
+                            <p class="text-gray-700 mt-2">Specializes in the design of interior spaces, focusing on functionality, aesthetics, and the integration of architectural elements within indoor environments.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Historic Preservation</summary>
+                            <p class="text-gray-700 mt-2">Involves the restoration and preservation of historic buildings and landmarks, ensuring their protection and adaptation for future use.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Architecture:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Architect:</strong> Design and plan buildings and structures, ensuring they meet functional, aesthetic, and safety requirements.</li>
+                            <li><strong>Urban Planner:</strong> Develop plans and policies for land use and community development within urban areas.</li>
+                            <li><strong>Landscape Architect:</strong> Design outdoor spaces, such as parks and gardens, focusing on environmental sustainability and user experience.</li>
+                            <li><strong>Interior Designer:</strong> Plan and design interior spaces, including residential, commercial, and public environments, to enhance functionality and aesthetics.</li>
+                            <li><strong>Construction Manager:</strong> Oversee construction projects, coordinating between architects, contractors, and clients to ensure timely and budget-friendly completion.</li>
+                            <li><strong>Historic Preservationist:</strong> Work on restoring and preserving historic buildings and sites, maintaining their cultural and historical significance.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'bsc':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Bachelor of Science (B.Sc)</h2>
+                        <p class="text-gray-700 mb-4">The Bachelor of Science (B.Sc) is an undergraduate degree focusing on scientific and technical subjects. It provides foundational knowledge in various scientific disciplines, including physics, chemistry, biology, and mathematics, preparing students for careers in research, industry, and academia.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Pursue a B.Sc:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete higher secondary education with a focus on science subjects.</li>
+                            <li>Apply to B.Sc programs at accredited colleges or universities.</li>
+                            <li>Engage in practical and research activities related to your field of study to gain hands-on experience.</li>
+                            <li>Consider choosing a specialization or major based on your interests and career goals.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in B.Sc:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Physics</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the study of matter, energy, and the fundamental forces of nature. Includes topics such as mechanics, electromagnetism, and quantum physics.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Chemistry</summary>
+                            <p class="text-gray-700 mt-2">Involves the study of substances, their properties, reactions, and the use of chemical processes. Includes organic, inorganic, and physical chemistry.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Biology</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the study of living organisms, their structure, function, and interactions with their environment. Includes molecular biology, ecology, and genetics.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Mathematics</summary>
+                            <p class="text-gray-700 mt-2">Involves the study of numbers, quantities, shapes, and patterns. Includes topics such as algebra, calculus, and statistics.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Computer Science</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the study of algorithms, programming, and computational systems. Includes software development, data structures, and computer networks.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities with a B.Sc:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Research Scientist:</strong> Conduct research in various scientific fields, contributing to knowledge and technological advancements.</li>
+                            <li><strong>Laboratory Technician:</strong> Perform experiments and analyses in laboratories, supporting scientific and industrial research.</li>
+                            <li><strong>Data Analyst:</strong> Analyze and interpret complex data sets, providing insights and solutions for decision-making.</li>
+                            <li><strong>Education and Teaching:</strong> Teach science subjects at schools or colleges, and contribute to educational development.</li>
+                            <li><strong>Healthcare and Medical Fields:</strong> Work in medical research, pharmaceuticals, or biotechnology, supporting health and wellness initiatives.</li>
+                            <li><strong>Environmental Consultant:</strong> Advise on environmental policies and practices, helping organizations to minimize their environmental impact.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'ballb':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">BA LLB</h2>
+                        <p class="text-gray-700 mb-4">The BA LLB is an integrated undergraduate degree combining a Bachelor of Arts and Bachelor of Laws. It offers a thorough understanding of legal principles and practices alongside a broad knowledge of humanities, preparing students for various roles in the legal field.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete higher secondary education with a focus on humanities or social sciences.</li>
+                            <li>Pass entrance exams such as CLAT (Common Law Admission Test) or other university-specific law entrance exams.</li>
+                            <li>Enroll in a BA LLB program at an accredited institution offering integrated law degrees.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in BA LLB:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Criminal Law</summary>
+                            <p class="text-gray-700 mt-2">Focuses on criminal offenses, their prosecution, and defense, including topics such as criminal procedure and penal laws.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Corporate Law</summary>
+                            <p class="text-gray-700 mt-2">Deals with business laws, including company formation, mergers and acquisitions, and corporate governance.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Family Law</summary>
+                            <p class="text-gray-700 mt-2">Covers legal issues related to family matters, such as marriage, divorce, child custody, and inheritance.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Intellectual Property Law</summary>
+                            <p class="text-gray-700 mt-2">Focuses on protecting intellectual property rights, including patents, trademarks, and copyrights.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Environmental Law</summary>
+                            <p class="text-gray-700 mt-2">Deals with laws and regulations related to environmental protection and sustainability.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities with a BA LLB:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Lawyer:</strong> Represent clients in legal matters, including litigation, criminal defense, and legal advice.</li>
+                            <li><strong>Legal Advisor:</strong> Provide legal counsel to organizations or individuals on various legal issues.</li>
+                            <li><strong>Judicial Officer:</strong> Work as a judge or magistrate, overseeing legal proceedings and making judicial decisions.</li>
+                            <li><strong>Corporate Counsel:</strong> Manage legal affairs within corporations, including compliance and contract management.</li>
+                            <li><strong>Public Prosecutor:</strong> Represent the state in prosecuting criminal cases and ensuring justice is served.</li>
+                            <li><strong>Legal Consultant:</strong> Offer specialized legal advice in areas such as intellectual property, family law, or corporate law.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'accountant':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Accountant</h2>
+                        <p class="text-gray-700 mb-4">Accountants are professionals who manage financial records, prepare financial statements, and ensure compliance with financial regulations. They play a crucial role in analyzing financial data and advising businesses or individuals on financial decisions.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in accounting, finance, or a related field.</li>
+                            <li>Obtain professional certification, such as Certified Public Accountant (CPA) or Chartered Accountant (CA), depending on the region.</li>
+                            <li>Gain practical experience through internships, entry-level positions, or part-time work in accounting.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Accounting:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Auditing</summary>
+                            <p class="text-gray-700 mt-2">Focuses on examining financial records and systems to ensure accuracy and compliance with laws and regulations.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Tax Accounting</summary>
+                            <p class="text-gray-700 mt-2">Involves preparing tax returns, advising on tax strategies, and ensuring compliance with tax laws.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Management Accounting</summary>
+                            <p class="text-gray-700 mt-2">Focuses on providing internal financial information and analysis to help management make informed business decisions.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Forensic Accounting</summary>
+                            <p class="text-gray-700 mt-2">Involves investigating financial discrepancies and fraud, often working with legal teams in litigation cases.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Financial Planning and Analysis</summary>
+                            <p class="text-gray-700 mt-2">Focuses on analyzing financial data to support strategic planning, budgeting, and forecasting.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities in Accounting:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Certified Public Accountant (CPA):</strong> Provide accounting, auditing, and tax services to clients or employers.</li>
+                            <li><strong>Tax Consultant:</strong> Specialize in tax planning, preparation, and advice for individuals and businesses.</li>
+                            <li><strong>Auditor:</strong> Conduct audits of financial records and systems to ensure compliance and accuracy.</li>
+                            <li><strong>Management Accountant:</strong> Work within organizations to provide financial information for decision-making and performance evaluation.</li>
+                            <li><strong>Forensic Accountant:</strong> Investigate financial irregularities and fraud, often working with law enforcement or legal teams.</li>
+                            <li><strong>Financial Analyst:</strong> Analyze financial data to support investment decisions and business strategies.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'charteredAccountant':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Chartered Accountant (CA)</h2>
+                        <p class="text-gray-700 mb-4">A Chartered Accountant is a highly qualified financial professional who provides expert financial advice, conducts audits, and manages financial records. The CA designation is recognized globally and is associated with high standards of financial management and integrity.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in accounting, finance, or a related field from a recognized institution.</li>
+                            <li>Pass the Chartered Accountant examination conducted by a recognized accounting body (such as ICAI in India, ACCA in the UK, etc.).</li>
+                            <li>Gain practical experience through articleship or training as required by the certifying body.</li>
+                            <li>Complete any additional requirements such as professional ethics exams or continuing education, if applicable.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Chartered Accounting:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Audit and Assurance</summary>
+                            <p class="text-gray-700 mt-2">Focuses on evaluating financial statements and systems to ensure accuracy and compliance with regulations.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Taxation</summary>
+                            <p class="text-gray-700 mt-2">Specializes in tax planning, preparation, and compliance, providing advice on tax-related issues.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Financial Advisory</summary>
+                            <p class="text-gray-700 mt-2">Involves offering strategic advice on financial planning, investments, and business management.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Management Accounting</summary>
+                            <p class="text-gray-700 mt-2">Focuses on providing internal financial insights and reports to aid in business decision-making.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Forensic Accounting</summary>
+                            <p class="text-gray-700 mt-2">Involves investigating financial discrepancies and fraud, often working with legal entities.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities as a Chartered Accountant:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Audit Manager:</strong> Oversee audit processes and ensure compliance with accounting standards.</li>
+                            <li><strong>Tax Consultant:</strong> Provide tax-related advice and services to individuals and businesses.</li>
+                            <li><strong>Financial Advisor:</strong> Offer strategic financial planning and investment advice.</li>
+                            <li><strong>Management Accountant:</strong> Analyze and interpret financial data for internal business decisions.</li>
+                            <li><strong>Forensic Accountant:</strong> Investigate financial fraud and assist in legal cases related to financial misconduct.</li>
+                            <li><strong>Corporate Accountant:</strong> Manage financial reporting and compliance within organizations.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                case 'companySecretary':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Company Secretary (CS)</h2>
+                        <p class="text-gray-700">A Company Secretary is responsible for ensuring that a company complies with legal and regulatory requirements. They handle corporate governance and maintain records.</p>
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in commerce or related fields.</li>
+                            <li>Pass the CS examination conducted by a recognized body.</li>
+                            <li>Gain practical experience through internships or training programs.</li>
+                        </ul>
+                    `;
+                    break;
+                    case 'architect':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Architect</h2>
+                        <p class="text-gray-700 mb-4">Architects design and plan buildings and other structures, ensuring they are functional, safe, and aesthetically pleasing. They work on a variety of projects including residential, commercial, and public spaces. Architects combine creativity with technical knowledge to create environments that meet the needs of their clients while adhering to regulatory standards.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete a degree in architecture, typically a Bachelor of Architecture (B.Arch) or equivalent.</li>
+                            <li>Obtain a license or registration to practice architecture, which may include passing a professional examination and meeting experience requirements.</li>
+                            <li>Gain practical experience through internships, apprenticeships, or working with established architects to build a portfolio and gain insights into the profession.</li>
+                            <li>Consider pursuing a Master’s degree in Architecture (M.Arch) or specialized certifications for advanced knowledge and skills.</li>
+                        </ul>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Architecture:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Residential Architecture</summary>
+                            <p class="text-gray-700 mt-2">Focuses on designing homes and residential buildings, including single-family houses, apartment complexes, and housing developments.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Commercial Architecture</summary>
+                            <p class="text-gray-700 mt-2">Involves designing commercial spaces such as offices, retail stores, hotels, and restaurants, aiming to create functional and attractive business environments.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Urban Planning</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the planning and development of urban areas, including zoning, land use, and infrastructure to create sustainable and efficient cities.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Landscape Architecture</summary>
+                            <p class="text-gray-700 mt-2">Designs outdoor spaces such as parks, gardens, and recreational areas, integrating natural and built elements to enhance the environment.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Sustainable Architecture</summary>
+                            <p class="text-gray-700 mt-2">Focuses on creating environmentally friendly and energy-efficient buildings, incorporating sustainable materials and design practices.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities as an Architect:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Design Architect:</strong> Focus on creating innovative and functional designs for various types of projects.</li>
+                            <li><strong>Project Architect:</strong> Oversee the planning and execution of architectural projects, ensuring design and construction standards are met.</li>
+                            <li><strong>Urban Planner:</strong> Work on the design and development of urban spaces, including zoning and land use planning.</li>
+                            <li><strong>Landscape Architect:</strong> Design outdoor spaces and landscapes, incorporating both natural and built elements.</li>
+                            <li><strong>Sustainable Design Consultant:</strong> Specialize in creating environmentally friendly and energy-efficient building solutions.</li>
+                            <li><strong>Architectural Educator:</strong> Teach architecture and design at educational institutions or provide training and workshops.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'baHospitalityTravel':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">BA in Hospitality and Travel</h2>
+                        <p class="text-gray-700 mb-4">A Bachelor of Arts (BA) in Hospitality and Travel focuses on the management and delivery of services within the hospitality and travel industries. This program covers aspects of hotel management, tourism, event planning, and customer service, preparing students for diverse roles in these sectors.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Enroll in a BA program specializing in hospitality and travel at a recognized institution.</li>
+                            <li>Gain practical experience through internships, part-time jobs, or work placements in hotels, travel agencies, or event management companies.</li>
+                            <li>Develop essential skills such as customer service, management, and communication through coursework and hands-on experiences.</li>
+                            <li>Participate in industry-related workshops, seminars, or networking events to enhance your industry knowledge and professional connections.</li>
+                        </ul>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Hospitality and Travel:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Hotel Management</summary>
+                            <p class="text-gray-700 mt-2">Focuses on managing hotel operations, including guest services, housekeeping, and front office management.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Travel and Tourism Management</summary>
+                            <p class="text-gray-700 mt-2">Involves planning and managing travel itineraries, tour operations, and travel agency services.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Event Management</summary>
+                            <p class="text-gray-700 mt-2">Focuses on organizing and managing events such as conferences, weddings, and corporate gatherings.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Restaurant Management</summary>
+                            <p class="text-gray-700 mt-2">Specializes in managing restaurant operations, including food service, menu planning, and staff management.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities with a BA in Hospitality and Travel:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Hotel Manager:</strong> Oversee hotel operations, manage staff, and ensure guest satisfaction.</li>
+                            <li><strong>Travel Consultant:</strong> Assist clients with travel planning, bookings, and itinerary management.</li>
+                            <li><strong>Event Planner:</strong> Organize and coordinate events, including logistics, vendor management, and client interactions.</li>
+                            <li><strong>Restaurant Manager:</strong> Manage restaurant operations, including staff supervision, customer service, and financial management.</li>
+                            <li><strong>Tour Guide:</strong> Provide guided tours and information to tourists, enhancing their travel experience.</li>
+                            <li><strong>Customer Service Manager:</strong> Ensure high-quality service and resolve customer issues in the hospitality or travel sector.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                    case 'baHumanities':
+                    content = `
+                                            <button class="view-colleges-btn" onclick="viewColleges('engineering')">View Colleges</button>
+
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">BA in Humanities & Social Science</h2>
+                        <p class="text-gray-700 mb-4">A Bachelor of Arts (BA) in Humanities and Social Science provides an in-depth understanding of human society, culture, and behavior. The program includes diverse subjects such as history, sociology, psychology, literature, and philosophy, focusing on analytical and critical thinking skills.</p>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">How to Join:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>Complete higher secondary education with a focus on humanities subjects.</li>
+                            <li>Apply to BA programs at universities or colleges offering humanities and social sciences.</li>
+                            <li>Engage in research projects, internships, or community work related to social sciences to gain practical experience.</li>
+                            <li>Participate in seminars, workshops, and extracurricular activities to enhance your understanding and network with professionals in the field.</li>
+                        </ul>
+                        
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Specializations in Humanities & Social Science:</h3>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">History</summary>
+                            <p class="text-gray-700 mt-2">Focuses on the study of past events, cultures, and civilizations, analyzing their impact on the present and future.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Sociology</summary>
+                            <p class="text-gray-700 mt-2">Explores the structure, development, and functioning of human society, including social relationships and institutions.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Psychology</summary>
+                            <p class="text-gray-700 mt-2">Studies human behavior and mental processes, including cognition, emotion, and development.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Literature</summary>
+                            <p class="text-gray-700 mt-2">Examines written works, including novels, poetry, and drama, to understand cultural, social, and artistic aspects of different periods.</p>
+                        </details>
+                        <details class="mt-2 mb-4" aria-expanded="false">
+                            <summary class="cursor-pointer text-lg font-semibold text-gray-800">Philosophy</summary>
+                            <p class="text-gray-700 mt-2">Investigates fundamental questions about existence, knowledge, values, and reason through critical analysis and logical argumentation.</p>
+                        </details>
+                
+                        <h3 class="text-2xl font-semibold mt-4 text-gray-800">Career Opportunities with a BA in Humanities & Social Science:</h3>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li><strong>Educator:</strong> Teach humanities or social science subjects at various educational levels.</li>
+                            <li><strong>Research Analyst:</strong> Conduct research and analysis in social science and humanities fields.</li>
+                            <li><strong>Community Outreach Coordinator:</strong> Work with organizations to address social issues and support community initiatives.</li>
+                            <li><strong>Content Writer:</strong> Create written content for publications, media, and online platforms, focusing on humanities and social science topics.</li>
+                            <li><strong>Cultural Heritage Manager:</strong> Manage and preserve cultural heritage sites, museums, and archives.</li>
+                            <li><strong>Social Worker:</strong> Provide support and services to individuals and communities in need.</li>
+                        </ul>
+                    `;
+                    break;
+                
+                default:
+                    content = `
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Welcome to Career Overview</h2>
+                        <p class="text-gray-700">Select a career option from the table to learn more about it, including the methods to join and other details.</p>
+                    `;
+            }
+            
+
+            contentArea.innerHTML = content;
+        }
+        const translations={
+   "en": {
+    "welcome": "Welcome to Career Overview",
+    "select_career": "Select a career option from the table to learn more about it, including the methods to join and other details.",
+    "engineering_intro": "Engineering is a broad field of study that applies scientific principles, mathematics, and empirical evidence to design, create, and improve structures, machines, systems, and processes. It involves solving complex problems and innovating solutions across various industries.",
+    "how_to_join": "How to Join Engineering Programs:",
+    "platform_intro": "Welcome to our comprehensive student career counseling and guidance platform. Our website is designed to help you navigate your educational journey with ease. Explore our features to make informed decisions about your future.",
+    "website_features_intro": "Website Features:",
+    "resources": "Resources: Aggregate and provide access to a wide range of resources on careers, educational requirements, and job market trends.",
+    "college_predictor": "College Predictor: Predict which colleges you are eligible for based on your academic performance and preferences.",
+    "scholarships": "Scholarships: Discover and apply for scholarships that match your profile to help finance your education.",
+    "career_development": "Career Development: Analyze student profiles (interests, skills, academic performance) to recommend suitable career paths.",
+    "voice_to_text_form_recognition": "Voice-to-Text Form Recognition: Utilize voice recognition technology to fill out forms quickly and accurately.",
+    "language_translator": "Language Translator: Translate website content into different languages for better understanding.",
+    "full_counseling_guidance": "Full Counseling Guidance: Receive detailed step-by-step guidance on the college admission process, from application to enrollment.",
+    "how_to_use_platform_intro": "How to Use the Platform:",
+    "how_to_use_platform": "To get started, select a career option from the table. Each option provides detailed information about various fields, how to join them, and related opportunities. Use our tools and resources to make well-informed decisions about your education and career.",
+    "platform_purpose": "Our platform is designed to simplify your career planning and help you achieve your academic and professional goals with confidence.",
+    "Engineering": "Engineering",
+      "Bachelor of Technology": "Bachelor of Technology",
+      "Animation": "Animation",
+      "Fashion Design": "Fashion Design",
+      "Law": "Law",
+      "Bachelor of Fine Arts": "Bachelor of Fine Arts",
+      "Mass Communication": "Mass Communication",
+      "Nursing": "Nursing",
+      "Environmental Science": "Environmental Science",
+      "Arts": "Arts",
+      "Bachelor of Pharmacy": "Bachelor of Pharmacy",
+      "Data Science": "Data Science",
+      "Interior Design": "Interior Design",
+      "Health Tourism": "Health Tourism",
+      "Hospitality Management Studies": "Hospitality Management Studies",
+      "Bachelor of Architecture": "Bachelor of Architecture",
+      "Bachelor of Science": "Bachelor of Science",
+      "BA LLB": "BA LLB",
+      "Accountant": "Accountant",
+      "Chartered Accountant": "Chartered Accountant",
+      "Company Secretary": "Company Secretary",
+      "Architect": "Architect",
+      "BA in Hospitality Travel": "BA in Hospitality Travel",
+      "BA in Humanities & Social Science": "BA in Humanities & Social Science",
+      "Career Option": "Career Option",
+
+ 
+   
+},
+  "ta": {
+    "welcome": "வேலை வாய்ப்புப் பரிசீலனையில் வரவேற்கிறோம்",
+    "select_career": "அந்த வழிகளில் சேர்வது மற்றும் பிற விவரங்களைப் பற்றிய மேலும் தகவலுக்காக அட்டவணையிலிருந்து ஒரு தொழில்முனைவோரைத் தேர்ந்தெடுக்கவும்.",
+    "engineering_intro": "என்ஜினியரிங் என்பது அறிவியல் கொள்கைகள், கணிதம் மற்றும் பகுப்பாய்வு ஆதாரங்களை பயன்படுத்தி கட்டிடங்கள், இயந்திரங்கள், அமைப்புகள் மற்றும் செயல்முறைகளை வடிவமைக்க, உருவாக்க மற்றும் மேம்படுத்தும் பரந்த படிப்புத்துறை ஆகும். இது சிக்கலான சிக்கல்களை தீர்க்கும் மற்றும் பல்வேறு தொழிற்துறைகளில் புதுமையான தீர்வுகளை உருவாக்குவதைக் குறிக்கிறது.",
+      "how_to_join": "என்ஜினியரிங் திட்டங்களில் சேர்வது எப்படி:",
+      "welcome": "வேலை வாய்ப்புப் பரிசீலனையில் வரவேற்கிறோம்",
+    "platform_intro": "எங்கள் விரிவான மாணவர் வேலை வழிகாட்டி மற்றும் வழிகாட்டல் தளத்திற்கு வரவேற்கிறோம். எங்கள் இணையதளம் உங்கள் கல்வி பயணத்தை எளிதாக இயக்க உதவுகிறது. உங்கள் எதிர்காலத்திற்கான அறிவார்ந்த முடிவுகளை எடுக்க எங்கள் அம்சங்களை ஆராயவும்.",
+    "website_features_intro": "இணையதள அம்சங்கள்:",
+    "resources": "வளங்கள்: வேலை வாய்ப்புகள், கல்வி தேவைகள், மற்றும் வேலை சந்தை போக்குகள் பற்றிய பல்வேறு வளங்களைத் தொகுத்து அணுகுக.",
+    "college_predictor": "கல்லூரி கணிப்பி: உங்கள் கல்வி செயல்திறன் மற்றும் விருப்பங்களின் அடிப்படையில் நீங்கள் தகுதிவாய்ந்துள்ள கல்லூரிகளை கணிக்கவும்.",
+    "scholarships": "கல்வி உதவித்தொகைகள்: உங்கள் சுயவிவரத்திற்கு பொருந்திய கல்வி உதவித்தொகைகளை கண்டறிந்து விண்ணப்பிக்கவும்.",
+    "career_development": "தொழில் மேம்பாடு: மாணவர் சுயவிவரங்களை (விருப்பங்கள், திறன்கள், கல்வி செயல்திறன்) பகுப்பாய்வு செய்து பொருத்தமான தொழில் பாதைகளை பரிந்துரைக்கவும்.",
+    "voice_to_text_form_recognition": "குரல்-இருந்து-உரை படிவம் அங்கீகாரம்: படிவங்களை விரைவாகவும் துல்லியமாகவும் நிரப்ப குரல் அங்கீகார தொழில்நுட்பத்தைப் பயன்படுத்தவும்.",
+    "language_translator": "மொழி மொழிபெயர்ப்பு: இணையதள உள்ளடக்கத்தை வேறுபட்ட மொழிகளில் மொழிபெயர்த்து புரிந்துகொள்ளவும்.",
+    "full_counseling_guidance": "முழு ஆலோசனை வழிகாட்டி: கல்லூரி சேர்க்கை செயல்முறை பற்றி விண்ணப்பத்திலிருந்து சேர்வதுவரை விரிவான படிநிலை வழிகாட்டியைப் பெறுங்கள்.",
+    "how_to_use_platform_intro": "தளத்தை எப்படி பயன்படுத்துவது:",
+    "how_to_use_platform": "தொடங்குவதற்கு அட்டவணையிலிருந்து ஒரு தொழில் விருப்பத்தைத் தேர்ந்தெடுக்கவும். ஒவ்வொரு விருப்பமும் பல்வேறு துறைகள், அவற்றில் சேர்வது எப்படி, மற்றும் தொடர்புடைய வாய்ப்புகள் பற்றிய விரிவான தகவல்களை வழங்குகின்றன. உங்கள் கல்வி மற்றும் தொழில் குறித்து நன்கு அறிவார்ந்த முடிவுகளை எடுக்க எங்கள் கருவிகள் மற்றும் வளங்களைப் பயன்படுத்தவும்.",
+    "platform_purpose": "எங்கள் தளம் உங்கள் தொழில் திட்டமிடலை எளிதாக்கவும், உங்கள் கல்வி மற்றும் தொழில் நோக்கங்களை நம்பிக்கையுடன் அடையவும் வடிவமைக்கப்பட்டுள்ளது.",
+    "Engineering": "எஞ்சினீயரிங்",
+      "Bachelor of Technology": "பெளத்திலர் ஆஃப் டெக்னாலஜி",
+      "Animation": "அனிமேஷன்",
+      "Fashion Design": "பேஷன் டிசைன்",
+      "Law": "சட்டம்",
+      "Bachelor of Fine Arts": "பெளத்திலர் ஆஃப் ஃபைன் ஆர்ட்ஸ்",
+      "Mass Communication": "மாஸ் கம்யூனிகேஷன்",
+      "Nursing": "நர்சிங்",
+      "Environmental Science": "சரித்திரம் அறிவியல்",
+      "Arts": "கலை",
+      "Bachelor of Pharmacy": "பெளத்திலர் ஆஃப் ஃபார்மசி",
+      "Data Science": "தரவியல் அறிவியல்",
+      "Interior Design": "உள் வடிவமைப்பு",
+      "Health Tourism": "ஆரோக்கிய சுற்றுலா",
+      "Hospitality Management Studies": "விருந்தோம்பல் மேலாண்மை படிப்புகள்",
+      "Bachelor of Architecture": "பெளத்திலர் ஆஃப் ஆர்கிடெக்சர்",
+      "Bachelor of Science": "பெளத்திலர் ஆஃப் சயின்ஸ்",
+      "BA LLB": "பி.ஏ எல்.எல்.பி",
+      "Accountant": "கணக்காளன்",
+      "Chartered Accountant": "சார்டர்ட் கணக்காளர்",
+      "Company Secretary": "நிறுவனச் செயலாளர்",
+      "Architect": "வீடு கட்டும் நிபுணர்",
+      "BA in Hospitality Travel": "விருந்தோம்பல் பயணத்தில் பி.ஏ",
+      "BA in Humanities & Social Science": "மனிதவியல் மற்றும் சமூக அறிவியலில் பி.ஏ",
+      "Career Option": "வெளிநாடு தேர்வு",
+  
+      
+  },
+  "hi": {
+    "welcome": "करियर अवलोकन में आपका स्वागत है",
+    "select_career": "तालिका से एक करियर विकल्प चुनें ताकि इसके बारे में अधिक जान सकें, शामिल होने के तरीकों और अन्य विवरणों को शामिल किया जा सके।",
+    "engineering_intro": "इंजीनियरिंग एक विस्तृत अध्ययन क्षेत्र है जो वैज्ञानिक सिद्धांतों, गणित और अनुभवजन्य साक्ष्यों को लागू करके संरचनाओं, मशीनों, सिस्टम और प्रक्रियाओं को डिजाइन, निर्माण और सुधारता है। इसमें जटिल समस्याओं को हल करना और विभिन्न उद्योगों में समाधान इनोवेट करना शामिल है।",
+      "how_to_join": "इंजीनियरिंग प्रोग्राम्स में कैसे शामिल हों:",
+      "welcome": "करियर ओवरव्यू में आपका स्वागत है",
+    "platform_intro": "हमारे व्यापक छात्र करियर परामर्श और मार्गदर्शन मंच में आपका स्वागत है। हमारी वेबसाइट आपको अपनी शैक्षिक यात्रा को आसानी से नेविगेट करने में मदद करने के लिए डिज़ाइन की गई है। अपने भविष्य के बारे में सूचित निर्णय लेने के लिए हमारी सुविधाओं का अन्वेषण करें।",
+    "website_features_intro": "वेबसाइट की विशेषताएं:",
+    "resources": "संसाधन: करियर, शैक्षिक आवश्यकताओं, और नौकरी बाजार की प्रवृत्तियों पर व्यापक संसाधनों को संकलित करें और उन तक पहुंच प्रदान करें।",
+    "college_predictor": "कॉलेज भविष्यवक्ता: अपने शैक्षिक प्रदर्शन और प्राथमिकताओं के आधार पर आप किन कॉलेजों के लिए पात्र हैं, इसका पूर्वानुमान लगाएं।",
+    "scholarships": "छात्रवृत्तियां: अपनी प्रोफ़ाइल के अनुसार मिलान करने वाली छात्रवृत्तियों की खोज करें और आवेदन करें ताकि अपनी शिक्षा के लिए वित्त पोषण कर सकें।",
+    "career_development": "करियर विकास: छात्र प्रोफ़ाइल (रुचियाँ, कौशल, शैक्षिक प्रदर्शन) का विश्लेषण करके उपयुक्त करियर मार्गों की सिफारिश करें।",
+    "voice_to_text_form_recognition": "वॉयस-टू-टेक्स्ट फॉर्म मान्यता: फॉर्म को तेजी से और सटीक रूप से भरने के लिए वॉयस मान्यता तकनीक का उपयोग करें।",
+    "language_translator": "भाषा अनुवादक: बेहतर समझ के लिए वेबसाइट सामग्री को विभिन्न भाषाओं में अनुवाद करें।",
+    "full_counseling_guidance": "पूर्ण परामर्श मार्गदर्शन: आवेदन से नामांकन तक, कॉलेज प्रवेश प्रक्रिया पर विस्तृत चरण-दर-चरण मार्गदर्शन प्राप्त करें।",
+    "how_to_use_platform_intro": "प्लेटफ़ॉर्म का उपयोग कैसे करें:",
+    "how_to_use_platform": "शुरू करने के लिए, तालिका से एक करियर विकल्प का चयन करें। प्रत्येक विकल्प विभिन्न क्षेत्रों, उनके साथ जुड़ने के तरीकों, और संबंधित अवसरों के बारे में विस्तृत जानकारी प्रदान करता है। अपनी शिक्षा और करियर के बारे में सूचित निर्णय लेने के लिए हमारे उपकरणों और संसाधनों का उपयोग करें।",
+    "platform_purpose": "हमारा प्लेटफ़ॉर्म आपके करियर की योजना को सरल बनाने और आपके शैक्षणिक और पेशेवर लक्ष्यों को आत्मविश्वास के साथ हासिल करने में मदद करने के लिए डिज़ाइन किया गया है।",
+    "Engineering": "इंजीनियरिंग",
+      "Bachelor of Technology": "बी.टेक",
+      "Animation": "एनीमेशन",
+      "Fashion Design": "फैशन डिज़ाइन",
+      "Law": "कानून",
+      "Bachelor of Fine Arts": "बैचलर ऑफ फाइन आर्ट्स",
+      "Mass Communication": "मास कम्युनिकेशन",
+      "Nursing": "नर्सिंग",
+      "Environmental Science": "पर्यावरण विज्ञान",
+      "Arts": "कला",
+      "Bachelor of Pharmacy": "बैचलर ऑफ फार्मेसी",
+      "Data Science": "डेटा साइंस",
+      "Interior Design": "इंटीरियर्स डिज़ाइन",
+      "Health Tourism": "स्वास्थ्य पर्यटन",
+      "Hospitality Management Studies": "हॉस्पिटैलिटी प्रबंधन अध्ययन",
+      "Bachelor of Architecture": "बैचलर ऑफ आर्किटेक्चर",
+      "Bachelor of Science": "बैचलर ऑफ साइंस",
+      "BA LLB": "बीए एलएलबी",
+      "Accountant": "लेखाकार",
+      "Chartered Accountant": "चार्टर्ड अकाउंटेंट",
+      "Company Secretary": "कंपनी सचिव",
+      "Architect": "वास्तुविद",
+      "BA in Hospitality Travel": "हॉस्पिटैलिटी ट्रैवल में बीए",
+      "BA in Humanities & Social Science": "मानविकी और सामाजिक विज्ञान में बीए",
+      "Career Option": "करियर विकल्प",
+ 
+     
+  },
+  "te": {
+    "welcome": "కెరీర్ అవలోకనానికి స్వాగతం",
+    "select_career": "ఇందులో చేరడానికి పద్ధతులు మరియు ఇతర వివరాలను తెలుసుకోవడానికి పట్టిక నుండి ఒక ఉద్యోగ ఎంపికను ఎంచుకోండి.",
+    "engineering_intro": "ఇంజనీరింగ్ అనేది శాస్త్రీయ సూత్రాలు, గణితం మరియు అనుభవపూర్వక సాక్ష్యాలను ఉపయోగించి నిర్మాణాలు, యంత్రాలు, వ్యవస్థలు మరియు ప్రక్రియలను రూపకల్పన, సృష్టి మరియు మెరుగుపరచడాన్ని ఇష్టపడే విస్తృత అధ్యయన విభాగం. ఇది సంక్లిష్ట సమస్యలను పరిష్కరించడాన్ని మరియు వివిధ పరిశ్రమల్లో పరిష్కారాలను కొత్తగా చేయడాన్ని కూడా కలిగి ఉంటుంది.",
+      "how_to_join": "ఇంజనీరింగ్ ప్రోగ్రామ్‌లలో చేరడం ఎలా:",
+      "welcome": "కెరీర్ ఓవర్వ్యూకి స్వాగతం",
+    "platform_intro": "మన సమగ్ర విద్యార్థుల కెరీర్ కౌన్సెలింగ్ మరియు మార్గదర్శక వేదికకు స్వాగతం. మా వెబ్‌సైట్ మీ విద్యా ప్రయాణాన్ని సులభంగా నావిగేట్ చేయడంలో మీకు సహాయపడేందుకు రూపొందించబడింది. మీ భవిష్యత్తు గురించి వివేకపూర్వక నిర్ణయాలు తీసుకోవడానికి మా ఫీచర్‌లను అన్వేషించండి.",
+    "website_features_intro": "వెబ్‌సైట్ ఫీచర్లు:",
+    "resources": "వనరులు: కెరీర్లు, విద్యా అవసరాలు మరియు ఉద్యోగ మార్కెట్ ధోరణులపై విస్తృత శ్రేణి వనరులను సమీకరించి ప్రాప్తిని అందించండి.",
+    "college_predictor": "కళాశాల పితృవేదనం: మీ విద్యా ప్రదర్శన మరియు అభిరుచుల ఆధారంగా మీరు అర్హత పొందిన కళాశాలలను అంచనా వేయండి.",
+    "scholarships": "విద్యాసహాయాలు: మీ ప్రొఫైల్‌కు సరిపోయే స్కాలర్‌షిప్‌లను కనుగొని దరఖాస్తు చేయండి, తద్వారా మీ విద్యకు నిధులు సమకూర్చుకోవచ్చు.",
+    "career_development": "కెరీర్ అభివృద్ధి: విద్యార్థుల ప్రొఫైల్‌లను (ఆసక్తులు, నైపుణ్యాలు, విద్యా ప్రదర్శన) విశ్లేషించి సరిపోయే కెరీర్ మార్గాలను సిఫార్సు చేయండి.",
+    "voice_to_text_form_recognition": "వాయిస్ టు టెక్స్ట్ ఫారం గుర్తింపు: ఫారమ్‌లను వేగంగా మరియు ఖచ్చితంగా పూరించడానికి వాయిస్ గుర్తింపు సాంకేతికతను ఉపయోగించండి.",
+    "language_translator": "భాషా అనువాదకుడు: మెరుగైన అర్థం కోసం వెబ్‌సైట్ కంటెంట్‌ను వివిధ భాషలలో అనువదించండి.",
+    "full_counseling_guidance": "పూర్తి కౌన్సెలింగ్ మార్గదర్శకత్వం: దరఖాస్తు నుండి నమోదు వరకు, కళాశాల ప్రవేశ ప్రక్రియపై దశల వారీగా మార్గదర్శకత్వం పొందండి.",
+    "how_to_use_platform_intro": "వేదికను ఎలా ఉపయోగించాలి:",
+    "how_to_use_platform": "ప్రారంభించడానికి, పట్టిక నుండి ఒక కెరీర్ ఎంపికను ఎంచుకోండి. ప్రతి ఎంపిక వివిధ రంగాలు, వాటిని ఎలా చేరుకోవాలి మరియు సంబంధిత అవకాశాలపై వివరమైన సమాచారం అందిస్తుంది. మీ విద్య మరియు కెరీర్ గురించి బాగా తెలిసిన నిర్ణయాలు తీసుకోవడానికి మా టూల్స్ మరియు వనరులను ఉపయోగించండి.",
+    "platform_purpose": "మా వేదిక మీ కెరీర్ ప్రణాళికను సులభతరం చేయడానికి మరియు మీ విద్య మరియు ప్రొఫెషనల్ లక్ష్యాలను విశ్వాసంతో సాధించడానికి రూపొందించబడింది.",
+    "Engineering": "ఇంజనీరింగ్",
+      "Bachelor of Technology": "బ్యాచిలర్ ఆఫ్ టెక్నాలజీ",
+      "Animation": "అనిమేషన్",
+      "Fashion Design": "ఫ్యాషన్ డిజైన్",
+      "Law": "చట్టం",
+      "Bachelor of Fine Arts": "బ్యాచిలర్ ఆఫ్ ఫైన్ ఆర్ట్స్",
+      "Mass Communication": "మాస్ కమ్యూనికేషన్",
+      "Nursing": "నర్సింగ్",
+      "Environmental Science": "పర్యావరణ శాస్త్రం",
+      "Arts": "కళ",
+      "Bachelor of Pharmacy": "బ్యాచిలర్ ఆఫ్ ఫార్మసీ",
+      "Data Science": "డేటా సైన్స్",
+      "Interior Design": "ఇంటీరియర్ డిజైన్",
+      "Health Tourism": "ఆరోగ్య పర్యాటనం",
+      "Hospitality Management Studies": "హాస్పిటాలిటీ మేనేజ్‌మెంట్ స్టడీస్",
+      "Bachelor of Architecture": "బ్యాచిలర్ ఆఫ్ ఆర్కిటెక్చర్",
+      "Bachelor of Science": "బ్యాచిలర్ ఆఫ్ సైన్స్",
+      "BA LLB": "బీఏ ఎల్‌ఎల్‌బీ",
+      "Accountant": "అకౌంటెంట్",
+      "Chartered Accountant": "చార్టర్డ్ అకౌంటెంట్",
+      "Company Secretary": "కంపెనీ సెక్రటరీ",
+      "Architect": "వాస్తువిద్",
+      "BA in Hospitality Travel": "హాస్పిటాలిటీ ట్రావెల్‌లో బీఏ",
+      "BA in Humanities & Social Science": "హ్యూమానిటీస్ & సోషియల్ సైన్స్‌లో బీఏ",
+      "Career Option": "వృత్తి ఎంపిక",
+ 
+  },
+  "ml": {
+    "welcome": "കെരിയർ അവലോകനത്തിൽ സ്വാഗതം",
+    "select_career": "അത് സംബന്ധിച്ച കൂടുതൽ വിവരങ്ങൾ, ജോയിൻ ചെയ്യുന്നതിനുള്ള മാർഗങ്ങൾ എന്നിവ ഉൾപ്പെടെ അറിയാൻ പട്ടികയിൽ നിന്ന് ഒരു കരിയർ ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക.",
+    "engineering_intro": "ഇഞ്ചിനിയറിംഗ് ശാസ്ത്രീയ സിദ്ധാന്തങ്ങൾ, ഗണിതം, അനുഭവം ഉള്ള തെളിവുകൾ എന്നിവ ഉപയോഗിച്ച് ഘടനകൾ, യന്ത്രങ്ങൾ, സിസ്റ്റങ്ങൾ, പ്രക്രിയകൾ രൂപകല്‌പന, സൃഷ്ടി, മെച്ചപ്പെടുത്തലിനും വിനിയോഗിക്കുന്ന ഒരു വിശാലമായ പഠന മേഖലയാണ്. ഇത് സമുച്ചിതമായ പ്രശ്നങ്ങൾ പരിഹരിക്കുകയും വ്യത്യസ്ത വ്യവസായങ്ങളിൽ നവീനമായ പരിഹാരങ്ങൾ അവതരിപ്പിക്കുകയും ചെയ്യുന്നു.",
+      "how_to_join": "ഇഞ്ചിനിയറിംഗ് പ്രോഗ്രാമുകളിൽ എങ്ങനെ ചേർന്നേക്കാം:",
+      "platform_intro": "ഞങ്ങളുടെ സമഗ്ര വിദ്യാർത്ഥി കരിയർ ഉപദേശവും മാർഗനിർദേശ വേദിയിലേക്ക് സ്വാഗതം. നിങ്ങളുടെ വിദ്യാഭ്യാസ യാത്ര എളുപ്പത്തിൽ നയിക്കാനുള്ള സഹായത്തിനായി ഞങ്ങളുടെ വെബ്സൈറ്റ് രൂപകല്പന ചെയ്തിരിക്കുന്നു. നിങ്ങളുടെ ഭാവിയെക്കുറിച്ച് അവബോധപൂർവമായ തീരുമാനങ്ങൾ എടുക്കാൻ ഞങ്ങളുടെ സൗകര്യങ്ങൾ ഉപയോഗിച്ച് പര്യവേഷിക്കുക.",
+    "website_features_intro": "വെബ്സൈറ്റ് സവിശേഷതകൾ:",
+    "resources": "വനരുകൾ: കരിയറുകൾ, വിദ്യാഭ്യാസ ആവശ്യങ്ങൾ, ജോലിയിട ത്രെൻഡുകൾ എന്നിവയുടെ സമഗ്രമായ വനംസംഹിത നൽകുക.",
+    "college_predictor": "കോളേജ് പ്രവചന സോഫ്റ്റ്‌വെയർ: നിങ്ങളുടെ അക്കാദമിക് പ്രകടനവും ഇഷ്ടപ്പെട്ട വിഷയങ്ങളും അടിസ്ഥാനമാക്കി നിങ്ങൾക്ക് യോഗ്യത ഉള്ള കോളേജുകളെ പ്രവചിക്കുക.",
+    "scholarships": "സ്കോളർഷിപ്പുകൾ: നിങ്ങളുടെ പ്രൊഫൈലിനൊപ്പം ചേരുന്ന സ്കോളർഷിപ്പുകൾ കണ്ടെത്തി അപേക്ഷിക്കുക.",
+    "career_development": "കർമവളർച്ച: വിദ്യാർത്ഥി പ്രൊഫൈലുകൾ (ആവേശങ്ങൾ, കഴിവുകൾ, അക്കാദമിക് പ്രകടനം) വിശകലനം ചെയ്ത് അനുയോജ്യമായ കരിയർ വഴികൾ നിർദ്ദേശിക്കുക.",
+    "voice_to_text_form_recognition": "വോയ്സ്-ടു-ടെക്സ്റ്റ് ഫോർം തിരിച്ചറിയൽ: ഫോർമുകൾ എളുപ്പത്തിൽ അതിവേഗവും കൃത്യവുമാക്കാൻ ശബ്ദ തിരിച്ചറിയൽ സാങ്കേതിക വിദ്യ ഉപയോഗിക്കുക.",
+    "language_translator": "ഭാഷാ പരിഭാഷ: വെബ്സൈറ്റിന്റെ ഉള്ളടക്കം മികച്ച മനസിലാക്കലിനായി വിവിധ ഭാഷകളിൽ പരിഭാഷ ചെയ്യുക.",
+    "full_counseling_guidance": "പൂർണ്ണ ഉപദേശ മാർഗനിർദേശം: അപേക്ഷയിൽ നിന്ന് പ്രവേശനം വരെയുള്ള കോളേജ് പ്രവേശന പ്രക്രിയയിലെ എല്ലാ ഘട്ടങ്ങളും വിശദമായ മാർഗനിർദേശം ലഭിക്കുക.",
+    "how_to_use_platform_intro": "വേദി എങ്ങനെ ഉപയോഗിക്കാം:",
+    "how_to_use_platform": "ആരംഭിക്കുന്നതിന്, പട്ടികയിൽ നിന്ന് ഒരു കരിയർ ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക. ഓരോ ഓപ്ഷനും വിവിധ മേഖലകൾ, അവയിലേക്ക് ചേർക്കേണ്ട വഴി, അനുബന്ധ അവസരങ്ങൾ എന്നിവയുടെ വിശദമായ വിവരങ്ങൾ നൽകുന്നു. നിങ്ങളുടെ വിദ്യാഭ്യാസവും കരിയറും സംബന്ധിച്ച് അറിവുള്ള തീരുമാനങ്ങൾ എടുക്കാൻ നമ്മുടെ ഉപകരണങ്ങളും വരികളുമെല്ലാം ഉപയോഗിക്കുക.",
+    "platform_purpose": "നമ്മുടെ വേദി നിങ്ങളുടെ കരിയർ പദ്ധതികൾ എളുപ്പമാക്കാനും നിങ്ങളുടെ വിദ്യാഭ്യാസ ലക്ഷ്യങ്ങൾ ആത്മവിശ്വാസത്തോടെ നേടാനും സഹായിക്കാൻ രൂപകല്പന ചെയ്തിരിക്കുന്നു.",
+    "Engineering": "എഞ്ചിനീയറിംഗ്",
+      "Bachelor of Technology": "ബാച്ചിലർ ഓഫ് ടെക്‌നോളജി",
+      "Animation": "എനിമേഷൻ",
+      "Fashion Design": "ഫാഷൻ ഡിസൈൻ",
+      "Law": "നിയമം",
+      "Bachelor of Fine Arts": "ബാച്ചിലർ ഓഫ് ഫൈൻ ആർട്സ്",
+      "Mass Communication": "മാസ് കമ്മ്യൂണിക്കേഷൻ",
+      "Nursing": "നഴ്സിംഗ്",
+      "Environmental Science": "പരിസ്ഥിതി ശാസ്ത്രം",
+      "Arts": "കല",
+      "Bachelor of Pharmacy": "ബാച്ചിലർ ഓഫ് ഫാർമസി",
+      "Data Science": "ഡാറ്റാ സയൻസ്",
+      "Interior Design": "ഇന്റീരിയർ ഡിസൈൻ",
+      "Health Tourism": "ആരോഗ്യ പര്യടനം",
+      "Hospitality Management Studies": "ഹോസ്പിറ്റാലിറ്റി മാനേജ്‌മെന്റ് പഠനം",
+      "Bachelor of Architecture": "ബാച്ചിലർ ഓഫ് ആർകിടെക്ചർ",
+      "Bachelor of Science": "ബാച്ചിലർ ഓഫ് സയൻസ്",
+      "BA LLB": "ബി.എ. എൽ.എൽ.ബി",
+      "Accountant": "അക്കൗണ്ടന്റ്",
+      "Chartered Accountant": "ചാർട്ടർഡ് അക്കൗണ്ടന്റ്",
+      "Company Secretary": "കമ്പനീ സെക്രട്ടറി",
+      "Architect": "ആർക്കിടെക്ട്",
+      "BA in Hospitality Travel": "ഹോസ്പിറ്റാലിറ്റി ട്രാവൽ എന്ന ബിഎ",
+      "BA in Humanities & Social Science": "ഹ്യൂമനിറ്റീസ് & സോഷിയൽ സയൻസ് എന്ന ബിഎ",
+      "Career Option": "കോളേജ് ഓപ്ഷൻ",
+ 
+ 
+
+  }
+        }
+        function changeLanguage(language) {
+    document.querySelectorAll("[data-translate]").forEach(function(element) {
+      const key = element.getAttribute("data-translate");
+      element.textContent = translations[language][key];
+    });
+  }
+  function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+    document.addEventListener('DOMContentLoaded', function() {
+             const language = getCookie('preferredLanguage') || 'en'; // Default to 'en' if no cookie is set
+           
+        changeLanguage(language);  // Ensure currentLanguage is defined correctly
+    });
+
+      document.querySelectorAll("[data-placeholder]").forEach(function(element) {
+        const key = element.getAttribute("data-placeholder");
+        element.placeholder = translations[language][key];
+      });
+        
+function readOutText(text) {
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = 'en'; 
+    window.speechSynthesis.speak(speech);
+}
+
+function setupReadOut() {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        element.addEventListener('click', () => {
+            const text = element.textContent || element.getAttribute('data-translate');
+            readOutText(text);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupReadOut);
+
+    
+    </script>
+
+</body>
+</html>

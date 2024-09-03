@@ -1,0 +1,803 @@
+[
+    {
+      "SNo": 1,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1224",
+      "College Name": "Loyola College (Autonomous)",
+      "Address": "Nungambakkam, Chennai - 600034"
+    },
+    {
+      "SNo": 2,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1225",
+      "College Name": "Madras Christian College (MCC)",
+      "Address": "East Tambaram, Chennai - 600059"
+    },
+    {
+      "SNo": 3,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1227",
+      "College Name": "Stella Maris College (Autonomous)",
+      "Address": "Cathedral Road, Chennai - 600086"
+    },
+    {
+      "SNo": 4,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1229",
+      "College Name": "PSG College of Arts and Science",
+      "Address": "Avinashi Road, Coimbatore - 641014"
+    },
+    {
+      "SNo": 5,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1230",
+      "College Name": "Kongunadu Arts and Science College",
+      "Address": "Gandhipuram, Coimbatore - 641029"
+    },
+    {
+      "SNo": 6,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1231",
+      "College Name": "Ethiraj College for Women (Autonomous)",
+      "Address": "Egmore, Chennai - 600008"
+    },
+    {
+      "SNo": 7,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1232",
+      "College Name": "Womens Christian College",
+      "Address": "Nungambakkam, Chennai - 600006"
+    },
+    {
+      "SNo": 8,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1233",
+      "College Name": "Lady Doak College",
+      "Address": "Chinnachokkikulam, Madurai - 625002"
+    },
+    {
+      "SNo": 9,
+      "District": "Tiruchirappalli",
+      "Region": "Tiruchirappalli",
+      "College Code": "1234",
+      "College Name": "Bishop Heber College",
+      "Address": "Puthur, Tiruchirappalli - 620017"
+    },
+    {
+      "SNo": 10,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1235",
+      "College Name": "Sri Krishna Arts and Science College",
+      "Address": "Kuniamuthur, Coimbatore - 641008"
+    },
+    {
+      "SNo": 11,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1236",
+      "College Name": "Hindusthan College of Arts and Science",
+      "Address": "Avinashi Road, Coimbatore - 641028"
+    },
+    {
+      "SNo": 12,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1237",
+      "College Name": "Guru Nanak College",
+      "Address": "Velachery, Chennai - 600042"
+    },
+    {
+      "SNo": 13,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1238",
+      "College Name": "M.O.P. Vaishnav College for Women (Autonomous)",
+      "Address": "Nungambakkam, Chennai - 600034"
+    },
+    {
+      "SNo": 14,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1239",
+      "College Name": "Anna Adarsh College for Women",
+      "Address": "Anna Nagar, Chennai - 600040"
+    },
+    {
+      "SNo": 15,
+      "District": "Kanyakumari",
+      "Region": "Kanyakumari",
+      "College Code": "1240",
+      "College Name": "S.T. Hindu College",
+      "Address": "Nagercoil, Kanyakumari - 629002"
+    },
+    {
+      "SNo": 16,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1241",
+      "College Name": "AVS College of Arts & Science",
+      "Address": "Ramalingapuram, Salem - 636106"
+    },
+    {
+      "SNo": 17,
+      "District": "Erode",
+      "Region": "Erode",
+      "College Code": "1242",
+      "College Name": "Vellalar College for Women",
+      "Address": "Thindal, Erode - 638012"
+    },
+    {
+      "SNo": 18,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1243",
+      "College Name": "A.V.V.M. Sri Pushpam College (Autonomous)",
+      "Address": "Poondi, Thanjavur - 613503"
+    },
+    {
+      "SNo": 19,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1244",
+      "College Name": "D.G. Vaishnav College",
+      "Address": "Arumbakkam, Chennai - 600106"
+    },
+    {
+      "SNo": 20,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1245",
+      "College Name": "Meenakshi College for Women (Autonomous)",
+      "Address": "Kodambakkam, Chennai - 600024"
+    },
+    {
+      "SNo": 21,
+      "District": "Kanchipuram",
+      "Region": "Chennai",
+      "College Code": "1246",
+      "College Name": "Sankar's Academy of Arts and Science",
+      "Address": "Poonamallee, Chennai - 600056"
+    },
+    {
+      "SNo": 22,
+      "District": "Thiruvallur",
+      "Region": "Chennai",
+      "College Code": "1247",
+      "College Name": "S.A. Arts and Science College",
+      "Address": "Thiruverkadu, Chennai - 600077"
+    },
+    {
+      "SNo": 23,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1248",
+      "College Name": "Patrician College of Arts and Science",
+      "Address": "Adyar, Chennai - 600020"
+    },
+    {
+      "SNo": 24,
+      "District": "Kanyakumari",
+      "Region": "Kanyakumari",
+      "College Code": "1249",
+      "College Name": "Holy Cross College (Autonomous)",
+      "Address": "Nagercoil, Kanyakumari - 629004"
+    },
+    {
+      "SNo": 25,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1250",
+      "College Name": "Thiagarajar College (Autonomous)",
+      "Address": "Madurai - 625009"
+    },
+    {
+      "SNo": 26,
+      "District": "Tirunelveli",
+      "Region": "Tirunelveli",
+      "College Code": "1251",
+      "College Name": "Sarah Tucker College (Autonomous)",
+      "Address": "Perumalpuram, Tirunelveli - 627007"
+    },
+    {
+      "SNo": 27,
+      "District": "Tiruppur",
+      "Region": "Coimbatore",
+      "College Code": "1252",
+      "College Name": "Nallamuthu Gounder Mahalingam College",
+      "Address": "Pollachi, Coimbatore - 642001"
+    },
+    {
+      "SNo": 28,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1253",
+      "College Name": "Sona College of Arts and Science",
+      "Address": "Salem - 636005"
+    },
+    {
+      "SNo": 29,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1254",
+      "College Name": "Mar Gregorios Arts and Science College",
+      "Address": "Mogappair West, Chennai - 600037"
+    },
+    {
+      "SNo": 30,
+      "District": "Tiruvannamalai",
+      "Region": "Vellore",
+      "College Code": "1255",
+      "College Name": "Arignar Anna Government Arts College",
+      "Address": "Cheyyar, Tiruvannamalai - 604407"
+    },
+    {
+      "SNo": 31,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1256",
+      "College Name": "Dhanraj Baid Jain College (Autonomous)",
+      "Address": "Thorapakkam, Chennai - 600097"
+    },
+    {
+      "SNo": 32,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1257",
+      "College Name": "Fatima College (Autonomous)",
+      "Address": "Madurai - 625018"
+    },
+    {
+      "SNo": 33,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1258",
+      "College Name": "Bharath College of Science and Management",
+      "Address": "Thanjavur - 613005"
+    },
+    {
+      "SNo": 34,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1259",
+      "College Name": "St. Joseph's College of Arts and Science",
+      "Address": "Chennai - 600125"
+    },
+    {
+      "SNo": 35,
+      "District": "Namakkal",
+      "Region": "Salem",
+      "College Code": "1260",
+      "College Name": "Selvam Arts and Science College",
+      "Address": "Pappinaickenpatti, Namakkal - 637003"
+    },
+    {
+      "SNo": 36,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1261",
+      "College Name": "Voorhees College",
+      "Address": "Vellore - 632001"
+    },
+    {
+      "SNo": 37,
+      "District": "Virudhunagar",
+      "Region": "Madurai",
+      "College Code": "1262",
+      "College Name": "Ayya Nadar Janaki Ammal College (Autonomous)",
+      "Address": "Sivakasi, Virudhunagar - 626124"
+    },
+    {
+      "SNo": 38,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1263",
+      "College Name": "Bon Secours College for Women",
+      "Address": "Thanjavur - 613006"
+    },
+    {
+      "SNo": 39,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1264",
+      "College Name": "Asan Memorial College of Arts and Science",
+      "Address": "Jaladampet, Chennai - 600100"
+    },
+    {
+      "SNo": 40,
+      "District": "Tiruvallur",
+      "Region": "Chennai",
+      "College Code": "1265",
+      "College Name": "Alpha Arts and Science College",
+      "Address": "Porur, Chennai - 600116"
+    },
+    {
+      "SNo": 41,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1266",
+      "College Name": "Valliammal College for Women",
+      "Address": "Anna Nagar East, Chennai - 600102"
+    },
+    {
+      "SNo": 42,
+      "District": "Kanchipuram",
+      "Region": "Chennai",
+      "College Code": "1267",
+      "College Name": "Agni College of Arts and Science",
+      "Address": "Thalambur, Chennai - 600130"
+    },
+    {
+      "SNo": 43,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1268",
+      "College Name": "Guru Shree Shantivijai Jain College for Women",
+      "Address": "Vepery, Chennai - 600007"
+    },
+    {
+      "SNo": 44,
+      "District": "Erode",
+      "Region": "Erode",
+      "College Code": "1269",
+      "College Name": "Chikkaiah Naicker College",
+      "Address": "Erode - 638004"
+    },
+    {
+      "SNo": 45,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1270",
+      "College Name": "KG College of Arts and Science",
+      "Address": "Coimbatore - 641035"
+    },
+    {
+      "SNo": 46,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1271",
+      "College Name": "Padmavani Arts and Science College for Women",
+      "Address": "Salem - 636011"
+    },
+    {
+      "SNo": 47,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1272",
+      "College Name": "Dr. N.G.P. Arts and Science College",
+      "Address": "Coimbatore - 641048"
+    },
+    {
+      "SNo": 48,
+      "District": "Tiruvallur",
+      "Region": "Chennai",
+      "College Code": "1273",
+      "College Name": "Jaya College of Arts and Science",
+      "Address": "Thiruninravur, Chennai - 602024"
+    },
+    {
+      "SNo": 49,
+      "District": "Thiruvannamalai",
+      "Region": "Vellore",
+      "College Code": "1274",
+      "College Name": "Thiruvalluvar College of Arts and Science",
+      "Address": "Tiruvannamalai - 606603"
+    },
+    {
+      "SNo": 50,
+      "District": "Tirunelveli",
+      "Region": "Tirunelveli",
+      "College Code": "1275",
+      "College Name": "M.D.T. Hindu College",
+      "Address": "Tirunelveli - 627010"
+    },
+    {
+      "SNo": 51,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1276",
+      "College Name": "Marudhar Kesari Jain College for Women",
+      "Address": "Vaniyambadi, Vellore - 635751"
+    },
+    {
+      "SNo": 52,
+      "District": "Tiruppur",
+      "Region": "Coimbatore",
+      "College Code": "1277",
+      "College Name": "Vellakoil College of Arts and Science",
+      "Address": "Vellakoil, Tiruppur - 638111"
+    },
+    {
+      "SNo": 53,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1278",
+      "College Name": "Bishop Appasamy College of Arts and Science",
+      "Address": "Coimbatore - 641018"
+    },
+    {
+      "SNo": 54,
+      "District": "Tiruvallur",
+      "Region": "Chennai",
+      "College Code": "1279",
+      "College Name": "Sri Sankara Arts and Science College",
+      "Address": "Enathur, Kanchipuram - 631561"
+    },
+    {
+      "SNo": 55,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1280",
+      "College Name": "Salem Sowdeswari College",
+      "Address": "Salem - 636010"
+    },
+    {
+      "SNo": 56,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1281",
+      "College Name": "Rajah Serfoji Government College (Autonomous)",
+      "Address": "Thanjavur - 613005"
+    },
+    {
+      "SNo": 57,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1282",
+      "College Name": "SIVET College",
+      "Address": "Gowrivakkam, Chennai - 600073"
+    },
+    {
+      "SNo": 58,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1283",
+      "College Name": "The New College (Autonomous)",
+      "Address": "Royapettah, Chennai - 600014"
+    },
+    {
+      "SNo": 59,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1284",
+      "College Name": "Chidambaram Pillai College of Women",
+      "Address": "Mannargudi, Thanjavur - 614001"
+    },
+    {
+      "SNo": 60,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1285",
+      "College Name": "Lady Doak College",
+      "Address": "Madurai - 625002"
+    },
+    {
+      "SNo": 61,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1286",
+      "College Name": "Mannar Thirumalai Naicker College",
+      "Address": "Madurai - 625004"
+    },
+    {
+      "SNo": 62,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1287",
+      "College Name": "Madras School of Social Work",
+      "Address": "Egmore, Chennai - 600008"
+    },
+    {
+      "SNo": 63,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1288",
+      "College Name": "C. Abdul Hakeem College",
+      "Address": "Melvisharam, Vellore - 632509"
+    },
+    {
+      "SNo": 64,
+      "District": "Namakkal",
+      "Region": "Salem",
+      "College Code": "1289",
+      "College Name": "Sri Vidya Mandir Arts and Science College",
+      "Address": "Uthangarai, Namakkal - 635207"
+    },
+    {
+      "SNo": 65,
+      "District": "Tiruvallur",
+      "Region": "Chennai",
+      "College Code": "1290",
+      "College Name": "Velammal College of Science and Arts",
+      "Address": "Thiruvallur - 602001"
+    },
+    {
+      "SNo": 66,
+      "District": "Namakkal",
+      "Region": "Salem",
+      "College Code": "1291",
+      "College Name": "Kandaswami Kandar's College",
+      "Address": "P. Velur, Namakkal - 638182"
+    },
+    {
+      "SNo": 67,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1292",
+      "College Name": "St. Joseph's College for Women",
+      "Address": "Gnanam Nagar, Thanjavur - 613007"
+    },
+    {
+      "SNo": 68,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1293",
+      "College Name": "Thiagarajar College (Autonomous)",
+      "Address": "Madurai - 625009"
+    },
+    {
+      "SNo": 69,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1294",
+      "College Name": "Sri Sarada College for Women (Autonomous)",
+      "Address": "Fairlands, Salem - 636016"
+    },
+    {
+      "SNo": 70,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1295",
+      "College Name": "Ramakrishna Mission Vivekananda College (Autonomous)",
+      "Address": "Mylapore, Chennai - 600004"
+    },
+    {
+      "SNo": 71,
+      "District": "Kanchipuram",
+      "Region": "Chennai",
+      "College Code": "1296",
+      "College Name": "Maharishi College of Arts and Science",
+      "Address": "Avadi, Chennai - 600071"
+    },
+    {
+      "SNo": 72,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1297",
+      "College Name": "Nazerath College of Arts and Science",
+      "Address": "Avadi, Chennai - 600071"
+    },
+    {
+      "SNo": 73,
+      "District": "Dindigul",
+      "Region": "Madurai",
+      "College Code": "1298",
+      "College Name": "RVS College of Arts and Science",
+      "Address": "Kumaran Kottam, Dindigul - 624005"
+    },
+    {
+      "SNo": 74,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1299",
+      "College Name": "M.O.P. Vaishnav College for Women (Autonomous)",
+      "Address": "Nungambakkam, Chennai - 600034"
+    },
+    {
+      "SNo": 75,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1300",
+      "College Name": "Rabiammal Ahamed Maideen College for Women",
+      "Address": "Thiruvarur, Thanjavur - 610003"
+    },
+    {
+      "SNo": 76,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1301",
+      "College Name": "Sri Krishna Adithya College of Arts and Science",
+      "Address": "Coimbatore - 641032"
+    },
+    {
+      "SNo": 77,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1302",
+      "College Name": "AVS College of Arts and Science",
+      "Address": "Salem - 636106"
+    },
+    {
+      "SNo": 78,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1303",
+      "College Name": "Sacred Heart College (Autonomous)",
+      "Address": "Tirupattur, Vellore - 635601"
+    },
+    {
+      "SNo": 79,
+      "District": "Erode",
+      "Region": "Erode",
+      "College Code": "1304",
+      "College Name": "Nandha Arts and Science College",
+      "Address": "Erode - 638052"
+    },
+    {
+      "SNo": 80,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1305",
+      "College Name": "PSG College of Arts and Science (Autonomous)",
+      "Address": "Coimbatore - 641014"
+    },
+    {
+      "SNo": 81,
+      "District": "Dindigul",
+      "Region": "Madurai",
+      "College Code": "1306",
+      "College Name": "Parvathy's Arts and Science College",
+      "Address": "Dindigul - 624619"
+    },
+    {
+      "SNo": 82,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1307",
+      "College Name": "American College (Autonomous)",
+      "Address": "Madurai - 625002"
+    },
+    {
+      "SNo": 83,
+      "District": "Tiruchirappalli",
+      "Region": "Trichy",
+      "College Code": "1308",
+      "College Name": "St. Joseph's College (Autonomous)",
+      "Address": "Tiruchirappalli - 620002"
+    },
+    {
+      "SNo": 84,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1309",
+      "College Name": "Government Arts College",
+      "Address": "Kumbakonam, Thanjavur - 612001"
+    },
+    {
+      "SNo": 85,
+      "District": "Theni",
+      "Region": "Madurai",
+      "College Code": "1310",
+      "College Name": "Theni Kammavar Sangam College of Arts and Science",
+      "Address": "Kammavar Nagar, Theni - 625534"
+    },
+    {
+      "SNo": 86,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1311",
+      "College Name": "Sun Arts and Science College",
+      "Address": "Tirupattur, Vellore - 635601"
+    },
+    {
+      "SNo": 87,
+      "District": "Cuddalore",
+      "Region": "Villupuram",
+      "College Code": "1312",
+      "College Name": "St. Joseph College of Arts and Science",
+      "Address": "Cuddalore - 607001"
+    },
+    {
+      "SNo": 88,
+      "District": "Namakkal",
+      "Region": "Salem",
+      "College Code": "1313",
+      "College Name": "Muthayammal College of Arts and Science",
+      "Address": "Rasipuram, Namakkal - 637408"
+    },
+    {
+      "SNo": 89,
+      "District": "Salem",
+      "Region": "Salem",
+      "College Code": "1314",
+      "College Name": "Sri Shakthi Kailash Women's College",
+      "Address": "Salem - 636003"
+    },
+    {
+      "SNo": 90,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1315",
+      "College Name": "St. Thomas College of Arts and Science",
+      "Address": "Koyambedu, Chennai - 600107"
+    },
+    {
+      "SNo": 91,
+      "District": "Chennai",
+      "Region": "Chennai",
+      "College Code": "1316",
+      "College Name": "Queen Mary's College (Autonomous)",
+      "Address": "Mylapore, Chennai - 600004"
+    },
+    {
+      "SNo": 92,
+      "District": "Tirunelveli",
+      "Region": "Tirunelveli",
+      "College Code": "1317",
+      "College Name": "Manonmaniam Sundaranar University Constituent College",
+      "Address": "Nagampatti, Tirunelveli - 627012"
+    },
+    {
+      "SNo": 93,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1318",
+      "College Name": "Bon Secours College for Women",
+      "Address": "Thanjavur - 613007"
+    },
+    {
+      "SNo": 94,
+      "District": "Vellore",
+      "Region": "Vellore",
+      "College Code": "1319",
+      "College Name": "Auxilium College (Autonomous)",
+      "Address": "Katpadi, Vellore - 632006"
+    },
+    {
+      "SNo": 95,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1320",
+      "College Name": "Madurai Institute of Social Sciences",
+      "Address": "Madurai - 625002"
+    },
+    {
+      "SNo": 96,
+      "District": "Nagapattinam",
+      "Region": "Thanjavur",
+      "College Code": "1321",
+      "College Name": "Thiru. A. Govindasamy Government Arts College",
+      "Address": "Tiruvarur, Nagapattinam - 610002"
+    },
+    {
+      "SNo": 97,
+      "District": "Madurai",
+      "Region": "Madurai",
+      "College Code": "1322",
+      "College Name": "Yadava College",
+      "Address": "Madurai - 625014"
+    },
+    {
+      "SNo": 98,
+      "District": "Thanjavur",
+      "Region": "Thanjavur",
+      "College Code": "1323",
+      "College Name": "Government Arts College for Women",
+      "Address": "Pudukkottai, Thanjavur - 622001"
+    },
+    {
+      "SNo": 99,
+      "District": "Kanyakumari",
+      "Region": "Tirunelveli",
+      "College Code": "1324",
+      "College Name": "Scott Christian College (Autonomous)",
+      "Address": "Nagercoil, Kanyakumari - 629003"
+    },
+    {
+      "SNo": 100,
+      "District": "Coimbatore",
+      "Region": "Coimbatore",
+      "College Code": "1325",
+      "College Name": "Kongunadu Arts and Science College (Autonomous)",
+      "Address": "Coimbatore - 641029"
+    }
+  ]
+  

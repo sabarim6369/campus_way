@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchBar {
+    width: 70%;
+    padding: 8px;
+}
+
+#searchCategory {
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}

@@ -1,0 +1,230 @@
+ <style>
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+       
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .controls select, .controls input {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 48%;
+        }
+
+        .college {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        
+        .college-info {
+            margin-bottom: 15px;
+        }
+
+        .college-code,
+        .college-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Back</button>
+    <div class="container">
+        <h1>College Data</h1>
+        <div class="controls">
+            <select id="college-select">
+                <option value="">Select College Code</option>
+              
+            </select>
+            <input type="text" id="search-input" placeholder="Search by College Name or Location">
+        </div>
+        <div id="colleges-container">
+            <!-- Colleges will be dynamically inserted here -->
+        </div>
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/sample3.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('JSON Data:', data); 
+                    const collegesContainer = document.getElementById('colleges-container');
+                    const collegeSelect = document.getElementById('college-select');
+                    const searchInput = document.getElementById('search-input');
+
+                    
+                    const collegeCodes = new Set();
+                    data.forEach(college => {
+                        if (college['College Code'] && !collegeCodes.has(college['College Code'])) {
+                            collegeCodes.add(college['College Code']);
+                            const option = document.createElement('option');
+                            option.value = college['College Code'];
+                            option.textContent = college['College Code'];
+                            collegeSelect.appendChild(option);
+                        } else {
+                            console.warn('Missing College Code in:', college); 
+                        }
+                    });
+
+                
+                    function displayColleges(filteredData) {
+                        collegesContainer.innerHTML = ''; 
+
+                        filteredData.forEach(college => {
+                    
+                            const collegeDiv = document.createElement('div');
+                            collegeDiv.classList.add('college');
+                            collegeDiv.id = college['College Code'];
+
+                           
+                            const collegeInfo = document.createElement('div');
+                            collegeInfo.classList.add('college-info');
+
+                            const collegeCode = document.createElement('div');
+                            collegeCode.classList.add('college-code');
+                            collegeCode.textContent = `College Code: ${college['College Code']}`;
+
+                            const collegeName = document.createElement('div');
+                            collegeName.classList.add('college-name');
+                            collegeName.textContent = college['College Name'];
+
+                            collegeInfo.appendChild(collegeCode);
+                            collegeInfo.appendChild(collegeName);
+                            collegeDiv.appendChild(collegeInfo);
+
+                            const table = document.createElement('table');
+                            const thead = document.createElement('thead');
+                            const tbody = document.createElement('tbody');
+
+                            
+                            const headerRow = document.createElement('tr');
+                            const headers = ['Branch Code', 'Branch Name', 'OC', 'BC', 'BCM', 'MBC', 'MBCDNC', 'MBCV', 'SC', 'SCA', 'ST'];
+                            headers.forEach(header => {
+                                const th = document.createElement('th');
+                                th.textContent = header;
+                                headerRow.appendChild(th);
+                            });
+                            thead.appendChild(headerRow);
+                            table.appendChild(thead);
+
+                       
+                            college.Branches.forEach(branch => {
+                                const tr = document.createElement('tr');
+                                Object.values(branch).forEach(value => {
+                                    const td = document.createElement('td');
+                                    td.textContent = value !== null ? value : '-';
+                                    tr.appendChild(td);
+                                });
+                                tbody.appendChild(tr);
+                            });
+
+                            table.appendChild(tbody);
+                            collegeDiv.appendChild(table);
+
+                            collegesContainer.appendChild(collegeDiv);
+                        });
+                    }
+
+                    displayColleges(data);
+
+                 
+                    collegeSelect.addEventListener('change', function() {
+                        const selectedCode = this.value;
+                        if (selectedCode) {
+                            const filteredColleges = data.filter(college => college['College Code'] === selectedCode);
+                            displayColleges(filteredColleges);
+                        } else {
+                            displayColleges(data);
+                        }
+                    });
+
+                 
+                    searchInput.addEventListener('input', function() {
+                        const query = this.value.toLowerCase();
+                        const filteredColleges = data.filter(college => {
+                            return college['College Name'].toLowerCase().includes(query) ||
+                                   (college['Location'] && college['Location'].toLowerCase().includes(query));
+                        });
+                        displayColleges(filteredColleges);
+                    });
+                })
+                .catch(error => console.error('Error loading JSON:', error));
+        });
+    </script>
+</body>

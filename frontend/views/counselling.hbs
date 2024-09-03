@@ -1,0 +1,690 @@
+
+
+<body>
+    <header>
+        <div class="user-info">
+            <p><strong data-translate="name">Name:</strong> Sushant Mishra</p>
+            <p><strong data-translate="cutoff">Cutoff:</strong> {{maincutoff}}</p>
+            <p><strong data-translate="general">General Rank:</strong> {{generalRank}}</p>
+            <p><strong data-translate="community">Community:</strong> {{community}}</p>
+        </div>
+        <div class="logout">
+            <a href="/dashboard" data-translate="Logout">LOGOUT</a>
+        </div>
+     
+    </header>
+  
+
+    <div class="container">
+        <section class="input-section">
+            <h2 data-translate="select-language">Enter Your Details</h2>
+            <form id="input-form">
+                <div class="form-group dropdown" id="zone-dropdown">
+                    <label for="zone" data-translate="zone">Zone</label>
+                    <div class="selected-options" id="selected-zone" onclick="toggleDropdown('zone-dropdown')"></div>
+                    <div class="dropdown-menu">
+                        <!-- Zones of Tamil Nadu -->
+                        <div class="dropdown-item" data-value="North Zone" data-translate="north-zone">North Zone</div>
+                        <div class="dropdown-item" data-value="Central Zone" data-translate="central-zone">Central Zone</div>
+                        <div class="dropdown-item" data-value="South Zone" data-translate="south-zone">South Zone</div>
+                        <div class="dropdown-item" data-value="West Zone" data-translate="west-zone">West Zone</div>
+                        <div class="dropdown-item" data-value="East Zone" data-translate="east-zone">East Zone</div>
+                        <div class="dropdown-item" data-value="North East Zone" data-translate="north-east-zone">North East Zone</div>
+                        <div class="dropdown-item" data-value="North West Zone" data-translate="north-west-zone">North West Zone</div>
+                        <div class="dropdown-item" data-value="South East Zone" data-translate="south-east-zone">South East Zone</div>
+                        <div class="dropdown-item" data-value="South West Zone" data-translate="south-west-zone">South West Zone</div>
+                    </div>
+                </div>
+                <div class="form-group dropdown" id="district-dropdown">
+                    <label for="district" data-translate="District">District</label>
+                    <div class="selected-options" id="selected-district" onclick="toggleDropdown('district-dropdown')"></div>
+                    <div class="dropdown-menu">
+                        <!-- Districts of Tamil Nadu -->
+                       <div class="dropdown-item" data-value="Ariyalur" data-translate="Ariyalur">Ariyalur</div>
+<div class="dropdown-item" data-value="Chengalpattu" data-translate="Chengalpattu">Chengalpattu</div>
+<div class="dropdown-item" data-value="Chennai" data-translate="Chennai">Chennai</div>
+<div class="dropdown-item" data-value="Coimbatore" data-translate="Coimbatore">Coimbatore</div>
+<div class="dropdown-item" data-value="Cuddalore" data-translate="Cuddalore">Cuddalore</div>
+<div class="dropdown-item" data-value="Dharmapuri" data-translate="Dharmapuri">Dharmapuri</div>
+<div class="dropdown-item" data-value="Dindigul" data-translate="Dindigul">Dindigul</div>
+<div class="dropdown-item" data-value="Erode" data-translate="Erode">Erode</div>
+<div class="dropdown-item" data-value="Kallakurichi" data-translate="Kallakurichi">Kallakurichi</div>
+<div class="dropdown-item" data-value="Kanchipuram" data-translate="Kanchipuram">Kanchipuram</div>
+<div class="dropdown-item" data-value="Kanyakumari" data-translate="Kanyakumari">Kanyakumari</div>
+<div class="dropdown-item" data-value="Karur" data-translate="Karur">Karur</div>
+<div class="dropdown-item" data-value="Krishnagiri" data-translate="Krishnagiri">Krishnagiri</div>
+<div class="dropdown-item" data-value="Madurai" data-translate="Madurai">Madurai</div>
+<div class="dropdown-item" data-value="Nagapattinam" data-translate="Nagapattinam">Nagapattinam</div>
+<div class="dropdown-item" data-value="Namakkal" data-translate="Namakkal">Namakkal</div>
+<div class="dropdown-item" data-value="Nilgiris" data-translate="Nilgiris">Nilgiris</div>
+<div class="dropdown-item" data-value="Perambalur" data-translate="Perambalur">Perambalur</div>
+<div class="dropdown-item" data-value="Pudukkottai" data-translate="Pudukkottai">Pudukkottai</div>
+<div class="dropdown-item" data-value="Ramanathapuram" data-translate="Ramanathapuram">Ramanathapuram</div>
+<div class="dropdown-item" data-value="Ranipet" data-translate="Ranipet">Ranipet</div>
+<div class="dropdown-item" data-value="Salem" data-translate="Salem">Salem</div>
+<div class="dropdown-item" data-value="Sivaganga" data-translate="Sivaganga">Sivaganga</div>
+<div class="dropdown-item" data-value="Tenkasi" data-translate="Tenkasi">Tenkasi</div>
+<div class="dropdown-item" data-value="Thanjavur" data-translate="Thanjavur">Thanjavur</div>
+<div class="dropdown-item" data-value="Theni" data-translate="Theni">Theni</div>
+<div class="dropdown-item" data-value="Thiruvallur" data-translate="Thiruvallur">Thiruvallur</div>
+<div class="dropdown-item" data-value="Thiruvarur" data-translate="Thiruvarur">Thiruvarur</div>
+<div class="dropdown-item" data-value="Thoothukudi" data-translate="Thoothukudi">Thoothukudi</div>
+<div class="dropdown-item" data-value="Tiruchirappalli" data-translate="Tiruchirappalli">Tiruchirappalli</div>
+<div class="dropdown-item" data-value="Tirunelveli" data-translate="Tirunelveli">Tirunelveli</div>
+<div class="dropdown-item" data-value="Tirupathur" data-translate="Tirupathur">Tirupathur</div>
+<div class="dropdown-item" data-value="Tiruppur" data-translate="Tiruppur">Tiruppur</div>
+<div class="dropdown-item" data-value="Tiruvannamalai" data-translate="Tiruvannamalai">Tiruvannamalai</div>
+<div class="dropdown-item" data-value="Vellore" data-translate="Vellore">Vellore</div>
+<div class="dropdown-item" data-value="Viluppuram" data-translate="Viluppuram">Viluppuram</div>
+<div class="dropdown-item" data-value="Virudhunagar" data-translate="Virudhunagar">Virudhunagar</div>
+
+                    </div>
+                </div>
+                <div class="form-group dropdown" id="institution-dropdown">
+                    <label for="institution" data-translate="TypeOfInstitution">Type of Institution</label>
+                    <div class="selected-options" id="selected-institution" onclick="toggleDropdown('institution-dropdown')"></div>
+                    <div class="dropdown-menu">
+                        <!-- Types of Institutions -->
+                        <div class="dropdown-item" data-value="Government" data-translate="Government">Government</div>
+    <div class="dropdown-item" data-value="Private" data-translate="Private">Private</div>
+    <div class="dropdown-item" data-value="Aided" data-translate="Aided">Aided</div>
+    <div class="dropdown-item" data-value="Autonomous" data-translate="Autonomous">Autonomous</div>
+    <div class="dropdown-item" data-value="Deemed" data-translate="Deemed">Deemed</div>
+    <div class="dropdown-item" data-value="University Department" data-translate="UniversityDepartment">University Department</div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="branch"  data-translate="Branch">Branch</label>
+                    <input type="text" id="branch" name="branch" placeholder="Enter Branch"data-translate="EnterBranch">
+                </div>
+                <button type="submit" data-translate="SearchColleges"data-translate="SearchColleges">Search Colleges</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <h2 data-translate="CollegePreferences">College Preferences</h2>
+            <table>
+                <thead>
+                    <tr>
+                             <th data-translate="CollegeCode">College Code</th>
+                <th data-translate="CollegeName">College Name</th>
+                <th data-translate="Branch">Branch</th>
+                <th data-translate="BranchName">Branch Name</th>
+                <th data-translate="Preference">Preference</th>
+                    </tr>
+                </thead>
+                <tbody id="results-table-body">
+                    <!-- Results will be populated here -->
+                </tbody>
+            </table>
+            <button onclick="editPreferences()" data-translate="EditPreferences">Edit Preferences</button>
+            <button onclick="searchAgain()"data-translate="SearchAgain">Search Again</button>
+            <button onclick="returnToDashboard()"data-translate="return-to-dashboard">Return to Dashboard</button>
+        </section>
+    </div>
+
+    <script>
+        
+        
+         const translations = {
+            "en": {
+                'name': 'Name:',
+                'cutoff': 'Cutoff:',
+                'select-language': 'Select Language:',
+                'enter-details': 'Enter Your Details',
+                'zone': 'Zone',
+                'north-zone': 'North Zone',
+                'central-zone': 'Central Zone',
+                'south-zone': 'South Zone',
+                'west-zone': 'West Zone',
+                'east-zone': 'East Zone',
+                'north-east-zone': 'North East Zone',
+                'north-west-zone': 'North West Zone',
+                'south-east-zone': 'South East Zone',
+                'south-west-zone': 'South West Zone',
+                'search-colleges': 'Search Colleges',
+                'college-preferences': 'College Preferences',
+                'college-code': 'College Code',
+                'college-name': 'College Name',
+                'branch': 'Branch',
+                'branch-name': 'Branch Name',
+                'preference': 'Preference',
+                'edit-preferences': 'Edit Preferences',
+                'search-again': 'Search Again',
+                'return-to-dashboard': 'Return to Dashboard',
+                 "Branch": "Branch",
+    "EnterBranch": "Enter Branch",
+    "SearchColleges": "Search Colleges",
+    "CollegePreferences": "College Preferences",
+    "CollegeCode": "College Code",
+    "CollegeName": "College Name",
+    "Branch": "Branch",
+    "BranchName": "Branch Name",
+    "Preference": "Preference",
+    "EditPreferences": "Edit Preferences",
+    "SearchAgain": "Search Again",
+              
+                "Ariyalur": "Ariyalur",
+      "Chengalpattu": "Chengalpattu",
+      "Chennai": "Chennai",
+      "Coimbatore": "Coimbatore",
+      "Cuddalore": "Cuddalore",
+      "Dharmapuri": "Dharmapuri",
+      "Dindigul": "Dindigul",
+      "Erode": "Erode",
+      "Kallakurichi": "Kallakurichi",
+      "Kanchipuram": "Kanchipuram",
+      "Kanyakumari": "Kanyakumari",
+      "Karur": "Karur",
+      "Krishnagiri": "Krishnagiri",
+      "Madurai": "Madurai",
+      "Nagapattinam": "Nagapattinam",
+      "Namakkal": "Namakkal",
+      "Nilgiris": "Nilgiris",
+      "Perambalur": "Perambalur",
+      "Pudukkottai": "Pudukkottai",
+      "Ramanathapuram": "Ramanathapuram",
+      "Ranipet": "Ranipet",
+      "Salem": "Salem",
+      "Sivaganga": "Sivaganga",
+      "Tenkasi": "Tenkasi",
+      "Thanjavur": "Thanjavur",
+      "Theni": "Theni",
+      "Thiruvallur": "Thiruvallur",
+      "Thiruvarur": "Thiruvarur",
+      "Thoothukudi": "Thoothukudi",
+      "Tiruchirappalli": "Tiruchirappalli",
+      "Tirunelveli": "Tirunelveli",
+      "Tirupathur": "Tirupathur",
+      "Tiruppur": "Tiruppur",
+      "Tiruvannamalai": "Tiruvannamalai",
+      "Vellore": "Vellore",
+      "Viluppuram": "Viluppuram",
+      "Virudhunagar": "Virudhunagar",
+        "Government": "Government",
+    "Private": "Private",
+    "Aided": "Aided",
+    "Autonomous": "Autonomous",
+    "Deemed": "Deemed",
+    "UniversityDepartment": "University Department",
+      "SearchColleges": "Search Colleges",
+         "District": "District",
+    "TypeOfInstitution": "Type of Institution",
+       "Logout": "Logout",
+       "general":" General Rank:",
+       "community":"Community:"
+            },
+            "ta": {
+                'name': 'பெயர்:',
+                'cutoff': 'முடிவெடுப்பு:',
+                'select-language': 'மொழியைத் தேர்ந்தெடுக்கவும்:',
+                'enter-details': 'உங்கள் விவரங்களை உள்ளிடவும்',
+                'zone': 'பகுதி',
+                'north-zone': 'வட பகுதி',
+                'central-zone': 'மத்திய பகுதி',
+                'south-zone': 'தெற்கு பகுதி',
+                'west-zone': 'மேற்கு பகுதி',
+                'east-zone': 'கிழக்கு பகுதி',
+                'north-east-zone': 'வட கிழக்கு பகுதி',
+                'north-west-zone': 'வட மேற்கு பகுதி',
+                'south-east-zone': 'தென் கிழக்கு பகுதி',
+                'south-west-zone': 'தென் மேற்கு பகுதி',
+                'search-colleges': 'கல்லூரிகளைத் தேடவும்',
+                'college-preferences': 'கல்லூரி முன்னுரிமைகள்',
+                'college-code': 'கல்லூரி குறியீடு',
+                'college-name': 'கல்லூரி பெயர்',
+                'branch': 'கிளை',
+                'branch-name': 'கிளை பெயர்',
+                'preference': 'முன்னுரிமை',
+                'edit-preferences': 'முன்னுரிமைகளை திருத்தவும்',
+                'search-again': 'மீண்டும் தேடவும்',
+                'return-to-dashboard': 'கட்டுப்பாட்டு அமைப்புக்கு திரும்பவும்',
+                "Ariyalur": "அரியலூர்",
+      "Chengalpattu": "செங்கல்பட்டு",
+      "Chennai": "சென்னை",
+      "Coimbatore": "கோயம்புத்தூர்",
+      "Cuddalore": "கடலூர்",
+      "Dharmapuri": "தர்மபுரி",
+      "Dindigul": "திண்டுக்கல்",
+      "Erode": "ஈரோடு",
+      "Kallakurichi": "கள்ளக்குறிச்சி",
+      "Kanchipuram": "காஞ்சிபுரம்",
+      "Kanyakumari": "கன்னியாகுமரி",
+      "Karur": "கரூர்",
+      "Krishnagiri": "கிருஷ்ணகிரி",
+      "Madurai": "மதுரை",
+      "Nagapattinam": "நாகப்பட்டினம்",
+      "Namakkal": "நாமக்கல்",
+      "Nilgiris": "நீலகிரி",
+      "Perambalur": "பெரம்பலூர்",
+      "Pudukkottai": "புதுக்கோட்டை",
+      "Ramanathapuram": "இராமநாதபுரம்",
+      "Ranipet": "ராணிப்பேட்டை",
+      "Salem": "சேலம்",
+      "Sivaganga": "சிவகங்கை",
+      "Tenkasi": "தேன்காசி",
+      "Thanjavur": "தஞ்சாவூர்",
+      "Theni": "தேனி",
+      "Thiruvallur": "திருவள்ளூர்",
+      "Thiruvarur": "திருவாரூர்",
+      "Thoothukudi": "தூத்துக்குடி",
+      "Tiruchirappalli": "திருச்சிராப்பள்ளி",
+      "Tirunelveli": "திருநெல்வேலி",
+      "Tirupathur": "திருப்பத்தூர்",
+      "Tiruppur": "திருப்பூர்",
+      "Tiruvannamalai": "திருவண்ணாமலை",
+      "Vellore": "வேலூர்",
+      "Viluppuram": "விழுப்புரம்",
+      "Virudhunagar": "விருதுநகர்",
+       "Government": "அரசு",
+    "Private": "தனியார்",
+    "Aided": "நிதியுதவி",
+    "Autonomous": "தன்னாட்சி",
+    "Deemed": "அறியப்பட்ட",
+    "UniversityDepartment": "பல்கலைக்கழகப் பிரிவு",
+        "SearchColleges": "கல்லூரிகளைத் தேடவும்",
+         "Branch": "கிளை",
+    "EnterBranch": "கிளையை உள்ளிடவும்",
+    "SearchColleges": "கல்லூரிகளைத் தேடவும்",
+    "CollegePreferences": "கல்லூரி முன்னுரிமைகள்",
+    "CollegeCode": "கல்லூரி குறியீடு",
+    "CollegeName": "கல்லூரி பெயர்",
+    "Branch": "கிளை",
+    "BranchName": "கிளை பெயர்",
+    "Preference": "முன்னுரிமை",
+    "EditPreferences": "முன்னுரிமைகளை திருத்தவும்",
+    "SearchAgain": "மீண்டும் தேடவும்",
+      "District": "மாவட்டம்",
+    "TypeOfInstitution": "நிறுவனத்தின் வகை",
+     "Logout": "வெளியேறு",
+     "general":"பொதுவான நிலை:",
+     "community":"சமூகம்:",
+            },
+            "hi": {
+                'name': 'नाम:',
+                'cutoff': 'कटऑफ:',
+                'select-language': 'भाषा चुनें:',
+                'enter-details': 'अपना विवरण दर्ज करें',
+                'zone': 'क्षेत्र',
+                'north-zone': 'उत्तर क्षेत्र',
+                'central-zone': 'मध्य क्षेत्र',
+                'south-zone': 'दक्षिण क्षेत्र',
+                'west-zone': 'पश्चिम क्षेत्र',
+                'east-zone': 'पूर्व क्षेत्र',
+                'north-east-zone': 'उत्तर-पूर्व क्षेत्र',
+                'north-west-zone': 'उत्तर-पश्चिम क्षेत्र',
+                'south-east-zone': 'दक्षिण-पूर्व क्षेत्र',
+                'south-west-zone': 'दक्षिण-पश्चिम क्षेत्र',
+                'search-colleges': 'कॉलेज खोजें',
+                'college-preferences': 'कॉलेज प्राथमिकताएं',
+                'college-code': 'कॉलेज कोड',
+                'college-name': 'कॉलेज का नाम',
+                'branch': 'शाखा',
+                'branch-name': 'शाखा का नाम',
+                'preference': 'प्राथमिकता',
+                'edit-preferences': 'प्राथमिकताएं संपादित करें',
+                'search-again': 'फिर से खोजें',
+                'return-to-dashboard': 'डैशबोर्ड पर लौटें',
+                   "Ariyalur": "अरियालूर",
+      "Chengalpattu": "चेंगलपट्टू",
+      "Chennai": "चेन्नई",
+      "Coimbatore": "कोयंबटूर",
+      "Cuddalore": "कुड्डलूर",
+      "Dharmapuri": "धर्मपुरी",
+      "Dindigul": "डिंडिगुल",
+      "Erode": "इरोडे",
+      "Kallakurichi": "कल्लकुरिची",
+      "Kanchipuram": "कांचीपुरम",
+      "Kanyakumari": "कन्याकुमारी",
+      "Karur": "करूर",
+      "Krishnagiri": "कृष्णागिरि",
+      "Madurai": "मदुरै",
+      "Nagapattinam": "नागपट्टिनम",
+      "Namakkal": "नमक्कल",
+      "Nilgiris": "नीलगिरि",
+      "Perambalur": "पेराम्बलूर",
+      "Pudukkottai": "पुदुक्कोट्टई",
+      "Ramanathapuram": "रामनाथपुरम",
+      "Ranipet": "रानीपेट",
+      "Salem": "सेलम",
+      "Sivaganga": "सिवगंगा",
+      "Tenkasi": "तेनकासी",
+      "Thanjavur": "तंजावुर",
+      "Theni": "थेनी",
+      "Thiruvallur": "थिरुवल्लुर",
+      "Thiruvarur": "थिरुवारुर",
+      "Thoothukudi": "थूथुकुडी",
+      "Tiruchirappalli": "तिरुचिरापल्ली",
+      "Tirunelveli": "तिरुनेलवेली",
+      "Tirupathur": "तिरुपथूर",
+      "Tiruppur": "तिरुप्पुर",
+      "Tiruvannamalai": "तिरुवन्नामलई",
+      "Vellore": "वेल्लोर",
+      "Viluppuram": "विलुप्पुरम",
+      "Virudhunagar": "विरुधुनगर",
+       "Government": "सरकार",
+    "Private": "निजी",
+    "Aided": "सहायता प्राप्त",
+    "Autonomous": "स्वायत्त",
+    "Deemed": "मानित",
+    "UniversityDepartment": "विश्वविद्यालय विभाग",
+     "SearchColleges": "कॉलेज खोजें",
+      "Branch": "ब्रांच",
+    "EnterBranch": "ब्रांच दर्ज करें",
+    "SearchColleges": "कॉलेज खोजें",
+    "CollegePreferences": "कॉलेज की प्राथमिकताएँ",
+    "CollegeCode": "कॉलेज कोड",
+    "CollegeName": "कॉलेज का नाम",
+    "Branch": "ब्रांच",
+    "BranchName": "ब्रांच का नाम",
+    "Preference": "प्राथमिकता",
+    "EditPreferences": "प्राथमिकताओं को संपादित करें",
+    "SearchAgain": "फिर से खोजें",
+        "District": "जिला",
+    "TypeOfInstitution": "संस्थान की प्रकार",
+     "Logout": "लॉगआउट",
+     "general":"सामान्य रैंक:",
+     "community":"समुदाय:",
+
+            },
+            "te": {
+                'name': 'పేరు:',
+                'cutoff': 'కట్ ఆఫ్:',
+                'select-language': 'భాషను ఎంచుకోండి:',
+                'enter-details': 'మీ వివరాలు నమోదు చేయండి',
+                'zone': 'జోన్',
+                'north-zone': 'ఉత్తర జోన్',
+                'central-zone': 'మధ్య జోన్',
+                'south-zone': 'దక్షిణ జోన్',
+                'west-zone': 'పశ్చిమ జోన్',
+                'east-zone': 'తూర్పు జోన్',
+                'north-east-zone': 'ఈశాన్య జోన్',
+                'north-west-zone': 'వాయువ్య జోన్',
+                'south-east-zone': 'ఆగ్నేయ జోన్',
+                'south-west-zone': 'దక్షిణ-పడమర జోన్',
+                'search-colleges': 'కళాశాలలు వెతకండి',
+                'college-preferences': 'కళాశాల ప్రాధాన్యతలు',
+                'college-code': 'కళాశాల కోడ్',
+                'college-name': 'కళాశాల పేరు',
+                'branch': 'శాఖ',
+                'branch-name': 'శాఖ పేరు',
+                'preference': 'ప్రాధాన్యత',
+                'edit-preferences': 'ప్రాధాన్యతలను సవరించు',
+                'search-again': 'మళ్ళీ వెతకండి',
+                'return-to-dashboard': 'డాష్‌బోర్డ్‌కు తిరిగి వెళ్ళండి',
+                 "Ariyalur": "అరియలూరు",
+      "Chengalpattu": "చెంగలపట్టు",
+      "Chennai": "చెన్నై",
+      "Coimbatore": "కోయంబత్తూరు",
+      "Cuddalore": "కద్దలూర్",
+      "Dharmapuri": "ధర్మపురి",
+      "Dindigul": "డిండి గుల్",
+      "Erode": "ఈరోడ్",
+      "Kallakurichi": "కల్లకురిచ్చి",
+      "Kanchipuram": "కాంచిపురం",
+      "Kanyakumari": "కన్యాకుమారి",
+      "Karur": "కరూర్",
+      "Krishnagiri": "కృష్ణగిరి",
+      "Madurai": "మదురై",
+      "Nagapattinam": "నాగపట్టినం",
+      "Namakkal": "నామక్కల్",
+      "Nilgiris": "నీలగిరి",
+      "Perambalur": "పెరంబలూరు",
+      "Pudukkottai": "పుదుక్కోట్లు",
+      "Ramanathapuram": "రామనాథపురం",
+      "Ranipet": "రాణిపేట",
+      "Salem": "సేలమ్",
+      "Sivaganga": "సివగంగా",
+      "Tenkasi": "తెంకాసి",
+      "Thanjavur": "తంజావూరు",
+      "Theni": "తేని",
+      "Thiruvallur": "తిరువల్లూర్",
+      "Thiruvarur": "తిరువారూర్",
+      "Thoothukudi": "తూత్తుకుడి",
+      "Tiruchirappalli": "తిరుచిరపల్లి",
+      "Tirunelveli": "తిరునల్వేలి",
+      "Tirupathur": "తిరుపత్తూర్",
+      "Tiruppur": "తిరుప్పూర్",
+      "Tiruvannamalai": "తిరువణ్ణామలై",
+      "Vellore": "వెల్లూరు",
+      "Viluppuram": "వிழுப்பురం",
+      "Virudhunagar": "విరుధునగర్",
+       "Government": "ప్రభుత్వం",
+    "Private": "ప్రైవేట్",
+    "Aided": "సహాయక",
+    "Autonomous": "స్వతంత్ర",
+    "Deemed": "పరిగణించబడిన",
+    "UniversityDepartment": "విశ్వవిద్యాలయ విభాగం",
+     "SearchColleges": "కలేజీలను అన్వేషించండి",
+      "Branch": "బ్రాంచ్",
+    "EnterBranch": "బ్రాంచ్ నమోదు చేయండి",
+    "SearchColleges": "కళాశాలలను అన్వేషించండి",
+    "CollegePreferences": "కళాశాలా ప్రాధాన్యతలు",
+    "CollegeCode": "కళాశాల కోడ్",
+    "CollegeName": "కళాశాల పేరు",
+    "Branch": "బ్రాంచ్",
+    "BranchName": "బ్రాంచ్ పేరు",
+    "Preference": "ప్రాధాన్యత",
+    "EditPreferences": "ప్రాధాన్యతలను సవరించండి",
+    "SearchAgain": "మరలా అన్వేషించండి",
+      "District": "జిల్లా",
+    "TypeOfInstitution": "సంస్థ యొక్క రకం",
+     "Logout": "లాగ్‌ఆవుట్",
+     "general":"సాధారణ ర్యాంకు:",
+     "community":"సమూహం:",
+            },
+            "ml": {
+                'name': 'പേര്:',
+                'cutoff': 'കടവ്:',
+                'select-language': 'ഭാഷ തിരഞ്ഞെടുക്കുക:',
+                'enter-details': 'നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക',
+                'zone': 'മേഖല',
+                'north-zone': 'വടക്കൻ മേഖല',
+                'central-zone': 'കേന്ദ്ര മേഖല',
+                'south-zone': 'തെക്കൻ മേഖല',
+                'west-zone': 'പശ്ചിമ മേഖല',
+                'east-zone': 'കിഴക്കൻ മേഖല',
+                'north-east-zone': 'വടക്ക് കിഴക്കൻ മേഖല',
+                'north-west-zone': 'വടക്ക് പടിഞ്ഞാറൻ മേഖല',
+                'south-east-zone': 'തെക്ക് കിഴക്കൻ മേഖല',
+                'south-west-zone': 'തെക്ക് പടിഞ്ഞാറൻ മേഖല',
+                'search-colleges': 'കോളേജുകൾ അന്വേഷിക്കുക',
+                'college-preferences': 'കോളേജ് മുൻഗണനകൾ',
+                'college-code': 'കോളേജ് കോഡ്',
+                'college-name': 'കോളേജ് പേര്',
+                'branch': 'ശാഖ',
+                'branch-name': 'ശാഖയുടെ പേര്',
+                'preference': 'മുൻഗണന',
+                'edit-preferences': 'മുൻഗണനകൾ തിരുത്തുക',
+                'search-again': 'വീണ്ടും തിരയുക',
+                'return-to-dashboard': 'ഡാഷ്ബോർഡിലേക്ക് മടങ്ങുക',
+                   "Ariyalur": "അറിയലൂര്",
+      "Chengalpattu": "ചെംഗല്‍പട്ട്",
+      "Chennai": "ചെന്നൈ",
+      "Coimbatore": "കോയമ്പത്തൂർ",
+      "Cuddalore": "കഡലൂർ",
+      "Dharmapuri": "ധർമപുരി",
+      "Dindigul": "ദിണ്ടിഗൽ",
+      "Erode": "ഈറോഡ്",
+      "Kallakurichi": "കല്യകുറിചി",
+      "Kanchipuram": "കാഞ്ചിപുരം",
+      "Kanyakumari": "കന്യാകുമാരി",
+      "Karur": "കരൂർ",
+      "Krishnagiri": "കൃഷ്ണഗിരി",
+      "Madurai": "മദുരൈ",
+      "Nagapattinam": "നാഗപട്ടണം",
+      "Namakkal": "നമക്കല്",
+      "Nilgiris": "നീലഗിരി",
+      "Perambalur": "പെരമ്പലൂർ",
+      "Pudukkottai": "പുതുക്കോട്ടൈ",
+      "Ramanathapuram": "രാമനാഥപുരം",
+      "Ranipet": "രാണിപേട്",
+      "Salem": "സേലം",
+      "Sivaganga": "ശിവഗംഗ",
+      "Tenkasi": "തെങ്കാശി",
+      "Thanjavur": "തഞ്ചാവൂർ",
+      "Theni": "തേനി",
+      "Thiruvallur": "തിരുവല്ലൂര്",
+      "Thiruvarur": "തിരുവരൂർ",
+      "Thoothukudi": "തൂത്തുക്കുടി",
+      "Tiruchirappalli": "തിരുചിറപ്പള്ളി",
+      "Tirunelveli": "തിരുനെൽവേലി",
+      "Tirupathur": "തിരുപ്പത്തൂർ",
+      "Tiruppur": "തിരുപ്പൂർ",
+      "Tiruvannamalai": "തിരുവണ്ണാമല",
+      "Vellore": "വേളൂർ",
+      "Viluppuram": "വിളുപ്പുറം",
+      "Virudhunagar": "വിരുദുനഗർ",
+       "Government": "സർക്കാർ",
+    "Private": "സ്വകാര്യ",
+    "Aided": "സഹായധനം ലഭിച്ച",
+    "Autonomous": "സ്വയംഭരണ",
+    "Deemed": "കരുതിയ",
+    "UniversityDepartment": "സർവ്വകലാശാല വകുപ്പ്",
+        "SearchColleges": "കോളേജുകൾ തേടുക",
+         "Branch": "ശാഖ",
+    "EnterBranch": "ശാഖ നൽകുക",
+    "SearchColleges": "കോളേജുകൾ തേടുക",
+    "CollegePreferences": "കോളേജ് മുൻഗണനകൾ",
+    "CollegeCode": "കോളേജ് കോഡ്",
+    "CollegeName": "കോളേജ് പേര്",
+    "Branch": "ശാഖ",
+    "BranchName": "ശാഖയുടെ പേര്",
+    "Preference": "മുൻഗണന",
+    "EditPreferences": "മുൻഗണനകൾ എഡിറ്റ് ചെയ്യുക",
+    "SearchAgain": "മറുവട്ടം തിരയുക",
+     "District": "ജില്ല",
+    "TypeOfInstitution": "സ്ഥാപനത്തിന്റെ തരം",    
+        "Logout": "ലോഗ് ഔട്ട്",
+        "general":"പൊതുവായ റാങ്ക്:",
+        "community":" സമുദായം:"
+
+            }
+        };
+
+        function translatePage() {
+            const language = document.getElementById('language').value;
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                element.textContent = translations[language][key] || element.textContent;
+            });
+        }
+
+        function toggleDropdown(dropdownId) {
+            document.getElementById(dropdownId).classList.toggle('active');
+        }
+
+       
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const dropdown = this.closest('.dropdown');
+                const selectedOptions = dropdown.querySelector('.selected-options');
+                const value = this.getAttribute('data-value');
+
+                const selectedDiv = document.createElement('div');
+                selectedDiv.classList.add('option');
+                selectedDiv.innerHTML = value + ' <span class="remove-option">&times;</span>';
+
+                selectedOptions.appendChild(selectedDiv);
+
+                
+                dropdown.classList.remove('active');
+
+                selectedDiv.querySelector('.remove-option').addEventListener('click', function () {
+                    selectedDiv.remove();
+                });
+            });
+        });
+
+      
+        document.getElementById('input-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+       
+
+            const tableBody = document.getElementById('results-table-body');
+            tableBody.innerHTML = `
+<tr>
+    <td>001</td>
+    <td>Indian Institute of Technology Madras</td>
+    <td>CSE</td>
+    <td>Computer Science Engineering</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>002</td>
+    <td>National Institute of Technology Tiruchirappalli</td>
+    <td>ECE</td>
+    <td>Electronics and Communication Engineering</td>
+    <td>2</td>
+</tr>
+<tr>
+    <td>003</td>
+    <td>Anna University</td>
+    <td>CSE</td>
+    <td>Computer Science Engineering</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>004</td>
+    <td>Vellore Institute of Technology</td>
+    <td>ECE</td>
+    <td>Electronics and Communication Engineering</td>
+    <td>2</td>
+</tr>
+<tr>
+    <td>005</td>
+    <td>PSG College of Technology</td>
+    <td>CSE</td>
+    <td>Computer Science Engineering</td>
+    <td>1</td>
+</tr>
+<tr>
+    <td>006</td>
+    <td>Sri Sivasubramaniya Nadar College of Engineering</td>
+    <td>ECE</td>
+    <td>Electronics and Communication Engineering</td>
+    <td>2</td>
+</tr>
+
+            `;
+        });
+
+    
+        function editPreferences() {
+         
+            alert('Edit Preferences functionality not implemented yet.');
+        }
+
+    
+        function searchAgain() {
+           
+            alert('Search Again functionality not implemented yet.');
+        }
+
+        function returnToDashboard() {
+            alert('Return to Dashboard functionality not implemented yet.');
+        }
+         function changeLanguage(language) {
+    document.querySelectorAll("[data-translate]").forEach(function(element) {
+      const key = element.getAttribute("data-translate");
+      element.textContent = translations[language][key];
+    });
+  }
+     function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const language = getCookie('preferredLanguage') || 'en'; // Default to 'en' if no cookie is set
+            changeLanguage(language);
+        });
+   {{!-- function toggleDropdown() {
+    document.getElementById("dropdown").classList.toggle("show");
+} --}}
+
+    </script>
+</body>
+

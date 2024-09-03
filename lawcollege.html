@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Law Colleges Details</h1>
+        <input type="text" id="searchBar" placeholder="Search by College Name or District" onkeyup="filterTable()">
+        
+        <table id="collegeTable">
+            <thead>
+                <tr>
+                    <th>College Name</th>
+                    <th>Counselling Code</th>
+                    <th>Region</th>
+                    <th>District</th>
+                    <th>Address</th>
+                    <th>Tuition Fee</th>
+                    <th>Exam Fee</th>
+                    <th>Library Fee</th>
+                    <th>Lab Fee</th>
+                    <th>Total Fee</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const colleges = [
+      
+    {
+        "collegeName": "National Law School of India University",
+        "counsellingCode": "NLSIU001",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "NLSIU Campus, Chennai - 600034",
+        "feesStructure": {
+            "tuitionFee": "85000",
+            "examFee": "2000",
+            "libraryFee": "1500",
+            "labFee": "3000",
+            "totalFee": "89500"
+        }
+    },
+    {
+        "collegeName": "Tamil Nadu Dr. Ambedkar Law University",
+        "counsellingCode": "TNDALU002",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "TNDALU Campus, Chennai - 600028",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2500",
+            "totalFee": "83500"
+        }
+    },
+    {
+        "collegeName": "Rajiv Gandhi National University of Law",
+        "counsellingCode": "RGNUL003",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "RGNUL Campus, Chennai - 600095",
+        "feesStructure": {
+            "tuitionFee": "82000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2700",
+            "totalFee": "87800"
+        }
+    },
+    {
+        "collegeName": "The Tamil Nadu Government Law College",
+        "counsellingCode": "TNGC004",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "TNGC Campus, Chennai - 600103",
+        "feesStructure": {
+            "tuitionFee": "70000",
+            "examFee": "1500",
+            "libraryFee": "1000",
+            "labFee": "2200",
+            "totalFee": "74500"
+        }
+    },
+    {
+        "collegeName": "School of Excellence in Law",
+        "counsellingCode": "SOEL005",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "SOEL Campus, Chennai - 600044",
+        "feesStructure": {
+            "tuitionFee": "79000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2600",
+            "totalFee": "84500"
+        }
+    },
+    {
+        "collegeName": "DR. Ambedkar Government Law College",
+        "counsellingCode": "DAGLC006",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "DR. Ambedkar Campus, Chennai - 600014",
+        "feesStructure": {
+            "tuitionFee": "71000",
+            "examFee": "1600",
+            "libraryFee": "1100",
+            "labFee": "2300",
+            "totalFee": "74800"
+        }
+    },
+    {
+        "collegeName": "VIT School of Law",
+        "counsellingCode": "VITSL007",
+        "region": "Southern",
+        "district": "Vellore",
+        "address": "VIT Campus, Vellore - 632014",
+        "feesStructure": {
+            "tuitionFee": "83000",
+            "examFee": "2100",
+            "libraryFee": "1500",
+            "labFee": "2800",
+            "totalFee": "89600"
+        }
+    },
+    {
+        "collegeName": "SASTRA University - School of Law",
+        "counsellingCode": "SUL008",
+        "region": "Southern",
+        "district": "Thanjavur",
+        "address": "SASTRA Campus, Thanjavur - 613401",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2500",
+            "totalFee": "83500"
+        }
+    },
+    {
+        "collegeName": "Anna University - School of Law",
+        "counsellingCode": "AUSL009",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Anna University Campus, Chennai - 600025",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1700",
+            "libraryFee": "1300",
+            "labFee": "2400",
+            "totalFee": "78800"
+        }
+    },
+    {
+        "collegeName": "PSG College of Arts and Science - Law Department",
+        "counsellingCode": "PSGCL010",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "PSG Campus, Coimbatore - 641004",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2500",
+            "totalFee": "79700"
+        }
+    },
+    {
+        "collegeName": "Sri Krishna College of Law",
+        "counsellingCode": "SKCL011",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Sri Krishna Campus, Coimbatore - 641006",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2400",
+            "totalFee": "80500"
+        }
+    },
+    {
+        "collegeName": "Government Law College",
+        "counsellingCode": "GLC012",
+        "region": "Southern",
+        "district": "Tiruchirappalli",
+        "address": "Government Campus, Tiruchirappalli - 620001",
+        "feesStructure": {
+            "tuitionFee": "69000",
+            "examFee": "1600",
+            "libraryFee": "1100",
+            "labFee": "2200",
+            "totalFee": "73700"
+        }
+    },
+    {
+        "collegeName": "Vivekananda College of Law",
+        "counsellingCode": "VCL013",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Vivekananda Campus, Chennai - 600084",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2400",
+            "totalFee": "79400"
+        }
+    },
+    {
+        "collegeName": "Sree Sankara College - Law Department",
+        "counsellingCode": "SSCL014",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sree Sankara Campus, Chennai - 600020",
+        "feesStructure": {
+            "tuitionFee": "72000",
+            "examFee": "1700",
+            "libraryFee": "1000",
+            "labFee": "2200",
+            "totalFee": "74800"
+        }
+    },
+    {
+        "collegeName": "Amrita School of Law",
+        "counsellingCode": "ASL015",
+        "region": "Southern",
+        "district": "Coimbatore",
+        "address": "Amrita Campus, Coimbatore - 641112",
+        "feesStructure": {
+            "tuitionFee": "79000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2500",
+            "totalFee": "83500"
+        }
+    },
+    {
+        "collegeName": "Indian Law Institute",
+        "counsellingCode": "ILI016",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "ILI Campus, Chennai - 600036",
+        "feesStructure": {
+            "tuitionFee": "80000",
+            "examFee": "2100",
+            "libraryFee": "1500",
+            "labFee": "2700",
+            "totalFee": "84400"
+        }
+    },
+    {
+        "collegeName": "K.L.E. Society's Law College",
+        "counsellingCode": "KLE017",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "KLE Campus, Chennai - 600019",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1900",
+            "libraryFee": "1200",
+            "labFee": "2400",
+            "totalFee": "77500"
+        }
+    },
+    {
+        "collegeName": "Dr. Ambedkar Law College",
+        "counsellingCode": "DALC018",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Dr. Ambedkar Campus, Chennai - 600086",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1800",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "80000"
+        }
+    },
+    {
+        "collegeName": "Hindustan Law College",
+        "counsellingCode": "HLC019",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Hindustan Campus, Chennai - 600073",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2600",
+            "totalFee": "83000"
+        }
+    },
+    {
+        "collegeName": "Nehru Institute of Law",
+        "counsellingCode": "NIL020",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Nehru Campus, Coimbatore - 641002",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1800",
+            "libraryFee": "1300",
+            "labFee": "2400",
+            "totalFee": "78700"
+        }
+    },
+    {
+        "collegeName": "Raja Lakshmi Institute of Technology",
+        "counsellingCode": "RLIT021",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Raja Lakshmi Campus, Chennai - 600117",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1700",
+            "libraryFee": "1200",
+            "labFee": "2200",
+            "totalFee": "80900"
+        }
+    },
+    {
+        "collegeName": "Sri Ramachandra Institute of Higher Education and Research",
+        "counsellingCode": "SRIHER022",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sri Ramachandra Campus, Chennai - 600116",
+        "feesStructure": {
+            "tuitionFee": "80000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2700",
+            "totalFee": "85100"
+        }
+    },
+    {
+        "collegeName": "Saveetha University - School of Law",
+        "counsellingCode": "SUSL023",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Saveetha Campus, Chennai - 600077",
+        "feesStructure": {
+            "tuitionFee": "77000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "82600"
+        }
+    },
+    {
+        "collegeName": "Sree Sastha Institute of Engineering and Technology",
+        "counsellingCode": "SSIE024",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sree Sastha Campus, Chennai - 600082",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2300",
+            "totalFee": "79100"
+        }
+    },
+    {
+        "collegeName": "Narayana Law College",
+        "counsellingCode": "NLC025",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Narayana Campus, Chennai - 600086",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2600",
+            "totalFee": "84800"
+        }
+    },
+    {
+        "collegeName": "Periyar University - School of Law",
+        "counsellingCode": "PUSL026",
+        "region": "Western",
+        "district": "Salem",
+        "address": "Periyar Campus, Salem - 636011",
+        "feesStructure": {
+            "tuitionFee": "73000",
+            "examFee": "1700",
+            "libraryFee": "1200",
+            "labFee": "2400",
+            "totalFee": "78200"
+        }
+    },
+    {
+        "collegeName": "Gandhigram Rural Institute - School of Law",
+        "counsellingCode": "GRI027",
+        "region": "Southern",
+        "district": "Dindigul",
+        "address": "Gandhigram Campus, Dindigul - 624302",
+        "feesStructure": {
+            "tuitionFee": "70000",
+            "examFee": "1600",
+            "libraryFee": "1100",
+            "labFee": "2200",
+            "totalFee": "74800"
+        }
+    },
+    {
+        "collegeName": "Kumaraguru College of Liberal Arts and Science",
+        "counsellingCode": "KCLAS028",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Kumaraguru Campus, Coimbatore - 641006",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "78700"
+        }
+    },
+    {
+        "collegeName": "T.S. Narayanaswami College of Arts and Science",
+        "counsellingCode": "TSNC029",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "T.S. Narayanaswami Campus, Chennai - 600086",
+        "feesStructure": {
+            "tuitionFee": "71000",
+            "examFee": "1700",
+            "libraryFee": "1100",
+            "labFee": "2200",
+            "totalFee": "74900"
+        }
+    },
+    {
+        "collegeName": "Bharath Institute of Higher Education and Research",
+        "counsellingCode": "BIHER030",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Bharath Campus, Chennai - 600073",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "79700"
+        }
+    },
+    {
+        "collegeName": "SSN College of Engineering",
+        "counsellingCode": "SSNCE031",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "SSN Campus, Chennai - 603110",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2400",
+            "totalFee": "79600"
+        }
+    },
+    {
+        "collegeName": "Shri Krishna College of Law",
+        "counsellingCode": "SKCL032",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Shri Krishna Campus, Coimbatore - 641007",
+        "feesStructure": {
+            "tuitionFee": "73000",
+            "examFee": "1700",
+            "libraryFee": "1200",
+            "labFee": "2300",
+            "totalFee": "77200"
+        }
+    },
+    {
+        "collegeName": "K.R. College of Law",
+        "counsellingCode": "KRL033",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "K.R. Campus, Chennai - 600045",
+        "feesStructure": {
+            "tuitionFee": "79000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2600",
+            "totalFee": "85000"
+        }
+    },
+    {
+        "collegeName": "N.S.S. College of Law",
+        "counsellingCode": "NSCL034",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "N.S.S. Campus, Chennai - 600066",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "82500"
+        }
+    },
+    {
+        "collegeName": "Nehru Law Academy",
+        "counsellingCode": "NLA035",
+        "region": "Western",
+        "district": "Salem",
+        "address": "Nehru Campus, Salem - 636016",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "400",
+            "totalFee": "78600"
+        }
+    },
+    {
+        "collegeName": "PSG Institute of Advanced Studies",
+        "counsellingCode": "PSGI036",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "PSG Campus, Coimbatore - 641004",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2500",
+            "totalFee": "79700"
+        }
+    },
+    {
+        "collegeName": "Bharathiyar University - School of Law",
+        "counsellingCode": "BUSL037",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Bharathiyar Campus, Coimbatore - 641046",
+        "feesStructure": {
+            "tuitionFee": "72000",
+            "examFee": "1700",
+            "libraryFee": "1100",
+            "labFee": "2300",
+            "totalFee": "76900"
+        }
+    },
+    {
+        "collegeName": "Karpagam Academy of Higher Education - School of Law",
+        "counsellingCode": "KAHE038",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Karpagam Campus, Coimbatore - 641021",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2400",
+            "totalFee": "78700"
+        }
+    },
+    {
+        "collegeName": "Valliammai Engineering College - School of Law",
+        "counsellingCode": "VEC039",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Valliammai Campus, Chennai - 602105",
+        "feesStructure": {
+            "tuitionFee": "77000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2500",
+            "totalFee": "78700"
+        }
+    },
+    {
+        "collegeName": "Sri Ramakrishna College of Arts and Science",
+        "counsellingCode": "SRCAS040",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Sri Ramakrishna Campus, Coimbatore - 641006",
+        "feesStructure": {
+            "tuitionFee": "73000",
+            "examFee": "1700",
+            "libraryFee": "1100",
+            "labFee": "2400",
+            "totalFee": "77200"
+        }
+    },
+    {
+        "collegeName": "Srinivasan Law College",
+        "counsellingCode": "SLC041",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Srinivasan Campus, Chennai - 600092",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1800",
+            "libraryFee": "1300",
+            "labFee": "2300",
+            "totalFee": "78600"
+        }
+    },
+    {
+        "collegeName": "Annamalai University - Faculty of Law",
+        "counsellingCode": "AUFL042",
+        "region": "Southern",
+        "district": "Cuddalore",
+        "address": "Annamalai Campus, Cuddalore - 608002",
+        "feesStructure": {
+            "tuitionFee": "79000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2700",
+            "totalFee": "85100"
+        }
+    },
+    {
+        "collegeName": "Bharath Institute of Higher Education",
+        "counsellingCode": "BIHE043",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Bharath Campus, Chennai - 600073",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "79700"
+        }
+    },
+    {
+        "collegeName": "Shri Shankaracharya College of Law",
+        "counsellingCode": "SSCL044",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Shri Shankaracharya Campus, Chennai - 600018",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2600",
+            "totalFee": "81800"
+        }
+    },
+    {
+        "collegeName": "Jaya College of Law",
+        "counsellingCode": "JCL045",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Jaya Campus, Chennai - 600100",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2300",
+            "totalFee": "77100"
+        }
+    },
+    {
+        "collegeName": "Vivekananda Institute of Legal Studies",
+        "counsellingCode": "VILS046",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Vivekananda Campus, Chennai - 600086",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "82600"
+        }
+    },
+    {
+        "collegeName": "Sree Narayana Guru College of Law",
+        "counsellingCode": "SNGCL047",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sree Narayana Guru Campus, Chennai - 600099",
+        "feesStructure": {
+            "tuitionFee": "76000",
+            "examFee": "1800",
+            "libraryFee": "1300",
+            "labFee": "2400",
+            "totalFee": "79700"
+        }
+    },
+    {
+        "collegeName": "Sri Venkateswara College of Law",
+        "counsellingCode": "SVC048",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sri Venkateswara Campus, Chennai - 600097",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1700",
+            "libraryFee": "1100",
+            "labFee": "2200",
+            "totalFee": "78800"
+        }
+    },
+    {
+        "collegeName": "Bharathiyar Law College",
+        "counsellingCode": "BLC049",
+        "region": "Southern",
+        "district": "Coimbatore",
+        "address": "Bharathiyar Campus, Coimbatore - 641046",
+        "feesStructure": {
+            "tuitionFee": "78000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2600",
+            "totalFee": "82000"
+        }
+    },
+    {
+        "collegeName": "J.K. Law College",
+        "counsellingCode": "JKLC050",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "J.K. Campus, Chennai - 600106",
+        "feesStructure": {
+            "tuitionFee": "73000",
+            "examFee": "1800",
+            "libraryFee": "1200",
+            "labFee": "2200",
+            "totalFee": "77200"
+        }
+    },
+    {
+        "collegeName": "Sri Krishna College of Law",
+        "counsellingCode": "SKCL051",
+        "region": "Western",
+        "district": "Coimbatore",
+        "address": "Sri Krishna Campus, Coimbatore - 641007",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1900",
+            "libraryFee": "1300",
+            "labFee": "2500",
+            "totalFee": "78700"
+        }
+    },
+    {
+        "collegeName": "Rajalakshmi Institute of Technology - School of Law",
+        "counsellingCode": "RITL052",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Rajalakshmi Campus, Chennai - 600124",
+        "feesStructure": {
+            "tuitionFee": "77000",
+            "examFee": "1900",
+            "libraryFee": "1400",
+            "labFee": "2600",
+            "totalFee": "84000"
+        }
+    },
+    {
+        "collegeName": "Sree Sankara College of Law",
+        "counsellingCode": "SSCL053",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Sree Sankara Campus, Chennai - 600061",
+        "feesStructure": {
+            "tuitionFee": "75000",
+            "examFee": "1800",
+            "libraryFee": "1300",
+            "labFee": "2300",
+            "totalFee": "78600"
+        }
+    },
+    {
+        "collegeName": "Easwari Engineering College - School of Law",
+        "counsellingCode": "EEC054",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Easwari Campus, Chennai - 600089",
+        "feesStructure": {
+            "tuitionFee": "74000",
+            "examFee": "1700",
+            "libraryFee": "1200",
+            "labFee": "2200",
+            "totalFee": "78900"
+        }
+    },
+    {
+        "collegeName": "The Indian Law Institute",
+        "counsellingCode": "ILIG055",
+        "region": "Southern",
+        "district": "Chennai",
+        "address": "Indian Law Institute Campus, Chennai - 600018",
+        "feesStructure": {
+            "tuitionFee": "79000",
+            "examFee": "2000",
+            "libraryFee": "1400",
+            "labFee": "2700",
+            "totalFee": "85100"
+        }
+    }
+    ];
+
+    const tableBody = document.querySelector('#collegeTable tbody');
+
+    function renderTable(data) {
+        tableBody.innerHTML = ''; // Clear previous data
+        data.forEach(college => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${college.collegeName}</td>
+                <td>${college.counsellingCode}</td>
+                <td>${college.region}</td>
+                <td>${college.district}</td>
+                <td>${college.address}</td>
+                <td>${college.feesStructure.tuitionFee}</td>
+                <td>${college.feesStructure.examFee}</td>
+                <td>${college.feesStructure.libraryFee}</td>
+                <td>${college.feesStructure.labFee}</td>
+                <td>${college.feesStructure.totalFee}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    function filterTable() {
+        const searchValue = document.getElementById('searchBar').value.toLowerCase();
+        const filteredColleges = colleges.filter(college => {
+            return college.collegeName.toLowerCase().includes(searchValue) ||
+                   college.district.toLowerCase().includes(searchValue);
+        });
+        renderTable(filteredColleges);
+    }
+
+    // Initial render
+    renderTable(colleges);
+});
+
+</script>
+</body>
+</html>

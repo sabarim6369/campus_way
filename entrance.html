@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Examination Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #149dc7;
+            /* Blue theme */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1,
+        h2 {
+            color: #0050a0;
+            /* Dark blue text */
+            text-align: center;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #0456a8;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #0e96cc;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff6600;
+            /* Orange hover color */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li a {
+            color: #004080;
+            text-decoration: none;
+            display: block;
+            background-color: #e6f7ff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #ff6600;
+            /* Orange hover color */
+            color: white;
+        }
+
+        .exam-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .apply-link,
+        .materials-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-link:hover,
+        .materials-link:hover {
+            background-color: #ff6600;
+            /* Orange hover color */
+        }
+
+        .back-button {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .popup-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Select Your Sector</h2>
+            <select id="popupSectorSelect">
+                <option value="">-- Select Sector --</option>
+                <option value="engineering">Engineering</option>
+                <option value="medical">Medical</option>
+                <option value="law">Law</option>
+                <option value="defense">Defense</option>
+                <option value="management">Management</option>
+                <option value="design">Design</option>
+                <option value="agriculture">Agriculture</option>
+                <option value="education">Education</option>
+            </select>
+            <button onclick="selectSector()">Continue</button>
+        </div>
+    </div>
+
+    <div class="container" id="mainContent" style="display:none;">
+        <div class="back-button">
+            <button onclick="goBack()">Edit Preferences</button>
+        </div>
+        <h1>Entrance Examination Portal</h1>
+        <ul id="examList"></ul>
+        <div id="examInfoContainer"></div>
+    </div>
+
+    <script>
+        const examData = {
+            engineering: [
+                {
+                    name: 'Joint Entrance Examination (JEE) Main',
+                    description: 'JEE Main is a national level entrance exam for admission to undergraduate engineering programs.',
+                    eligibility: 'Candidates must have passed class 12th with Physics, Chemistry, and Mathematics.',
+                    examDate: 'January & April',
+                    preparationTips: 'Focus on NCERT textbooks, solve previous years’ papers, and take regular mock tests.',
+                    applyLink: 'https://jeemain.nta.nic.in/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'JEE Advanced',
+                    description: 'JEE Advanced is conducted for admission to IITs and is taken by top candidates from JEE Main.',
+                    eligibility: 'Top candidates from JEE Main are eligible to appear.',
+                    examDate: 'May',
+                    preparationTips: 'Focus on understanding concepts deeply, solve challenging problems, and take mock tests.',
+                    applyLink: 'https://jeeadv.ac.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for engineering...
+            ],
+            medical: [
+                {
+                    name: 'National Eligibility cum Entrance Test (NEET)',
+                    description: 'NEET is the only entrance test for admission to MBBS and BDS courses in India.',
+                    eligibility: 'Candidates must have passed class 12th with Physics, Chemistry, and Biology.',
+                    examDate: 'May',
+                    preparationTips: 'Focus on Biology, Chemistry, and Physics. Practice previous years’ question papers and take mock tests.',
+                    applyLink: 'https://ntaneet.nic.in/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'AIIMS MBBS',
+                    description: 'AIIMS MBBS is a national level entrance exam for admission to the MBBS program in AIIMS institutions.',
+                    eligibility: 'Candidates must have passed class 12th with Physics, Chemistry, Biology, and English.',
+                    examDate: 'May',
+                    preparationTips: 'Focus on Biology, Chemistry, and Physics with emphasis on AIIMS specific question patterns.',
+                    applyLink: 'https://www.aiimsexams.org/',
+                    materialsLink: '#'
+                },
+                // Add more exams for medical...
+            ],
+            law: [
+                {
+                    name: 'Common Law Admission Test (CLAT)',
+                    description: 'CLAT is a national level entrance test for admission to undergraduate and postgraduate law programs.',
+                    eligibility: 'Candidates must have passed class 12th for UG courses and LL.B for PG courses.',
+                    examDate: 'May',
+                    preparationTips: 'Focus on English, General Knowledge, and Legal Aptitude. Solve previous years’ papers.',
+                    applyLink: 'https://consortiumofnlus.ac.in/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'AILET',
+                    description: 'AILET is an entrance exam conducted by National Law University, Delhi for admission to its law programs.',
+                    eligibility: 'Candidates must have passed class 12th for UG courses.',
+                    examDate: 'May',
+                    preparationTips: 'Focus on Legal Aptitude, English, and General Knowledge. Practice previous year papers.',
+                    applyLink: 'https://nludelhi.ac.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for law...
+            ],
+            defense: [
+                {
+                    name: 'National Defence Academy (NDA) Exam',
+                    description: 'NDA exam is conducted for recruitment into the Army, Navy, and Air Force wings of NDA.',
+                    eligibility: 'Candidates must have passed class 12th with Physics and Mathematics for Air Force and Navy; any stream for Army.',
+                    examDate: 'April & September',
+                    preparationTips: 'Focus on Mathematics, General Ability Test (GAT), and improve physical fitness. Regular mock tests will help in understanding the exam pattern.',
+                    applyLink: 'https://www.upsc.gov.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for defense...
+            ],
+            management: [
+                {
+                    name: 'Common Admission Test (CAT)',
+                    description: 'CAT is a computer-based test for admission in a graduate management program. The test consists of three sections: Verbal Ability and Reading Comprehension, Data Interpretation and Logical Reasoning, and Quantitative Ability.',
+                    eligibility: 'Candidates with a Bachelor’s degree in any discipline from a recognized university are eligible.',
+                    examDate: 'November',
+                    preparationTips: 'Focus on the three sections separately, practice through mock tests, and enhance your speed and accuracy.',
+                    applyLink: 'https://iimcat.ac.in/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'Xavier Aptitude Test (XAT)',
+                    description: 'XAT is a national level aptitude test conducted by XLRI for admission to management programs in XLRI and other management institutes across India.',
+                    eligibility: 'Candidates must have a Bachelor’s degree in any discipline from a recognized university.',
+                    examDate: 'January',
+                    preparationTips: 'Focus on Decision Making, Verbal and Logical Ability, Quantitative Ability, and General Awareness. Regular practice and mock tests are key.',
+                    applyLink: 'https://xatonline.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for management...
+            ],
+            design: [
+                {
+                    name: 'National Institute of Design (NID) Entrance Exam',
+                    description: 'NID conducts an entrance exam for admission to undergraduate and postgraduate design programs.',
+                    eligibility: 'Candidates must have passed class 12th for UG programs and have a Bachelor’s degree for PG programs.',
+                    examDate: 'January',
+                    preparationTips: 'Focus on creative skills, design aptitude, and general knowledge. Practice sketching and solving previous years’ papers.',
+                    applyLink: 'https://admissions.nid.edu/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'Undergraduate Common Entrance Examination for Design (UCEED)',
+                    description: 'UCEED is conducted by IIT Bombay for admission to the Bachelor of Design (B.Des) programs at IITs.',
+                    eligibility: 'Candidates must have passed class 12th or equivalent in any stream.',
+                    examDate: 'January',
+                    preparationTips: 'Focus on Visualization and Spatial Ability, Design Thinking, Analytical and Logical Reasoning. Practice sample papers and mock tests.',
+                    applyLink: 'http://www.uceed.iitb.ac.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for design...
+            ],
+            agriculture: [
+                {
+                    name: 'Indian Council of Agricultural Research (ICAR) AIEEA',
+                    description: 'ICAR conducts All India Entrance Examination for Admission (AIEEA) for undergraduate and postgraduate programs in agriculture and allied sciences.',
+                    eligibility: 'Candidates must have passed class 12th with Physics, Chemistry, and Biology/Mathematics/Agriculture.',
+                    examDate: 'June',
+                    preparationTips: 'Focus on subjects like Agriculture, Biology, Physics, and Chemistry. Practice with previous years’ papers and mock tests.',
+                    applyLink: 'https://icar.nta.nic.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for agriculture...
+            ],
+            education: [
+                {
+                    name: 'Central Teacher Eligibility Test (CTET)',
+                    description: 'CTET is conducted by CBSE for determining the eligibility of candidates for teaching positions in schools.',
+                    eligibility: 'Candidates must have passed class 12th with a minimum of 50% marks and completed or pursuing a teacher education course.',
+                    examDate: 'July & December',
+                    preparationTips: 'Focus on Child Development and Pedagogy, Language I and II, Mathematics, and Environmental Studies. Practice with mock tests and previous year papers.',
+                    applyLink: 'https://ctet.nic.in/',
+                    materialsLink: '#'
+                },
+                {
+                    name: 'National Eligibility Test (NET)',
+                    description: 'NET is conducted by NTA to determine the eligibility of candidates for Assistant Professor or Junior Research Fellowship in Indian universities and colleges.',
+                    eligibility: 'Candidates must have a Master’s degree or equivalent from a recognized university.',
+                    examDate: 'June & December',
+                    preparationTips: 'Focus on the subject-specific syllabus, solve previous years’ papers, and take mock tests. Develop a good understanding of research methodology and teaching aptitude.',
+                    applyLink: 'https://ugcnet.nta.nic.in/',
+                    materialsLink: '#'
+                },
+                // Add more exams for education...
+            ]
+        };
+
+        function selectSector() {
+            const sectorSelect = document.getElementById('popupSectorSelect');
+            const selectedSector = sectorSelect.value;
+
+            if (selectedSector) {
+                const examList = document.getElementById('examList');
+                examList.innerHTML = '';
+
+                examData[selectedSector].forEach(exam => {
+                    const listItem = document.createElement('li');
+                    const examLink = document.createElement('a');
+                    examLink.href = '#';
+                    examLink.textContent = exam.name;
+                    examLink.onclick = () => displayExamInfo(exam);
+
+                    listItem.appendChild(examLink);
+                    examList.appendChild(listItem);
+                });
+
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            } else {
+                alert('Please select a sector');
+            }
+        }
+
+        function displayExamInfo(exam) {
+            const examInfoContainer = document.getElementById('examInfoContainer');
+            examInfoContainer.innerHTML = `
+                <div class="exam-info">
+                    <h2>${exam.name}</h2>
+                    <p><strong>Description:</strong> ${exam.description}</p>
+                    <p><strong>Eligibility:</strong> ${exam.eligibility}</p>
+                    <p><strong>Exam Date:</strong> ${exam.examDate}</p>
+                    <p><strong>Preparation Tips:</strong> ${exam.preparationTips}</p>
+                    <a href="${exam.applyLink}" class="apply-link" target="_blank">Apply Now</a>
+                    <a href="${exam.materialsLink}" class="materials-link" target="_blank">Study Materials</a>
+                </div>
+            `;
+        }
+
+        function goBack() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('popup').style.display = 'flex';
+            document.getElementById('popupSectorSelect').value = '';
+            document.getElementById('examList').innerHTML = '';
+            document.getElementById('examInfoContainer').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>

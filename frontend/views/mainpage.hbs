@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Language</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="popup">
+        <h2 id="message">Select your language / आपकी भाषा का चयन करें / உங்கள் மொழியைத் தேர்ந்தெடுக்கவும் / మీ భాషను ఎంచుకోండి / നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</h2>
+        <button onclick="selectLanguage('en')">English</button>
+        <button onclick="selectLanguage('ta')">தமிழ் (Tamil)</button>
+        <button onclick="selectLanguage('hi')">हिन्दी (Hindi)</button>
+        <button onclick="selectLanguage('te')">తెలుగు (Telugu)</button>
+        <button onclick="selectLanguage('ml')">മലയാളം (Malayalam)</button>
+    </div>
+    <script>
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+        }
+
+        function selectLanguage(language) {
+            setCookie('preferredLanguage', language, 365); 
+            speakText(getLanguageMessage(language)); 
+            setTimeout(() => {
+                window.location.href = '/home'; 
+            }, 2000); 
+        }
+
+        function getLanguageMessage(language) {
+            const messages = {
+                'en': "You have selected English.",
+                'ta': "நீங்கள் தமிழ் மொழியைத் தேர்ந்தெடுத்துள்ளீர்கள்.",
+                'hi': "आपने हिंदी भाषा चुनी है।",
+                'te': "మీరు తెలుగు భాషను ఎంచుకున్నారు.",
+                'ml': "നിങ്ങൾ മലയാളം ഭാഷ തിരഞ്ഞെടുക്കുകയും ചെയ്തിട്ടുണ്ട്."
+            };
+            return messages[language] || messages['en'];
+        }
+
+        function speakText(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(voice => voice.name.includes('Google'));
+            utterance.lang = 'en-US';   
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

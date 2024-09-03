@@ -1,0 +1,209 @@
+
+    <style>
+        .container { width: 80%; margin: auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        #feedback { margin-top: 20px; font-size: 16px; color: #333; }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>{{sector}}</h1>
+        <h1>Student Information Form</h1>
+
+        <!-- Language Selection -->
+        <div class="form-group">
+            <label for="language-select">Choose a language:</label>
+            <select id="language-select">
+                <option value="en-US">English</option>
+                <option value="ta-IN">Tamil</option>
+                <option value="hi-IN">Hindi</option>
+            </select>
+        </div>
+
+        <form action="/counselling" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="marks">12th Grade Marks</label>
+                <input type="number" id="marks" name="marks" required>
+            </div>
+            <div class="form-group">
+                <label for="major">12th Grade Major Group</label>
+                <input type="text" id="major" name="major" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="preferredCourses">Preferred Courses</label>
+                <textarea id="preferredCourses" name="preferredCourses" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additionalInfo">Additional Information</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" id="startRecognition">Speak to Fill Form</button>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div id="feedback">Please click "Speak to Fill Form" to start.</div>
+    </div>
+
+    <script>
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const SpeechSynthesis = window.speechSynthesis;
+        let recognition;
+        let currentFieldIndex = 0;
+        const fieldIds = ['name', 'age', 'gender', 'address', 'marks', 'major', 'contact', 'email', 'preferredCourses', 'additionalInfo'];
+        let debounceTimeout;
+
+        const prompts = {
+            'en-US': {
+                name: "Please say your full name",
+                age: "Please say your age",
+                gender: "Please say your gender",
+                address: "Please say your address",
+                marks: "Please say your 12th grade marks",
+                major: "Please say your 12th grade major group",
+                contact: "Please say your contact number",
+                email: "Please say your email address",
+                preferredCourses: "Please say your preferred courses",
+                additionalInfo: "Please say any additional information"
+            },
+            'ta-IN': {
+                name: "தயவுசெய்து உங்கள் முழுப்பெயரை சொல்லுங்கள்",
+                age: "தயவுசெய்து உங்கள் வயதைச் சொல்லுங்கள்",
+                gender: "தயவுசெய்து உங்கள் பாலினத்தைச் சொல்லுங்கள்",
+                address: "தயவுசெய்து உங்கள் முகவரியைச் சொல்லுங்கள்",
+                marks: "தயவுசெய்து உங்கள் 12 ஆம் வகுப்பு மதிப்பெண்களைச் சொல்லுங்கள்",
+                major: "தயவுசெய்து உங்கள் 12 ஆம் வகுப்பு முதன்மை குழுவைச் சொல்லுங்கள்",
+                contact: "தயவுசெய்து உங்கள் தொடர்பு எண்ணைச் சொல்லுங்கள்",
+                email: "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியைச் சொல்லுங்கள்",
+                preferredCourses: "தயவுசெய்து உங்கள் விருப்பமான பாடப்பிரிவுகளைச் சொல்லுங்கள்",
+                additionalInfo: "தயவுசெய்து கூடுதல் தகவல்களைச் சொல்லுங்கள்"
+            },
+            'hi-IN': {
+                name: "कृपया अपना पूरा नाम बताएं",
+                age: "कृपया अपनी आयु बताएं",
+                gender: "कृपया अपना लिंग बताएं",
+                address: "कृपया अपना पता बताएं",
+                marks: "कृपया अपने 12वीं कक्षा के अंक बताएं",
+                major: "कृपया अपनी 12वीं कक्षा का मुख्य समूह बताएं",
+                contact: "कृपया अपना संपर्क नंबर बताएं",
+                email: "कृपया अपना ईमेल पता बताएं",
+                preferredCourses: "कृपया अपनी पसंदीदा पाठ्यक्रम बताएं",
+                additionalInfo: "कृपया कोई अन्य जानकारी बताएं"
+            }
+        };
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US'; // Default to English
+
+            recognition.onresult = function(event) {
+                const result = event.results[0][0].transcript.trim();
+                console.log('Recognized text:', result); // Log recognized text
+                fillForm(result);
+                currentFieldIndex++;
+                if (currentFieldIndex < fieldIds.length) {
+                    document.getElementById('feedback').textContent = 'Moving to next field: ' + prompts[recognition.lang][fieldIds[currentFieldIndex]];
+                    speakFieldLabel(fieldIds[currentFieldIndex]);
+                } else {
+                    speakCompletionMessage();
+                }
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+            };
+
+            document.getElementById('startRecognition').addEventListener('click', () => {
+                currentFieldIndex = 0;
+                updateLanguage();
+                document.getElementById('feedback').textContent = 'Starting with: ' + prompts[recognition.lang][fieldIds[currentFieldIndex]];
+                speakFieldLabel(fieldIds[currentFieldIndex]);
+            });
+
+            document.getElementById('language-select').addEventListener('change', updateLanguage);
+
+        } else {
+            alert('Speech recognition not supported in this browser.');
+        }
+
+        function updateLanguage() {
+            const languageSelect = document.getElementById('language-select').value;
+            recognition.lang = languageSelect;
+        }
+
+        function getVoiceForLanguage(language) {
+            const voices = SpeechSynthesis.getVoices();
+            return voices.find(voice => voice.lang === language) || voices[0];
+        }
+
+        function speakFieldLabel(fieldId) {
+            const label = prompts[recognition.lang] ? prompts[recognition.lang][fieldId] : prompts['en-US'][fieldId];
+            if (label) {
+                const utterance = new SpeechSynthesisUtterance(label);
+                const selectedVoice = getVoiceForLanguage(recognition.lang);
+                utterance.voice = selectedVoice;
+                utterance.onend = function() {
+                    clearTimeout(debounceTimeout);
+                    debounceTimeout = setTimeout(() => {
+                        recognition.start();
+                    }, 300);
+                };
+                SpeechSynthesis.speak(utterance);
+            } else {
+                console.error('No prompt available for field:', fieldId);
+            }
+        }
+
+        function speakCompletionMessage() {
+            const completionMessages = {
+                'en-US': 'All fields have been filled. Please review and submit.',
+                'ta-IN': 'அனைத்து புலங்களும் நிரப்பப்பட்டுவிட்டது. தயவுசெய்து சரிபார்த்து சமர்ப்பிக்கவும்.',
+                'hi-IN': 'सभी फील्ड भर दिए गए हैं। कृपया समीक्षा करें और जमा करें।'
+            };
+            const utterance = new SpeechSynthesisUtterance(completionMessages[recognition.lang]);
+            const selectedVoice = getVoiceForLanguage(recognition.lang);
+            utterance.voice = selectedVoice;
+            SpeechSynthesis.speak(utterance);
+        }
+
+        function fillForm(text) {
+            const field = document.getElementById(fieldIds[currentFieldIndex]);
+            if (field) {
+                field.value = text;
+            } else {
+                console.error('Field not found:', fieldIds[currentFieldIndex]);
+            }
+        }
+    </script>
+</body>

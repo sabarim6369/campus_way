@@ -1,0 +1,30 @@
+{
+  "name": "smart-india-hackathon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+ 
+  "build:css": "npx tailwindcss build src/college_university_dashboard.css -o public/college_university_dashboard.css"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.5",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "punycode": "^2.3.1",
+    "tailwindcss": "^3.4.10"
+  }
+}

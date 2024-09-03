@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Light gray background for the whole page */
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #e0f7fa; /* Sky blue background */
+    padding: 20px;
+    border-right: 2px solid #b2ebf2; /* Lighter border */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.sidebar .logo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar .department {
+    background-color: #b2ebf2; /* Light sky blue background */
+    color: #00796b;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar .department:hover {
+    background-color: #80deea; /* Slightly darker sky blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    border-left: 2px solid #b2ebf2; /* Lighter border matching sidebar */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.content p {
+    line-height: 1.6;
+    color: #424242;
+    font-size: 1rem;
+}
+
+.content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+    color: #424242;
+}

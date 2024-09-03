@@ -1,0 +1,784 @@
+<body id="top">
+  
+
+
+  
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo"data-translate="campusWay">CampusWay</a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo" data-translate="campusWay">CampusWay</a>
+
+          <button class="nav-close-btn" aria-label="Clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        
+
+        <ul class="navbar-list">
+
+          {{!-- <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#service" class="navbar-link" data-nav-link>
+              <span>Service</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>
+              <span>Blog</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav> --}}
+ 
+    <div class="header-content">
+            <div class="profile-menu">
+                <img src="\assets\images\profile.png" alt="Profile Icon" class="profile-icon" onclick="toggleDropdown()">
+                <div id="dropdown" class="dropdown-content">
+                  
+                    <a href="/changepassword/{{email}}" data-translate="changePassword">Change Password</a>
+                    <a href="/home" data-translate="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+      <!-- 
+        - #FEATURE
+      -->
+
+      <section class="section feature" aria-label="feature">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <div>
+              <p class="section-subtitle" ><font size="8"><b  data-translate="welcome">Welcome</b> {{name}}</font></p>
+              <!-- <hr length = "20" align="left" color="orange"> -->
+
+              <!-- <h2 class="h2 section-title">Welcome to padho !</h2> -->
+
+              <p class="section-text" data-translate="hello">
+                Empower Your Future with the Right Career Choices!
+Discover resources and insights to guide you toward your dream career.
+
+
+              </p>
+            </div>
+            
+
+            <a href="#" class="btn1" data-translate="readmore">Read More</a>
+
+          </div>
+<hr color="orange" size="3" >
+          <ul class="feature-list grid-list">
+
+            <li>
+              <div class="feature-card" style="--card-number: '01'">
+
+                <div class="card-icon">
+                  <img src="\assets\images\service-icon-3.png" width="72" height="91" alt="">
+                </div>
+
+                <h3 class="h3 card-title" data-translate="scholarships">Scholorships</h3>
+
+                <p class="card-text" data-translate="one">
+               Fulfill your educational expenses seamlessly with official assistance.
+                </p>
+
+                <a href="/scholarship" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '02'">
+
+                <div class="card-icon">
+                  <img src="\assets\images\feature-icon-1.png" width="94" height="94" alt="">
+                </div>
+
+                <h3 class="h3 card-title" data-translate="resourses">College prediction</h3>
+
+                <p class="card-text"data-translate="second">
+                Get a accurate prediction of colleges for your mark
+                </p>
+
+                <a href="/collegeprediction" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '03'">
+
+                <div class="card-icon">
+                  <img src="\assets\images\feature-icon-3.png" width="93" height="93" alt="">
+                </div>
+
+                <h3 class="h3 card-title" data-translate="counceling">Councelling</h3>
+
+                <p class="card-text" data-translate="three">
+                  Get expert guidance and support to make informed decisions about your academic and career path..
+                </p>
+
+                <a href="/counsellingpart" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+                <div class="feature-card" style="--card-number: '04'">
+  
+                  <div class="card-icon">
+                    <img src="\assets\images\connection.png" width="94" height="94" alt="">
+                  </div>
+  
+                  <h3 class="h3 card-title" data-translate="details">Your Academic Details</h3>
+  
+                  <p class="card-text" data-translate="four">
+                   Your Academic Details for a Bright Future..
+                  </p>
+  
+                  <a href="/roadmap" class="card-btn" aria-label="Read more">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </a>
+  
+                </div>
+              </li>
+
+
+          
+              <li>
+                <div class="feature-card" style="--card-number: '05'">
+  
+                  <div class="card-icon">
+                    <img src="\assets\images\mortarboard.png" width="94" height="94" alt="">
+                  </div>
+                   
+                  <h3 class="h3 card-title" data-translate="college">Colleges/Universities</h3>
+  
+                  <p class="card-text"data-translate="five">
+                Explore Top Colleges and Universities......
+                  </p>
+                   
+                  <a href="/collegeoruniversity" class="card-btn" aria-label="Read more">
+               <ion-icon name="arrow-forward"></ion-icon>
+                  </a>
+   </form>
+                </div>
+              </li>
+             
+
+
+
+              <li>
+                <div class="feature-card" style="--card-number: '06'">
+  
+                  <div class="card-icon">
+                    <img src="\assets\images\idea.png" width="94" height="94" alt="">
+                  </div>
+  
+                  <h3 class="h3 card-title"data-translate="entrance">Entrance Exams</h3>
+  
+                  <p class="card-text" data-translate="six">
+                  Prepare for Entrance Exams and Achieve Success...
+                  </p>
+  
+                  <a href="/entrance" class="card-btn" aria-label="Read more">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </a>
+  
+                </div>
+              </li>
+
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo"data-translate="campusWay">CampusWay</a>
+
+        <p class="footer-text" data-translate="footerText">
+  Next Step Is Success! <br>
+  Your college dreams, our expert guidance
+</p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Feedbacks</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <!-- <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Warehouse</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Air Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Ocean Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Road Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Packaging</a>
+          </li>
+
+        </ul> -->
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Community</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Business Consulting</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Testimonials</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Track Your Shipment</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Condition</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <center><p data-translate="createdBy">
+          This website is created by Sushant,Sabari,Sridharan,YuvanShankar,Megala,Goforthwalker</p></center>
+        <p class="copyright"data-translate="copyright">
+          &copy;All Rights Reserved by <a href="#" class="copyright-link">Padho</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+  <button class="chatbot-toggler">
+        <!-- Chatbot icon -->
+        <img src="\assets\images\chatbot.png" alt="Chatbot Icon">
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+            <span class="material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there 👋 <br> How can I help you today?</p>
+            </li>    
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." required></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+<script>
+  const chatInput = document.querySelector(".chat-input textarea");
+const sendChatBtn = document.querySelector(".chat-input span");
+const chatbox = document.querySelector(".chatbox");
+const chatbotToggler = document.querySelector(".chatbot-toggler");
+const chatbotElement = document.querySelector(".chatbot");
+
+// Define responses directly in JavaScript
+let responses = {
+    "hi": "Hello! How can I help you today?",
+    "hii": "Hello! How can I help you today?",
+    "hey": "Hello! How can I help you today?",
+    "how to appear in engineering counselling":"check the counselling section which is present at top",
+    "hello": "Hi there! What can I assist you with?",
+    "how are you?": "I'm just a bot, but I'm here to help you!",
+    "what is your name?": "I'm your friendly chatbot.",
+    "bye": "Goodbye! Have a great day!",
+    "best engineering courses?": "Computer science, artificial intelligence, Machine learning",
+    "choose career path?": "Assess interests, skills, and values.",
+    "top engineering colleges India?": "IITs, NITs, and IISc.",
+    "admission process top colleges?": "Entrance exams like JEE Main and JEE Advanced.",
+    "prepare for entrance exams?": "Study syllabus, solve past papers, take mock tests.",
+    "career prospects after engineering?": "Roles in tech, manufacturing, consulting, and more.",
+    "choose engineering branch importance?": "Aligns with interests and career goals.",
+    "emerging engineering trends?": "AI, data science, and interdisciplinary studies.",
+    "handle challenging work environment?": "Stay positive, focus on solutions, seek support.",
+    "improve job satisfaction?": "Find meaning, seek growth opportunities, balance work.",
+    "create career development plan?": "Identify goals, outline steps, set milestones.",
+    "achieve career success?": "Set clear goals, stay motivated, improve skills.",
+    "handle work-related stress?": "Identify sources, use stress management techniques, seek support.",
+    "common interview questions?": "Tell me about yourself, strengths and weaknesses.",
+    "build professional credibility?": "Deliver high-quality work, be reliable, contribute actively.",
+    "choose specialization within field?": "Explore areas, consider interests, seek advice.",
+    "effective job searching tips?": "Tailor resume, leverage network, use job engines.",
+    "develop a career plan?": "Set goals, identify steps, review regularly.",
+    "mistakes to avoid interview?": "Be prepared, avoid negativity, ask thoughtful questions.",
+    "stay competitive job market?": "Update skills, stay informed, be adaptable.",
+    "improve professional skills?": "Seek feedback, pursue training, practice skills.",
+    "make career transition successful?": "Research field, acquire skills, leverage experience.",
+    "find career mentor?": "Look for industry professionals, network, seek recommendations.",
+    "plan for career growth?": "Set goals, pursue skills, seek feedback.",
+    "benefits of internships?": "Gain experience, network, explore career options.",
+    "best practices resume writing?": "Highlight achievements, tailor for job, proofread.",
+    "improve public speaking skills?": "Practice regularly, seek feedback, join groups.",
+    "networking tips for professionals?": "Attend events, connect online, follow up.",
+    "handle job rejection?": "Learn from feedback, stay positive, keep applying.",
+    "transition from student to professional?": "Gain experience, build skills, adjust expectations.",
+    "find job opportunities online?": "Use job boards, company websites, social media.",
+    "develop leadership skills?": "Take on responsibilities, seek mentorship, lead projects.",
+    "handle workplace conflicts?": "Communicate openly, seek resolution, stay professional.",
+    "importance of work-life balance?": "Prevent burnout, improve productivity, enhance well-being.",
+    "get career advice?": "Talk to mentors, use career services, read guides.",
+    "start career in tech?": "Learn coding, build projects, network with professionals.",
+    "career options in healthcare?": "Nursing, medical research, administration, patient care.",
+    "pursue career in finance?": "Study finance, gain experience, pursue certifications.",
+    "effective job interview preparation?": "Research company, practice answers, prepare questions.",
+    "skills needed for management?": "Leadership, communication, problem-solving, organization.",
+    "how to set career goals?": "Identify interests, set SMART goals, create plan.",
+    "importance of professional certifications?": "Enhance skills, improve job prospects, gain recognition.",
+    "find work-life balance?": "Set boundaries, prioritize tasks, manage time.",
+    "improve teamwork skills?": "Communicate effectively, collaborate, respect others.",
+    "handle career setbacks?": "Stay resilient, reassess goals, seek support.",
+    "get noticed by employers?": "Build a strong online presence, network, apply widely.",
+    "best career resources?": "Career websites, professional organizations, mentorship programs.",
+    "improve time management?": "Use planners, set priorities, avoid multitasking.",
+    "gain experience for career?": "Volunteer, intern, work on projects.",
+    "how to negotiate salary?": "Research market rates, highlight skills, be confident.",
+    "effective job search strategies?": "Network, tailor applications, follow up.",
+    "career options in education?": "Teaching, administration, counseling, curriculum development.",
+    "develop problem-solving skills?": "Practice critical thinking, seek challenges, learn from mistakes.",
+    "benefits of career counseling?": "Personalized advice, career clarity, goal setting.",
+    "how to ask for a raise?": "Prepare evidence, schedule meeting, present case.",
+    "find career growth opportunities?": "Seek additional responsibilities, ask for feedback, pursue training.",
+    "handle job dissatisfaction?": "Identify issues, seek solutions, consider career change.",
+    "learn new skills?": "Take courses, attend workshops, practice regularly.",
+    "improve job performance?": "Set goals, seek feedback, improve skills.",
+    "build a professional portfolio?": "Showcase work, highlight achievements, update regularly.",
+    "prepare for career change?": "Research new field, gain relevant skills, network.",
+    "find work that aligns with values?": "Identify values, research companies, seek matching roles.",
+    "importance of continuing education?": "Stay updated, enhance skills, advance career.",
+    "handle workplace stress?": "Practice relaxation, manage time, seek support.",
+    "explore career interests?": "Research fields, take assessments, gain experience.",
+    "top 2 engineering colleges in tamilnadu":"IIT Madras,SRM",
+    "top engineering colleges in tamilnadu":"IIT Madras,SRM",
+    "how to apply for entrance exams":"scroll down.you can see the section named entrance exam.click it.you can see the details"
+};
+
+// The rest of your existing JavaScript code
+const createChatLi = (message, classname) => {
+    const chatLi = document.createElement("li");
+    chatLi.classList.add("chat", classname);
+    const chatContent = classname === "outgoing"
+        ? `<p>${message}</p>`
+        : `<span class="material-symbols-outlined">smart_toy</span><p>${message}</p>`;
+    chatLi.innerHTML = chatContent;
+    return chatLi;
+};
+
+const generateResponse = (incomingChatLi, userMessage) => {
+    const messageElement = incomingChatLi.querySelector("p");
+    const lowerCaseMessage = userMessage.toLowerCase();
+    const response = responses[lowerCaseMessage] || "I'm not sure how to respond to that.";
+    messageElement.textContent = response;
+};
+
+const handleChat = () => {
+    const userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+    chatInput.value = "";
+
+    setTimeout(() => {
+        const incomingChatLi = createChatLi("Thinking...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi, userMessage);
+    }, 300);
+};
+
+// Toggle chatbot visibility
+chatbotToggler.addEventListener("click", () => {
+    document.body.classList.toggle("show-chatbot");
+});
+
+// Toggle chatbot visibility
+chatbotToggler.addEventListener("click", () => {
+    chatbotElement.classList.toggle("visible");  // Toggle 'visible' class on chatbot element
+});
+// Send message on button click
+sendChatBtn.addEventListener("click", handleChat);
+
+// Optionally send message on Enter key press
+chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        handleChat();
+    }
+});
+
+  const translations = {
+"en": {
+    "welcome": "Welcome",
+    "campusWay": "CampusWay",
+    "hello": "Empower Your Future with the Right Career Choices! Discover resources and insights to guide you toward your dream career.",
+    "changePassword": "Change Password",
+    "logout": "Logout",
+    "scholarships": "Scholarships",
+    "resources": "College Prediction",
+    "counseling": "Counseling",
+    "academicDetails": "Your Academic Details",
+    "colleges": "Colleges/Universities",
+    "footerText": "Next Step Is Success! Your college dreams, our expert guidance.",
+    "readmore": "Read More",
+    "scholarships": "Scholarships",
+    "resourses": "College Prediction",
+    "counceling": "Counseling",
+    "details": "Your Academic Details",
+    "college": "Colleges/Universities",
+    "entrance": "Entrance exams",
+    "one": "Fulfill your educational expenses seamlessly with official assistance.",
+    "second": "Get an accurate prediction of colleges for your mark.",
+    "three": "Get expert guidance and support to make informed decisions about your academic and career path.",
+    "four": "Your Academic Details for a Bright Future",
+    "five": "Explore Top Colleges and Universities",
+    "six": "Prepare for Entrance Exams and Achieve Success",
+    "termsCondition": "Terms & Condition",
+     "createdBy": "This website is created by Sushant, Sabari, Sridharan, YuvanShankar, Megala, Goforthwalker",
+       "copyright": "&copy;All Rights Reserved by campusway",
+    
+  },
+  "ta": {
+    "welcome": "வணக்கம்",
+    "campusWay": "கேம்பஸ் வே",
+    "hello": "உங்கள் எதிர்காலத்தை சரியான தொழில் தேர்வுகளுடன் சிறப்பிக்கவும்! உங்கள் கனவு தொழிலை நோக்கி வழிகாட்டும் வளங்கள் மற்றும் குறியீடுகளைப் கண்டறியவும்.",
+    "changePassword": "கடவுச்சொல்லை மாற்றவும்",
+    "logout": "வெளியேறு",
+    "scholarships": "மதிப்பூதியங்கள்",
+    "resources": "வளங்கள்",
+    "counseling": "ஆலோசனை",
+    "academicDetails": "உங்கள் கல்வி விவரங்கள்",
+    "colleges": "கல்லூரிகள்/பல்கலைக்கழகங்கள்",
+    "footerText": "அடுத்த படி வெற்றி! உங்கள் கல்லூரி கனவுகள், எங்கள் நிபுணர் வழிகாட்டல்.",
+    "readmore": "மேலும் படிக்கவும்",
+    "scholarships": "மாணவர்கள் அறக்கட்டளை",
+    "resourses": "கல்லூரி கணிப்பு",
+    "counceling": "ஆலோசனை",
+    "details": "உங்கள் கல்வி விவரங்கள்",
+    "college": "கல்லூரிகள்/பல்கலைக்கழகங்கள்",
+    "entrance": "எழுத்துத் தேர்வுகள்",
+    "one": "அதிகாரப்பூர்வமான உதவிகளுடன் உங்கள் கல்வி செலவுகளைச் சிக்கலில்லாமல் நிறைவேற்றுங்கள்.",
+    "second": "உங்கள் மதிப்பெண்ணுக்கு துல்லியமான கல்லூரி கணிப்பு பெறுங்கள்.",
+    "three": "உங்கள் கல்வி மற்றும் தொழில் பாதையை பற்றி அறிவுசார்ந்த முடிவுகளை எடுக்கும் குறும்பட உதவி மற்றும் ஆதரவை பெறுங்கள்.",
+    "four": "உங்கள் பிரகாசமான எதிர்காலத்திற்கு கல்வி விவரங்கள்",
+    "five": "மேலான கல்லூரிகள் மற்றும் பல்கலைக்கழகங்களை ஆராயுங்கள்",
+    "six": "உங்கள் நுழைவுத் தேர்வுகளுக்கு தயார் ஆகி வெற்றியை அடையுங்கள்",
+    "termsCondition": "நிபந்தனைகள் மற்றும் விதிமுறைகள்",
+     "createdBy": "இந்த இணையதளத்தை சுஷாந்த், சபரி, ஸ்ரீதரன், யுவன் ஷங்கர், மேகலா, கோஃபோர்த்வாக்கர் ஆகியோர் உருவாக்கினர்.",
+        "copyright": "&copy;அனைத்துரிமையும் பாதுகாக்கப்பட்டது campusway மூலம்",
+   
+  },
+  "hi": {
+    "welcome": "स्वागत है",
+    "campusWay": "कैम्पसवे",
+    "hello": "सही करियर विकल्पों के साथ अपने भविष्य को सशक्त बनाएं! अपने सपनों के करियर की ओर मार्गदर्शन करने के लिए संसाधन और जानकारी खोजें",
+    "changePassword": "पासवर्ड बदलें",
+    "logout": "लॉग आउट",
+    "scholarships": "छात्रवृत्तियां",
+    "resources":"कॉलेज भविष्यवाणी",
+    "counseling": "परामर्श",
+    "academicDetails": "आपका शैक्षणिक विवरण",
+    "colleges": "कॉलेज/विश्वविद्यालय",
+    "footerText": "अगला कदम सफलता है! आपके कॉलेज के सपने, हमारी विशेषज्ञ मार्गदर्शन।",
+    "readmore": "अधिक पढ़ें",
+    "scholarships": "छात्रवृत्तियाँ",
+    "resourses": "संसाधन",
+    "counceling": "सलाहकार",
+    "details": "आपके शैक्षिक विवरण",
+    "college": "कॉलेज/विश्वविद्यालय",
+    "entrance": "प्रवेश परीक्षाएँ",
+    "one": "आधिकारिक सहायता के साथ आपकी शिक्षा लागत को बिना किसी परेशानी के पूरा करें।",
+    "second": "अपने अंकों के लिए सही कॉलेज की भविष्यवाणी प्राप्त करें।",
+    "three": "आपकी शिक्षा और करियर पथ के बारे में सूचित निर्णय लेने के लिए विशेषज्ञ मार्गदर्शन और समर्थन प्राप्त करें।",
+    "four": "एक उज्जवल भविष्य के लिए आपकी शैक्षणिक जानकारी",
+    "five": "सर्वश्रेष्ठ कॉलेज और विश्वविद्यालयों की खोज करें",
+    "six": "प्रवेश परीक्षाओं के लिए तैयारी करें और सफलता प्राप्त करें",
+    "termsCondition": "नियम और शर्तें",
+     "createdBy": "यह वेबसाइट सुषांत, सबरी, श्रीधरन, युवानशंकर, मेगला, गोफोर्थवाकर द्वारा बनाई गई है।",
+       "copyright": "&copy;सर्वाधिकार सुरक्षित campusway द्वारा",
+
+   
+  },
+  "te": {
+    "welcome": "స్వాగతం",
+    "campusWay": "క్యాంపస్‌వే",
+    "hello": "సరైన కెరీర్ ఎంపికలతో మీ భవిష్యత్తును శక్తివంతం చేయండి! మీ కలల కెరీర్‌ వైపు మార్గనిర్దేశం చేయడానికి వనరులు మరియు సమాచారం కనుగొనండి.",
+    "changePassword": "పాస్వర్డ్ మార్పు",
+    "logout": "లాగ్ అవుట్",
+    "scholarships": "ఉపాధి",
+    "resourses":"కలేజీ అంచనా",
+    "counceling": "కౌన్సలింగ్",
+    "details": "మీ విద్యా వివరాలు",
+    "college": "కళాశాలలు/విశ్వవిద్యాలయాలు",
+    "entrance": "ప్రవేశ పరీక్షలు",
+"one": "ప్రామాణిక సహాయంతో మీ విద్యా ఖర్చులను సులభంగా పూర్తి చేయండి.",
+"second":"మీ మార్కుల కోసం సరిగ్గా కళాశాల అంచనా పొందండి.",
+"three": "మీ విద్య మరియు కెరీర్ మార్గం గురించి సచేతన నిర్ణయాలు తీసుకోవడానికి నిపుణుల మార్గనిర్దేశం మరియు మద్దతు పొందండి.",
+"four": "ఓ ప్రకాశవంతమైన భవిష్యత్తుకు మీ విద్యా వివరాలు",
+"five": "ఉత్తమమైన కళాశాలలు మరియు విశ్వవిద్యాలయాలను అన్వేషించండి",
+"six": "ప్రవేశ పరీక్షలకు సిద్ధమయ్యి విజయం సాధించండి",
+
+    "footerText": "మరొక అడుగు విజయం! మీ కళాశాల కలలు, మా నిపుణుల మార్గనిర్దేశం.",
+    "readmore": "ఇంకా చదవండి",
+    "termsCondition": "వివరాలు మరియు షరతులు",
+    "createdBy": "ఈ వెబ్‌సైట్‌ను సుశాంత్, సబరి, శ్రీధరన్, యువన్‌శంకర్, మేగలా, గోఫార్త్వాకర్ రూపొందించారు.",
+    "copyright": "&copy; అన్ని హక్కులు రిజర్వు చేయబడ్డాయి campusway",
+  },
+  "ml": {
+    "welcome": "സ്വാഗതം",
+    "campusWay": "കാമ്പസ് വേ",
+    "hello": "ശ്രേയസ്വഭാവം സെലക്ട് ചെയ്ത് നിങ്ങളുടെ ഭാവി ശക്തിപ്പെടുത്തുക! നിങ്ങളുടെ സ്വപ്ന കരിയറിലേക്ക് നയിക്കാൻ വിഭവങ്ങളും വിവരങ്ങളും കണ്ടെത്തുക.",
+    "changePassword": "പാസ്‌വേഡ് മാറ്റുക",
+    "logout": "ലോഗ് ഔട്ട്",
+    "scholarships": "പണ്ഡിതങ്ങള്",
+    "resourses": "കോളേജ് പ്രവചനത്തിന്",
+    "counceling": "കൗൺസിലിംഗ്",
+    "details": "നിങ്ങളുടെ അക്കാദമിക് വിശദാംശങ്ങൾ",
+    "college": "കോളേജുകൾ/വിശ്വവിദ്യാലയങ്ങൾ",
+    "entrance": "പ്രവേശന പരീക്ഷകൾ",
+"one": "സർക്കാരിന്റെ സഹായത്തോടെ നിങ്ങളുടെ വിദ്യാഭ്യാസ ചെലവുകൾ സുഖപ്രദമായി പൂർത്തിയാക്കുക.",
+"second": "നിങ്ങളുടെ മാർക്കിനുള്ള കൃത്യമായ കോളേജ് പ്രവചനങ്ങൾ നേടൂ.",
+"three": "നിങ്ങളുടെ വിദ്യാഭ്യാസവും കരിയർ പാതയും കുറിച്ച് അറിയുന്ന തീരുമാനങ്ങൾ എടുക്കാൻ വിദഗ്ധ മാർഗനിർദ്ദേശവും പിന്തുണയും നേടുക.",
+"four": "ഒരു വെളിച്ചമുള്ള ഭാവിക്കായി നിങ്ങളുടെ അക്കാദമിക് വിവരങ്ങൾ",
+"five": "മികച്ച കോളേജുകൾക്കും സർവകലാശാലകൾക്കും തികഞ്ഞത് കാണുക",
+"six": "പ്രവേശന പരീക്ഷകൾക്ക് തയ്യാറായിരിക്കുക, വിജയകരമായി ഉചിതമായി പോകുക",
+
+    "footerText": "അടുത്ത ഇടം വിജയമാണ്! നിങ്ങളുടെ കോളേജ് സ്വപ്നങ്ങൾ, നമ്മുടെ വിദഗ്ധ മാർഗനിർദ്ദേശം.",
+    "readmore": "കൂടുതൽ വായിക്കുക",
+    "termsCondition": "നിബന്ധനകളും വ്യവസ്ഥകളും",
+    "createdBy": "ഈ വെബ്സൈറ്റ് സുഷാന്ത്, സബരി, ശ്രീധരൻ, യുവൻശങ്കർ, മേഗലാ, ഗോഫോർത്‌വാക്കർ രൂപകൽപ്പന ചെയ്‌തതാണ്.",
+    "copyright": "&copy;എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം campusway",
+  }
+
+  };
+
+  function changeLanguage(language) {
+    document.querySelectorAll("[data-translate]").forEach(function(element) {
+      const key = element.getAttribute("data-translate");
+      element.textContent = translations[language][key];
+    });
+  }
+     function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const language = getCookie('preferredLanguage') || 'en'; // Default to 'en' if no cookie is set
+            changeLanguage(language);
+        });
+   function toggleDropdown() {
+    document.getElementById("dropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.profile-icon')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+   
+function readOutText(text) {
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = 'en'; 
+    window.speechSynthesis.speak(speech);
+}
+
+function setupReadOut() {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        element.addEventListener('click', () => {
+            const text = element.textContent || element.getAttribute('data-translate');
+            readOutText(text);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupReadOut);
+
+
+
+  // Example: Call this function with the language code to change the language
+  // changeLanguage('ta'); // Change to Tamil
+  // changeLanguage('hi'); // Change to Hindi
+</script>

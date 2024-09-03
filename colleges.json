@@ -1,0 +1,51 @@
+[
+    {
+        "College Name": "College A",
+        "General Rank": 1,
+        "Branches": [
+            {
+                "Branch Name": "Computer Science",
+                "OC": 200,
+                "BC": 195,
+                "BCM": 190,
+                "MBC": 185,
+                "SC": 180,
+                "ST": 175
+            },
+            {
+                "Branch Name": "Electronics",
+                "OC": 195,
+                "BC": 190,
+                "BCM": 185,
+                "MBC": 180,
+                "SC": 175,
+                "ST": 170
+            }
+        ]
+    },
+    {
+        "College Name": "College B",
+        "General Rank": 2,
+        "Branches": [
+            {
+                "Branch Name": "Mechanical Engineering",
+                "OC": 185,
+                "BC": 180,
+                "BCM": 175,
+                "MBC": 170,
+                "SC": 165,
+                "ST": 160
+            },
+            {
+                "Branch Name": "Civil Engineering",
+                "OC": 180,
+                "BC": 175,
+                "BCM": 170,
+                "MBC": 165,
+                "SC": 160,
+                "ST": 155
+            }
+        ]
+    }
+    
+]
